@@ -16,11 +16,8 @@
                     <div class="row">
                         <p class="col-sm-12 col-md-9">Chào Mừng Bạn Đã Đến Với Website Của Chúng Tôi!</p>
                         <div class="icon col-md-3">
-                            <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                            <a href=""><i class="fa fa-rss" aria-hidden="true"></i></a>
                             <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                            <a href=""><i class="fa fa-skype" aria-hidden="true"></i></a>
-                            <a href=""><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                            <a href=""><i class="fa fa-envelope" aria-hidden="true"></i></a>
                             <a href=""><i class="fa fa-google" aria-hidden="true"></i></a>
                         </div>
                     </div>
@@ -28,7 +25,10 @@
             </div>
             <div id="banner" class="container">
                 <div class="row">
-                    <ul class="breadcrumb col-md-7">
+                    <div class="logo col-sm-12 col-md-3">
+                        <img src="./images/placeHolder.jpg" alt="Logo" >
+                    </div>
+                    <ul class="breadcrumb col-md-4">
                         <li>
                             <a href="./index.html" title="Trang Chủ">Trang Chủ</a>
                             <span>></span>
@@ -68,6 +68,16 @@
             </div>    
         </div>
         <h4><strong style="padding-left: 20px;">CÁC SẢN PHẨM NỔI BẬT NHẤT</strong></h4>
+        <div class="dropdown" id="btnDropdown">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Sort by </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Ascending ↑</a>
+              <a class="dropdown-item" href="#">Decrease ↓</a>
+            </div>
+        </div>
+        <div class="HideFilter" id="btnHideFilter">
+            <button type="button" class="btn btn-primary" >HideFilter</button>
+        </div>
         <a href="javascript:;" class="back-to-top show"><i class="fa fa-chevron-up"></i></a>
         <div id="category" class="container-fluid">
             <div class="row">
@@ -121,8 +131,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="right-btnHideFilter">
-                    <input type="checkbox" class="chkboxHideFilter"/><span>HideFilter</span>
+                <div class="bodyContainer">
+
                 </div>
             </div>
         </div>
@@ -187,17 +197,17 @@
         <script type="text/javascript"></script>
         <script>
             $(document).ready(function(){
-                var dem = 0;
-                $(".chkboxHideFilter").click(function(){
-                    if($(this).html() == ""){
-                        dem = dem + 1;
-                        if(dem % 2 == 1){
-                            $(".left-420-filter-panel").hide(500);
-                        }
-                        else{
-                            $(".left-420-filter-panel").show(500);
-                        }
+                $(".btn").click(function(){
+                    if($(this).html() == "HideFilter"){
+                        $(".left-420-filter-panel").hide(100);
+                        $(this).html("ShowFilter");
+                        $(".bodyContainer").text("KHÔNG CÓ DỮ LIỆU RÀ SOÁT");
                     }
+                    else if($(this).html() == "ShowFilter"){
+                        $(".left-420-filter-panel").show(100);
+                        $(this).html("HideFilter");
+                        $(".bodyContainer").text("");
+                        }
                 });
             });
         </script>
