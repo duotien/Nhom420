@@ -25,6 +25,7 @@
 body{
     padding: 0;
     margin: 0;
+
 }
 /* Header */
 #bannerTop{
@@ -160,17 +161,48 @@ body{
 /* Category */
 #category{
     margin-top: 10px;
+    position: relative;
+    
 }
 #category .left-420-filter-panel{
-    padding: 0px 15px 0px 15px;
-    border: 1px solid black;
-    margin: 0px 0px 0px 10px;
+    border-right: 1px groove red;
+    margin-left: 22px;
+    padding-right: 10px;
+
 }
 #category .n420-filter-search-status_text{
     font-weight: bolder;
 }
 #category .n420-filter-group-header{
     margin-bottom: 10px;
+}
+#category .n420-checkbox_label{
+    margin-left: 20px;
+}
+#category .n420-filter-button{
+    margin-left: -15px;
+}
+#category .n420-filter-button-submit{
+    margin-right: 10px;
+    padding: 5px 20px 5px 20px;
+    text-transform: uppercase;
+    background-color: orangered;
+    color: whitesmoke;
+    border: 1px solid orangered;
+    border-radius: 4px;
+}
+#category .n420-filter-button :hover{
+    background-color: whitesmoke;
+    color: orangered;
+}
+#category .n420-filter-button-reset{
+    padding: 5px 20px 5px 20px;
+    text-transform: uppercase;
+    background-color: orangered;
+    color: whitesmoke;
+    border: none;
+    border: 1px solid orangered;
+    border-radius: 4px;
 }
 #category .left-category img{
     width: 300px;
@@ -182,9 +214,30 @@ body{
     height: 300px;
 }
 #category .bodyContainer{
-    margin: 10% 10% 10% 50%;
-    font-weight: bold;
-    color: red;
+    margin: 5px 5px 5px 10px;
+}
+#category .n420-product-title{
+    margin: 0px auto 5px 18px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#category .n420-product-box{
+    display: inline-block;
+    margin: 5px 5px 50px 18px;
+    text-align: center;
+}
+#category .n420-product-image{
+    height: 400px; width: 400px;
+}
+#category a{
+    text-decoration: none;
+    color: black;
+    text-align: left;
+}
+#category .n420-product-name-price span{
+    float: right;
+}
+#titleContainer{
+    margin: 5px 5px 5px 5px;
 }
 #btnHideFilter{
     float: right;
