@@ -48,10 +48,12 @@ body{
     #bannerTop .icon a{
         text-decoration: none;
         color: #83dc36;
+        
     }
     #bannerTop .icon i{
         font-size: x-large;
         margin-right: 10px;
+        
     }
     #banner .logo img{
         width: 100px;
@@ -64,6 +66,9 @@ body{
     background-color: white;
     overflow: hidden;
     font-size: 20px;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
     #banner .breadcrumb li{
         display: inline-block;
