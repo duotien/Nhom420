@@ -111,14 +111,52 @@ body{
     }
     #highlight .right-highlight{
         padding: 0;
-        border-left: solid 2px black;
+
     }
     #highlight .left-highlight img{
         width: 100%;
         float: right;
+        margin-top: 20%;
     }
     #highlight .right-highlight img{
         width: 100%;
+        margin-top: 20%;
+    }
+    #highlight p{
+        margin: 20% 0px 0px 10px;
+        font-weight: bolder;
+        font-size: 20px;
+    }
+    #highlight h3{
+        margin: 5px 0px 0px 10px;
+        font-size: 16px;
+        text-decoration: none;
+        font-weight: normal;
+    }
+    #highlight .highlight-price{
+        margin: 5px 0px 0px 10px;
+        font-size: 20px;
+        font-weight: bolder;
+    }
+    #highlight .highlight-price:hover{
+        color: #f72b3f;
+    }
+    #highlight .highlight-addCart{
+        margin: 5px 0px 0px 10px;
+        font-size: 40px;
+    }
+    #highlight .btn-seemore{
+        margin: 5px 0px 0px 10px;
+        padding: 5px 20px 5px 20px;
+        text-transform: uppercase;
+        background-color: blue;
+        color: whitesmoke;
+        border: 1px solid skyblue;
+        border-radius: 4px;
+    }
+    #highlight .highlight-seemore :hover{
+        color: blue;
+        background-color: whitesmoke;
     }
 /* Back to top */
 .back-to-top {
@@ -161,13 +199,10 @@ body{
 /* Category */
 #category{
     margin-top: 10px;
-    position: relative;
     
 }
 #category .left-420-filter-panel{
     border-right: 1px groove red;
-    margin-left: 22px;
-    padding-right: 10px;
 
 }
 #category .n420-filter-search-status_text{
@@ -204,25 +239,13 @@ body{
     border: 1px solid orangered;
     border-radius: 4px;
 }
-#category .left-category img{
-    width: 300px;
-    height: 300px;
-    float: right;
-}
-#category .right-category img{
-    width: 300px;
-    height: 300px;
-}
-#category .bodyContainer{
-    margin: 5px 5px 5px 10px;
-}
 #category .n420-product-title{
     margin: 0px auto 5px 18px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 #category .n420-product-box{
     display: inline-block;
-    margin: 5px 5px 50px 18px;
+    margin : 5px 0px 5px 5px;
     text-align: center;
 }
 #category .n420-product-image{
