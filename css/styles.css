@@ -60,24 +60,24 @@ body{
 #banner .header-menu{
     padding: 0;
 }
-    #banner .header-menu .main-menu{
+    /* #banner .header-menu */ .main-menu{
         list-style: none;
         margin: 0;
         display: block;
         padding: 0;
     }
-    #banner .header-menu .is-child{
+    /*#banner .header-menu */ .is-child{
         float: left;
-        margin: 18px 10px;
+        margin: 18px 10px 0px 10px;
         padding: 0;
-        height: 60px;
+        /* height: 60px; */
         vertical-align: middle;
     }
-    #banner .header-menu .is-child :hover{
+    /*#banner .header-menu */ .is-child :hover{
         color: white;
         background-color: #83dc36;
     }
-    #banner .header-menu .is-child a{
+    /*#banner .header-menu */ .is-child a{
         text-decoration: none;
         color: black;
         font-size: 20px;
@@ -103,12 +103,13 @@ body{
     #banner .group-box{
         margin-top: 10px;
         text-align: right;
+        padding: 0;
     }
     #banner .group-box a{
         text-decoration: none;
         color: black;
         font-size: xx-large;
-        margin: 20px;
+        margin-left: 20px;
     }
 /* Highlight */
 #highlight{
@@ -257,3 +258,40 @@ footer{
         margin-top: 10px;
     }
 
+/* Back to top */
+#button {
+    display: inline-block;
+    background-color: red;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 35px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: background-color .3s, 
+      opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+  }
+  #button::after {
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2em;
+    line-height: 50px;
+    color: #fff;
+  }
+  #button:hover {
+    cursor: pointer;
+    background-color: red;
+  }
+  #button:active {
+    background-color: red;
+  }
+  #button.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  

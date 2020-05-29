@@ -1,0 +1,9 @@
+/*set a border on the images to prevent shifting*/
+#gal1 a img{
+    border:2px solid white;
+}
+ 
+/*Change the colour*/
+.active img{
+    border:2px solid #333 !important;
+}
