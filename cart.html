@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="./css/bootstrap.css">
         <link rel="stylesheet" href="./css/styles.css">
         <link rel="stylesheet" href="./css/men.css">
-        <link rel="stylesheet" href="./css/product.css">
+        <link rel="stylesheet" href="./css/cart.css">
         <link rel="stylesheet" href="./css/responsive.css">
         <link rel="stylesheet" href="./fonts/font-awesome-4.7.0/css/font-awesome.min.css">
         <script  type="text/javascript" src="./js/jquery-1.8.3.min.js"></script>
@@ -58,12 +58,9 @@
                                 <a href="./index.html" title="Home">Home</a>
                                 <span>></span>
                             </li>
+                            
                             <li>
-                                <a href="./men.html" title="Men">Men</a>
-                                <span>></span>
-                            </li>
-                            <li>
-                                <a href="./product.html" title="Product">Product</a>
+                                <a href="./cart.html" title="Cart">Cart</a>
                             </li>
                         </ul>
                     </div>
@@ -87,56 +84,92 @@
             </div>
         </header>
         <hr>
-        <div class="container">
-            <div class="row" style="display: flex;">
-                <div id="img-container" class="col-md-6">
-                    <img id="zoom_01" src="./images/react-phantom-run-flyknit-.jpg" data-zoom-image="./images/react-phantom-run-flyknit-.jpg" width="80%"/>
+        <section class="jumbotron text-center">
+            <div class="container">
+                <h1 class="jumbotron-heading">YOUR SHOPPING CART</h1>
+             </div>
+        </section>
+        
+        <div class="container mb-4">
+            <div class="row">
+                <div class="col-12">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col"> </th>
+                                    <th scope="col">Product</th>
+                                    <th scope="col">Available</th>
+                                    <th scope="col" class="text-center">Quantity</th>
+                                    <th scope="col" class="text-right">Price</th>
+                                    <th> </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
+                                    <td>Product Name</td>
+                                    <td>In stock</td>
+                                    <td><input class="form-control" type="text" value="1" /></td>
+                                    <td class="text-right">124.000đ</td>
+                                    <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
+                                </tr>
+                                <tr>
+                                    <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
+                                    <td>Product Name</td>
+                                    <td>In stock</td>
+                                    <td><input class="form-control" type="text" value="1" /></td>
+                                    <td class="text-right">124.000đ</td>
+                                    <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
+                                </tr>
+                                <tr>
+                                    <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
+                                    <td>Product Name/td>
+                                    <td>In stock</td>
+                                    <td><input class="form-control" type="text" value="1" /></td>
+                                    <td class="text-right">124.000đ</td>
+                                    <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Sub-Total</td>
+                                    <td class="text-right">372.000đ</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Shipping</td>
+                                    <td class="text-right">25.000đ</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><strong>Total</strong></td>
+                                    <td class="text-right"><strong>397.000đ</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <h1>Nike React Phantom Run Flyknit 2</h1>
-                        <span class="price">4,109,000đ</span>
-                        <!-- <div>
-                            <label for="">Color</label>
-                            <span style="background-color: red; width: 100px; height: 100px; border: red 1px solid;">RED</span>
+                <div class="col mb-2">
+                    <div class="row">
+                        <!-- <div class="col-sm-12  col-md-6">
+                            <button class="btn btn-block btn-light">Continue Shopping</button>
                         </div> -->
-                        <div class="size">
-                            <label for="">Size</label>
-                            <span>35</span>
-                            <span>36</span>
-                            <span>37</span>
-                            <span>38</span>
-                            <span>39</span>
-                            <span>40</span>
+                        <div class="col-sm-12 col-md-6 text-right">
+                            <button class="btn btn-lg btn-block btn-success text-uppercase">Checkout</button>
                         </div>
-                        <button type="button" class="btn btn-success">Add to your cart</button>
+                    </div>
                 </div>
             </div>
         </div>
-        
-        <div class="container mt-3">
-            <br>
-            <!-- Nav tabs -->
-            <ul class="nav nav-tabs">
-              <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#home">Mô tả</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#menu">Nhận xét</a>
-              </li>
-            </ul>
-            <hr>
-            <!-- Tab panes -->
-            <div class="tab-content">
-              <div id="home" class="container tab-pane active"><br>
-                <h3>Mô tả</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              </div>
-              <div id="menu" class="container tab-pane fade"><br>
-                <h3>Nhận xét</h3>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-              </div>
-            </div>
-          </div>
         <a id="button"><i class="fa fa-chevron-up"></i></a>
         <footer>     
             <div class="container">
