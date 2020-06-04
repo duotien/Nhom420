@@ -55,11 +55,7 @@ body{
         margin-right: 10px;
         
     }
-    #banner .logo img{
-        width: 100px;
-        height: 100px;
-        margin-left: 20%;
-    }
+    
 #banner .breadcrumb{
     margin-top: 20px;
     display: block;
