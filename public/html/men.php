@@ -2,6 +2,7 @@
 <html lang="vi">
     <head>
         <title>Men</title>
+        <base href="http://localhost/Nhom420/"> 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/png" href="images/favicon.ico"/>
@@ -218,98 +219,29 @@
                 </div>
                 <div class="right-bodyContainer col-md-10">
                     <h2 class="n420-product-title">Trending</h2>
-                    <div class="n420-product-box">
-                        <a href="product.html">
-                            <img class="n420-product-image" src="./images/react-phantom-run-flyknit-.jpg" alt="Nike React Phantom Run Flyknit 2"/>
-                            <!--img class="n420-product-icon" src="" alt=""-->
-                            <div class="n420-product-name-price">
-                                <b>Nike React Phantom Run Flyknit 2</b>
-                                <span>4,109,000đ</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="n420-product-box">
-                        <a href="product.html">
-                            <img class="n420-product-image" src="./images/react-phantom-run-flyknit-.jpg" alt="Nike React Phantom Run Flyknit 2"/>
-                            <!--img class="n420-product-icon" src="" alt=""-->
-                            <div class="n420-product-name-price">
-                                <b>Updating...</b>
-                                <span>Updating...</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="n420-product-box">
-                        <a href="product.html">
-                            <img class="n420-product-image" src="./images/react-phantom-run-flyknit-.jpg" alt="Nike React Phantom Run Flyknit 2"/>
-                            <!--img class="n420-product-icon" src="" alt=""-->
-                            <div class="n420-product-name-price">
-                                <b>Updating...</b>
-                                <span>Updating...</span>
-                            </div>
-                        </a>
-                    </div>
-                    <h2 class="n420-product-title">Featured</h2>
-                    <div class="n420-product-box">
-                        <a href="#">
-                            <img class="n420-product-image" src="./images/placeHolder.jpg" alt="Nike React Phantom Run Flyknit 2"/>
-                            <!--img class="n420-product-icon" src="" alt=""-->
-                            <div class="n420-product-name-price">
-                                <b>Updating...</b>
-                                <span>Updating...</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="n420-product-box">
-                        <a href="#">
-                            <img class="n420-product-image" src="./images/custom-nike-blazer-low.jpg" alt="Nike Blazer Low"/>
-                            <!--img class="n420-product-icon" src="" alt=""-->
-                            <div class="n420-product-name-price">
-                                <b>Nike Blazer Low</b>
-                                <span>2,779,000đ</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="n420-product-box">
-                        <a href="#">
-                            <img class="n420-product-image" src="./images/placeHolder.jpg" alt="Nike React Phantom Run Flyknit 2"/>
-                            <!--img class="n420-product-icon" src="" alt=""-->
-                            <div class="n420-product-name-price">
-                                <b>Updating...</b>
-                                <span>Updating...</span>
-                            </div>
-                        </a>
-                    </div>
-                    <h2 class="n420-product-title">By You Favorites</h2>
-                    <div class="n420-product-box">
-                        <a href="#">
-                            <img class="n420-product-image" src="./images/placeHolder.jpg" alt="Nike React Phantom Run Flyknit 2"/>
-                            <!--img class="n420-product-icon" src="" alt=""-->
-                            <div class="n420-product-name-price">
-                                <b>Updating...</b>
-                                <span>Updating...</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="n420-product-box">
-                        <a href="#">
-                            <img class="n420-product-image" src="./images/placeHolder.jpg" alt="Nike React Phantom Run Flyknit 2"/>
-                            <!--img class="n420-product-icon" src="" alt=""-->
-                            <div class="n420-product-name-price">
-                                <b>Updating...</b>
-                                <span>Updating...</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="n420-product-box">
-                        <a href="#">
-                            <img class="n420-product-image" src="./images/lebron-17-low.jpg" alt="LeBron 17 Low"/>
-                            <!--img class="n420-product-icon" src="" alt=""-->
-                            <div class="n420-product-name-price">
-                                <b>LeBron 17 Low</b>
-                                <span>4,699,000đ</span>
-                            </div>
-                        </a>
-                    </div>
+                    <?php 
+                        $con = mysqli_connect("localhost", "root", "", "quanligiaydep") or die("Connect failed!");
+                        $qry = "Select * from product ORDER BY id DESC";
+
+                        $result = mysqli_query($con, $qry);
+
+                        while($row = mysqli_fetch_array($result)) {
+                    ?>
+                        <div class="n420-product-box">
+                            <a href="<?php echo $row['id'] . ".php" ?>">
+                                <img class="n420-product-image" src="<?php echo $row['img_path'] ?>" alt=""/>
+                                <!--img class="n420-product-icon" src="" alt=""-->
+                                <div class="n420-product-name-price">
+                                    <b><?php echo $row['name'] ?></b>
+                                    <span><?php echo $row['price'] ?></span>
+                                </div>
+                            </a>
+                        </div>
+                    <?php
+                        }
+                        
+                    ?>
+                    
                 </div>
             </div>
         </div>
