@@ -2,14 +2,7 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title>Men's, Women's shoes and sneakers</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" type="image/png" href="public/images/favicon.ico"/>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="public/css/styles.css">
-        <link rel="stylesheet" href="public/css/responsive.css">
-        <link rel="stylesheet" href="public/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+        <title>Men's, Women's shoes and sneakers</title>        
     </head>
     <body>
         <header>
@@ -31,7 +24,7 @@
             <div id="banner" class="container">
                 <div class="row">
                     <div class="logo col-xs-12 col-sm-2 col-md-2">
-                        <img src="public/images/logo.jpg" alt="Logo" >
+                        <img src="./images/logo.jpg" alt="Logo" >
                     </div>
                     <div class="header-menu col-xs-12 col-sm-6 col-md-5">
                         <ul class="main-menu clearfix">
