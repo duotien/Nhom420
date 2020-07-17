@@ -100,6 +100,7 @@ body{
     #banner .search-box button{
         background-color: #83dc36;
         border-radius: 0 30px 30px 0 ;
+        height: 100% !important;
     }
     #banner .group-box{
         margin-top: 10px;
