@@ -10,14 +10,12 @@ class App
 {
     #Home/ShowDefault/1/2/3/4
     protected $controller = "Home";
-    protected $action = "ShowDefault";
+    protected $action = "showDefault";
     protected $params = [];
 
     function __construct()
     {
-
-        $arr = $this->UrlProcess();
-
+        $arr = $this->urlProcess();
         // Controller
         if (isset($arr[0]))
         {
@@ -29,7 +27,6 @@ class App
         }
         require_once "./mvc/controllers/" . $this->controller . ".php";
         $this->controller = new $this->controller;
-
         // Action
         if (isset($arr[1]))
         {
@@ -39,14 +36,12 @@ class App
             }
             unset($arr[1]);
         }
-
         // Params
         $this->params = $arr ? array_values($arr) : [];
-
         call_user_func_array([$this->controller, $this->action], $this->params);
     }
 
-    function UrlProcess()
+    function urlProcess()
     {
         if (isset($_GET["url"]))
         {

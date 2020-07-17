@@ -1,9 +1,14 @@
 <?php
 class Home extends Controller
 {
-    function ShowDefault()
+    function showDefault()
     {
         echo "Controller-Home";
+        
+        // Call Models
+
+        // Call Views
+        
     }
 
     function SayHello()
