@@ -23,6 +23,15 @@ class Product extends Controller
         ]);     
     }
 
+    function Detail($id)
+    {
+        //echo "Sản phẩm có id: $id";
+        $this->getView("master-view-1", [
+            "Page" => "productdetail",
+            "id" => $id
+        ]);
+    }
+
     function sayHello()
     {
         echo "Hello World!";
