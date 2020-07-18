@@ -1,10 +1,8 @@
 ﻿<!DOCTYPE html>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <meta charset="utf-8"/>
-    </head>
-    <body>
+        <script>
+            $("#zoom_01").elevateZoom({tint:true, tintColour:'#D8D8D8', tintOpacity:0.5});
+        </script>
         <footer>     
             <div class="container">
                 <div class="row">
@@ -55,5 +53,3 @@
                 </div>          
             </div>
         </footer>
-    </body>
-</html>

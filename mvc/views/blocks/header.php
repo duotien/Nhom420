@@ -1,11 +1,4 @@
-﻿<!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>Men's, Women's shoes and sneakers</title>        
-    </head>
-    <body>
-        <header>
+﻿        <header>
             <div id="bannerTop">
                 <div class="container">
                     <div class="row">
@@ -58,17 +51,9 @@
                     </div>
 <!------------------Xử lí phần SEARCH tại đây-->
                     <div class="group-box col-xs-12 col-sm-2 col-md-2">
-                        <a href="cart.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                        <a href="./mvc/views/pages/cart.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                         <a href="login.html"><i class="fa fa-user" aria-hidden="true"></i></a>
                     </div>
                 </div>
-            </div>
-            
+            </div>            
         </header>
-        <a id="button"><i class="fa fa-chevron-up"></i></a>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-        <script src="public/js/main.js"></script>
-    </body>
-</html>

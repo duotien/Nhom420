@@ -2,20 +2,21 @@
 <html lang="en">
 
     <head>
-        <base href="http://localhost/Nhom420/public/">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="icon" type="image/png" href="./images/favicon.ico" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="./css/styles.css">
-        <link rel="stylesheet" href="./css/responsive.css">
-        <link rel="stylesheet" href="./fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+        <title>Men's, Women's shoes and sneakers</title>
+        <script src="https://unpkg.com/js-image-zoom@0.4.1/js-image-zoom.js" type="application/javascript"></script>
+        <?php require_once "./mvc/views/blocks/head.html"; ?>
+        <link rel="stylesheet" href="./css/category.css">
+        <link rel="stylesheet" href="./css/product.css">
+        <script  type="text/javascript" src="./js/jquery-1.8.3.min.js"></script>
+        <script src="./js/jquery.elevatezoom-3.0.8.min.js" type="text/javascript"></script>
+        <script src="./js/jquery.elevatezoom.js" type="text/javascript"></script>
+        
     </head>
 
     <body>
         <?php require_once "./mvc/views/blocks/header.php"; ?>
         <?php require_once "./mvc/views/pages/" . $data["Page"] . ".php"; ?>
+        <?php require_once "./mvc/views/blocks/chevron-up.html"; ?>
         <?php require_once "./mvc/views/blocks/footer.php"; ?>
     </body>
 
