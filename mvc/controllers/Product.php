@@ -29,6 +29,24 @@ class Product extends Controller
         ]);
     }
 
+    function Men()
+    {
+        $my_array = json_decode($this->productmodel->showListGender(1), true);
+        $this->getView("master-view-1", [
+            "Page" => "category",
+            "Array" => $my_array
+        ]);
+    }
+
+    function Women()
+    {
+        $my_array = json_decode($this->productmodel->showListGender(2), true);
+        $this->getView("master-view-1", [
+            "Page" => "category",
+            "Array" => $my_array
+        ]);
+    }
+
     function sayHello()
     {
         echo "Hello World!";
