@@ -51,4 +51,9 @@ class Product extends Controller
     {
         echo "Hello World!";
     }
+
+    function search($keyword)
+    {
+        #Code search
+    }
 }

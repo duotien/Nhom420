@@ -51,4 +51,9 @@ class ProductModel extends Database
         $result = mysqli_query($this->con, $qr);
         return json_encode(mysqli_fetch_array($result));
     }
+
+    function search()
+    {
+        
+    }
 }
