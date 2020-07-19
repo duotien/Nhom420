@@ -34,22 +34,25 @@
             <!-- Nav tabs -->
             <ul class="nav nav-tabs">
               <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#home">Mô tả</a>
+                <a class="nav-link active" data-toggle="tab" href="#home">Description</a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link" data-toggle="tab" href="#menu">Nhận xét</a>
-              </li>
+              </li> -->
             </ul>
             <hr>
             <!-- Tab panes -->
             <div class="tab-content">
               <div id="home" class="container tab-pane active"><br>
-                <h3>Mô tả</h3>
+                <h3><?php echo $data["Product"]['name'] ?></h3>
                 <?php echo $data["Product"]['description'] ?>
               </div>
-              <div id="menu" class="container tab-pane fade"><br>
+              <!-- <div id="menu" class="container tab-pane fade"><br>
                 <h3>Nhận xét</h3>
                 <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-              </div>
+              </div> -->
             </div>
           </div>
+          <script>
+            $("#zoom_01").elevateZoom({tint:true, tintColour:'#D8D8D8', tintOpacity:0.5});
+        </script>
