@@ -1,4 +1,18 @@
-﻿        <header>
+﻿<?php
+    if(isset($_POST["btn_search"]))
+    {
+        $keyword = $_POST["search_keyword"];
+        if(empty($keyword))
+        {
+            echo "Empty string";
+        }
+        else
+        {
+            header("location: http://localhost/Nhom420/Product/search/$keyword");
+        }
+    }
+?>
+        <header>
             <div id="bannerTop">
                 <div class="container">
                     <div class="row">
@@ -38,11 +52,11 @@
 
 <!------------------Xử lí phần SEARCH tại đây-->
                     <div class="search-box col-xs-12 col-sm-2 col-md-3">
-                        <form class="navbar-form" action="">
+                        <form class="navbar-form" action="" method="POST">
                             <div class="input-group">
-                              <input type="text" class="form-control" placeholder="Search">
+                              <input type="text" class="form-control" placeholder="Search" name="search_keyword">
                               <div class="input-group-btn">
-                                <button class="btn btn-default" type="submit" >
+                                <button class="btn btn-default" type="submit" name="btn_search">
                                     <i class="fa fa-search" aria-hidden="true"></i>
                                 </button>
                               </div>

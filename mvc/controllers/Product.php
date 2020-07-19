@@ -54,6 +54,10 @@ class Product extends Controller
 
     function search($keyword)
     {
-        #Code search
+        $my_array = json_decode($this->productmodel->getProductByName($keyword), true);
+        $this->getView("master-view-1", [
+            "Page" => "category",
+            "Array" => $my_array
+        ]);
     }
 }

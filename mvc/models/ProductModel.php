@@ -52,8 +52,15 @@ class ProductModel extends Database
         return json_encode(mysqli_fetch_array($result));
     }
 
-    function search()
+    function getProductByName($name)
     {
-        
+        $qr = "SELECT DISTINCT * FROM product WHERE name LIKE '%$name%'";
+        $result = mysqli_query($this->con, $qr);
+        $my_array = array();
+        while($row = mysqli_fetch_array($result))
+        {
+            $my_array[] = $row;
+        }
+        return json_encode($my_array);
     }
 }
