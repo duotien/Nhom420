@@ -27,7 +27,7 @@
             <div id="banner" class="container">
                 <div class="row">
                     <div class="logo col-xs-12 col-sm-2 col-md-2">
-                        <a href="Home.php"><img src="./images/logo.jpg" alt="Logo" ></a>
+                        <a href="../Home"><img src="./images/logo.jpg" alt="Logo" ></a>
                     </div>
                     <div class="header-menu col-xs-12 col-sm-6 col-md-5">
                         <ul class="main-menu clearfix">
