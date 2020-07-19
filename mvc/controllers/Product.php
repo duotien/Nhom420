@@ -21,8 +21,6 @@ class Product extends Controller
     function Detail($id)
     {
         $my_product = json_decode($this->productmodel->getProduct($id), true);
-
-        //echo "Sản phẩm có id: $id";
         $this->getView("master-view-1", [
             "Page" => "productdetail",
             "Product" => $my_product

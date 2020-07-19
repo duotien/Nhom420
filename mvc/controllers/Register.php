@@ -17,7 +17,7 @@ class Register extends Controller
     function create($username, $password)
     {
         $result = $this->RegisterModel->insertAccount($username, $password);
-        if($result)
+        if ($result)
             echo "Successfully";
         else
             echo "Failed";

@@ -14,7 +14,7 @@ class ProductModel extends Database
         $qr = "SELECT * FROM product";
         $result = mysqli_query($this->con, $qr);
         $my_array = array();
-        while($row = mysqli_fetch_array($result))
+        while ($row = mysqli_fetch_array($result))
         {
             $my_array[] = $row;
         }
@@ -26,19 +26,19 @@ class ProductModel extends Database
         $qr = "SELECT * FROM product WHERE brand_id=$brand_id";
         $result = mysqli_query($this->con, $qr);
         $my_array = array();
-        while($row = mysqli_fetch_array($result))
+        while ($row = mysqli_fetch_array($result))
         {
             $my_array[] = $row;
         }
         return json_encode($my_array);
     }
-    
+
     function showListGender($cate_id)
     {
         $qr = "SELECT * FROM product WHERE cate_id=$cate_id";
         $result = mysqli_query($this->con, $qr);
         $my_array = array();
-        while($row = mysqli_fetch_array($result))
+        while ($row = mysqli_fetch_array($result))
         {
             $my_array[] = $row;
         }
@@ -57,7 +57,7 @@ class ProductModel extends Database
         $qr = "SELECT DISTINCT * FROM product WHERE name LIKE '%$name%'";
         $result = mysqli_query($this->con, $qr);
         $my_array = array();
-        while($row = mysqli_fetch_array($result))
+        while ($row = mysqli_fetch_array($result))
         {
             $my_array[] = $row;
         }

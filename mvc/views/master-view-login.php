@@ -1,7 +1,7 @@
 <?php
 	if(isset($_POST["login_btn"])){
 		if(empty($_POST["username"]) || empty($_POST["pass"])){
-			header("location: http://localhost/Nhom420/Login/error");
+			header("location: http://localhost/Nhom420/Login/error/empty");
 
 		}
 		else{
@@ -17,7 +17,7 @@
 				header("location: http://localhost/Nhom420");
 			}
 			else {
-				header("location: http://localhost/Nhom420/Login/Wrongpassword");
+				header("location: http://localhost/Nhom420/Login/error/wrong");
 			}
 		}
 	}
@@ -96,9 +96,10 @@
 					</div>
 					<p class="message">
 						<?php
-							if(isset($_GET["error"])){
-								if($_GET["error"] == "wrong"){
-									echo "wrong username/password";
+							if(isset($data["error"])){
+								if($data["error"])
+								{
+									echo $data["message"];
 								}
 							}
 						?>
@@ -112,7 +113,7 @@
 							<span class="txt3">
 								Not registered?
 							</span>
-							<a href="Nhom420/Register" class="txt3" style="color: greenyellow; font-weight: bold;">
+							<a href="../Register" class="txt3" style="color: greenyellow; font-weight: bold;">
 								Create an account
 							</a>
 						</div>
