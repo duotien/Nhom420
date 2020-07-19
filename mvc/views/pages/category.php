@@ -155,6 +155,7 @@
                         </div>
                     <?php
                     } ?>
+                    <hr>
                     <h2 class="n420-product-title">Featured</h2>
                     <?php
                     foreach ($data['Array'] as $row)
@@ -172,6 +173,7 @@
                         </div>
                     <?php
                     } ?>
+                    <hr>
                     <h2 class="n420-product-title">By You Favorites</h2>
                     <?php
                     foreach ($data['Array'] as $row)
@@ -192,4 +194,21 @@
                 </div>
             </div>
         </div>
+        <script>
+            $(document).ready(function(){
+                $(".btn").click(function(){
+                    if($(this).text() == "HideFilter"){
+                        $(".left-420-filter-panel").hide(100);
+                        $(this).text("ShowFilter");
+                        $(".right-bodyContainer").css("margin-left","10%");
+                    }
+                    else if($(this).text() == "ShowFilter"){
+                        $(".left-420-filter-panel").show(100);
+                        $(this).text("HideFilter");
+                        $(".right-bodyContainer").css("margin-left","0%");
+                        }
+                });
+                $(".folding-items").append("<div><p>-----------------</p></div>");
+            });
+        </script>
 

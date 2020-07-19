@@ -15,11 +15,11 @@
                         <p class="col-sm-12 col-md-8">Welcome to our Website!</p>
                         <div class="icon col-md-4 hidden-xs hidden-sm">
                             <!-- <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a> -->
-                            <a href=""><i class="fa fa-rss" aria-hidden="true"></i></a>
-                            <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="https://twitter.com/"><i class="fa fa-rss" aria-hidden="true"></i></a>
+                            <a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                             <!-- <a href=""><i class="fa fa-skype" aria-hidden="true"></i></a> -->
-                            <a href=""><i class="fa fa-youtube" aria-hidden="true"></i></a>
-                            <a href=""><i class="fa fa-google" aria-hidden="true"></i></a>
+                            <a href="https://www.youtube.com/"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                            <a href="https://www.google.com/"><i class="fa fa-google" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
@@ -27,7 +27,7 @@
             <div id="banner" class="container">
                 <div class="row">
                     <div class="logo col-xs-12 col-sm-2 col-md-2">
-                        <img src="./images/logo.jpg" alt="Logo" >
+                        <a href="Home.php"><img src="./images/logo.jpg" alt="Logo" ></a>
                     </div>
                     <div class="header-menu col-xs-12 col-sm-6 col-md-5">
                         <ul class="main-menu clearfix">
@@ -44,6 +44,15 @@
                                 <a href="../Contact">CONTACT</a>
                             </li>
                         </ul>
+                        <!-- <ul class="breadcrumb">
+                            <li>
+                                <a href="./index.html" title="Home">Home</a>
+                                <span>></span>
+                            </li>
+                            <li>
+                                <a href="./men.html" title="Men">Men</a>
+                            </li>
+                        </ul> -->
                     </div>
                     <div class="search-box col-xs-12 col-sm-2 col-md-3">
                         <form class="navbar-form" action="" method="POST">
