@@ -51,8 +51,17 @@
                     </div>
 <!------------------Xử lí phần SEARCH tại đây-->
                     <div class="group-box col-xs-12 col-sm-2 col-md-2">
-                        <a href="./mvc/views/pages/cart.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                        <a href="login.html"><i class="fa fa-user" aria-hidden="true"></i></a>
+                        <a href="../Cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                        <?php
+                        if(isset($_SESSION["user"]))
+                        {
+                            echo '<span>Chào '.$_SESSION["user"].'</span>
+                                <a href="../Logout">logout</a>';
+                        }
+                        else{
+                            echo '<a href="../Login"><i class="fa fa-user" aria-hidden="true"></i></a>';
+                        }
+                        ?>
                     </div>
                 </div>
             </div>            
