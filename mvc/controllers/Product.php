@@ -52,7 +52,7 @@ class Product extends Controller
         echo "Hello World!";
     }
 
-    function search($keyword)
+    function search($keyword = "")
     {
         $my_array = json_decode($this->productmodel->getProductByName($keyword), true);
         $this->getView("master-view-1", [

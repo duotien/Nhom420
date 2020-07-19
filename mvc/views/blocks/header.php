@@ -2,11 +2,7 @@
     if(isset($_POST["btn_search"]))
     {
         $keyword = $_POST["search_keyword"];
-        if(empty($keyword))
-        {
-            echo "Empty string";
-        }
-        else
+        if(!empty($keyword))
         {
             header("location: http://localhost/Nhom420/Product/search/$keyword");
         }
@@ -49,8 +45,6 @@
                             </li>
                         </ul>
                     </div>
-
-<!------------------Xử lí phần SEARCH tại đây-->
                     <div class="search-box col-xs-12 col-sm-2 col-md-3">
                         <form class="navbar-form" action="" method="POST">
                             <div class="input-group">
@@ -63,7 +57,6 @@
                             </div>
                         </form>
                     </div>
-<!------------------Xử lí phần SEARCH tại đây-->
                     <div class="group-box col-xs-12 col-sm-2 col-md-2">
                         <a href="../Cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                         <?php
