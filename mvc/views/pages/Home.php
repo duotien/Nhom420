@@ -36,7 +36,7 @@
         </div>
         
         <div id="category" class="container">
-            <p>Danh mục</p>
+            <p>Category</p>
             <div class="row">
                 <div class="left col-md-6">
                     <h3>Men</h3>
@@ -47,10 +47,10 @@
             </div> 
             <div class="row">
                 <div class="left-category col-md-6">
-                    <img src="../public/images/placeHolder.jpg" alt="">
+                    <img src="../public/images/men-shoes.jpg" alt="">
                 </div>
                 <div class="right-category col-md-6">
-                    <img src="../public/images/placeHolder.jpg" alt="">
+                    <img src="../public/images/women-shoes.jpg" alt="">
                 </div>
             </div>    
         </div>
