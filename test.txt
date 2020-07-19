@@ -1,3 +1,5 @@
-d�ng 1 tr�n txt
+﻿d�ng 1 tr�n txt
 
 dòng 2 trên github
+
+dòng 3 trên máy tính
