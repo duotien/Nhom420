@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 17, 2020 at 05:20 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.5
+-- Generation Time: Jul 19, 2020 at 06:56 PM
+-- Server version: 10.4.13-MariaDB
+-- PHP Version: 7.4.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -67,17 +67,19 @@ INSERT INTO `category` (`cat_id`, `name`) VALUES
 
 CREATE TABLE `customer_account` (
   `id` int(10) NOT NULL,
-  `tentk` varchar(20) NOT NULL,
-  `pass` varchar(16) NOT NULL
+  `username` varchar(20) NOT NULL,
+  `pass` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `customer_account`
 --
 
-INSERT INTO `customer_account` (`id`, `tentk`, `pass`) VALUES
-(1, 'ac00', '12345'),
-(3, 'hello', 'world');
+INSERT INTO `customer_account` (`id`, `username`, `pass`, `email`) VALUES
+(1, 'a', '$2y$10$iWMW87SZJ/T56KftTXCXW.Xj6AmqcdTS6/bI5TVA06nds17O70E6.', 'a@a.com'),
+(4, 'test', '123', 'test@mail.com'),
+(7, 'test1', '$2y$10$U1dVM9SdWdh.oHurj5lw6uhq6OPMzKVtO0lCumJjqTWRC5LFnADzK', '1a@a.com');
 
 -- --------------------------------------------------------
 
@@ -102,7 +104,16 @@ CREATE TABLE `product` (
 
 INSERT INTO `product` (`id`, `name`, `brand_id`, `cate_id`, `price`, `quantity`, `img_path`, `description`) VALUES
 (1, 'Giày Nikey', 1, 1, 300, 12, 'images/react-phantom-run-flyknit-.jpg', 'asjdasdasdj'),
-(2, 'Giày adidas', 2, 2, 150, 300, 'images/adidas/0011.png', 'giày adidas');
+(2, 'Giày adidas', 2, 2, 150, 300, 'images/adidas/0011.png', 'giày adidas'),
+(3, 'Adidas Ultra Boost 20', 2, 1, 130, 100, 'product/adidas/1.png', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'),
+(4, 'Adidas Originals Superstar White', 2, 2, 100, 100, 'product/adidas/2.png', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'),
+(5, 'Adidas Originals Superstar Black', 2, 1, 100, 100, 'product/adidas/3.png', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'),
+(6, 'Jordan 1 Retro High Court Purple', 2, 1, 120, 100, 'product/jordan/1.png', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'),
+(7, 'Nike Air Zoom Streak 7', 1, 2, 130, 100, 'product/nike/1.png', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'),
+(8, 'Nike Zoom Fly Flyknit', 1, 1, 100, 100, 'product/nike/2.png', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'),
+(9, 'Nike Air Max 90 Red', 1, 2, 100, 100, 'product/nike/3.png', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'),
+(10, 'Nike Air Max 270', 1, 1, 140, 100, 'product/nike/4.png', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'),
+(11, 'Nike Air Zoom Pegasus 33 Shield', 1, 1, 130, 100, 'product/nike/5.png', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.');
 
 --
 -- Indexes for dumped tables
@@ -125,7 +136,8 @@ ALTER TABLE `category`
 --
 ALTER TABLE `customer_account`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `tentk` (`tentk`);
+  ADD UNIQUE KEY `username` (`username`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- Indexes for table `product`
@@ -155,13 +167,13 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `customer_account`
 --
 ALTER TABLE `customer_account`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables
