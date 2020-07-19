@@ -71,8 +71,9 @@
                         <?php
                         if(isset($_SESSION["user"]))
                         {
-                            echo '<span>Chào '.$_SESSION["user"].'</span>
-                                <a href="../Logout">logout</a>';
+                            echo '<a href="../Logout"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                                <br>
+                                <span>Hi '.$_SESSION["user"].'</span>';
                         }
                         else{
                             echo '<a href="../Login"><i class="fa fa-user" aria-hidden="true"></i></a>';
