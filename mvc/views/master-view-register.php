@@ -1,6 +1,8 @@
 <?php
-    if(isset($_POST["submit"]))
+    /*
+    if(isset($_POST["btn_signup"]))
     {
+        echo "you press it";
         $username = $_POST["name"];
         $password = $_POST["password"];
 
@@ -10,10 +12,10 @@
         }
         else
         {
-            header("Location: http://localhost/Nhom420/Register/create/$username/$password");
+            header("Location: http://localhost/Nhom420/Register/create/");
         }
     }
-
+    */
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,10 +39,10 @@
             <!-- <img src="images/signup-bg.jpg" alt=""> -->
             <div class="container">
                 <div class="signup-content">
-                    <form method="POST" id="signup-form" class="signup-form">
+                    <form action="./Register/create" method="POST" id="signup-form" class="signup-form">
                         <h2 class="form-title">Create account</h2>
                         <div class="form-group">
-                            <input type="text" class="form-input" name="name" id="name" placeholder="Username"/>
+                            <input type="text" class="form-input" name="username" id="username" placeholder="Username"/>
                         </div>
                         <div class="form-group">
                             <input type="email" class="form-input" name="email" id="email" placeholder="Email"/>
@@ -57,7 +59,7 @@
                             <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
                         </div>
                         <div class="form-group">
-                            <input type="submit" name="submit" id="submit" class="form-submit" value="Sign up"/>
+                            <input type="submit" name="btn_signup" id="submit" class="form-submit" value="Sign up"/>
                         </div>
                     </form>
                     <p class="loginhere">
