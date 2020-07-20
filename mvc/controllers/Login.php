@@ -11,27 +11,21 @@ class Login extends Controller
     function showDefault()
     {
         $this->getView("master-view-login", []);
-        //echo "Controller Login";
     }
 
-    function error($type)
+    function Empty()
     {
-        $message = "error";
-        switch ($type)
-        {
-            case 'wrong':
-                $message = "Wrong username/password";
-                break;
-            case 'empty':
-                $message = "Please enter your username/password";
-                break;
-            default:
-                $message = "error";
-                break;
-        }
         $this->getView("master-view-login", [
             "error" => true,
-            "message" => $message
+            "message" => "Please enter your username/password"
+        ]);
+    }
+
+    function Wrong()
+    {
+        $this->getView("master-view-login", [
+            "error" => true,
+            "message" => "Wrong username/password"
         ]);
     }
 
@@ -41,35 +35,27 @@ class Login extends Controller
         {
             if (empty($_POST["username"]) || empty($_POST["pass"]))
             {
-                //header("location: http://localhost/Nhom420/Login/error/empty");
-                echo "Empty username or password";
+                header("location: http://localhost/Nhom420/Login/Empty");
+                return false;
             }
             else
             {
                 $username = $_POST["username"];
                 $password = $_POST["pass"];
-                $hash = json_decode($this->LoginModel->getUserPasswordHash($username))[0];
-                echo $username."<br>".$password."<br>";
-                echo $hash;
-                //$pass = password_verify($pass, $hash);
 
-                $con = mysqli_connect("localhost", "root", "", "quanligiaydep") or die("Connect failed!");
-                $qry = "Select * from customer_account where username = '$username' and pass = '$password'";
-                $result = mysqli_query($con, $qry);
-                
-                /*
-                if (mysqli_num_rows($result) > 0)
+                if ($this->LoginModel->login($username, $password))
                 {
-                    session_start();
-                    $_SESSION["user"] = $username;
-                    header("location: http://localhost/Nhom420");
+                    header("Location: http://localhost/Nhom420");
+                    return true;
                 }
                 else
                 {
-                    header("location: http://localhost/Nhom420/Login/error/wrong");
+                    header("location: http://localhost/Nhom420/Login/Wrong");
+                    return false;
                 }
-                */
             }
         }
+        header("Location: http://localhost/Nhom420/Login");
+        return false;
     }
 };

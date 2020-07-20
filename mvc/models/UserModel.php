@@ -23,14 +23,22 @@ class UserModel extends Database
     function getUserPasswordHash($username)
     {
         $qr = "SELECT `pass` FROM customer_account WHERE username='$username'";
-        echo $qr."<br>";
         $result = mysqli_query($this->con, $qr);
         return json_encode(mysqli_fetch_row($result));
     }
 
     function login($username, $password)
     {
-
+        $hash = json_decode($this->getUserPasswordHash($username));
+        if(isset($hash))
+        {
+            if(password_verify($password, $hash[0]))
+            {
+                $_SESSION["user"] = $username;
+                return true;
+            }
+        }
+        return false;
     }
 
     function logout()
