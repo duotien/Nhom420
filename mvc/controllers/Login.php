@@ -29,7 +29,7 @@ class Login extends Controller
         ]);
     }
 
-    function Login()
+    function Processing()
     {
         if (isset($_POST["btn_login"]))
         {
