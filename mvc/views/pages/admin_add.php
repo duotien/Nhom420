@@ -95,15 +95,15 @@
 											<input type="file" id="file-input" name="file-input" class="form-control-file">
 										</div>
 									</div>
+									<div class="card-footer">
+										<a href="../Admin/Product"><button type="submit" name="btn_add_product" class="btn btn-primary btn-sm">
+											<i class="fa fa-dot-circle-o"></i>Submit
+										</button></a>
+										<button type="reset" class="btn btn-danger btn-sm">
+											<i class="fa fa-ban"></i> Reset
+										</button>
+									</div>
 								</form>
-							</div>
-							<div class="card-footer">
-								<a href="../Admin/Product"><button type="submit" class="btn btn-primary btn-sm">
-									<i class="fa fa-dot-circle-o"></i>Submit
-								</button></a>
-								<button type="reset" class="btn btn-danger btn-sm">
-									<i class="fa fa-ban"></i> Reset
-								</button>
 							</div>
 						</div>
 					</div>
