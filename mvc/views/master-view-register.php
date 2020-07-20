@@ -26,17 +26,16 @@
     <title>Sign Up</title>
 
     <!-- Font Icon -->
-    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="public/fonts/material-icon/css/material-design-iconic-font.min.css">
 
     <!-- Main css -->
-    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="public/css/register.css">
 </head>
 <body>
 
     <div class="main">
 
         <section class="signup">
-            <!-- <img src="images/signup-bg.jpg" alt=""> -->
             <div class="container">
                 <div class="signup-content">
                     <form action="./Register/create" method="POST" id="signup-form" class="signup-form">
@@ -73,6 +72,6 @@
 
     <!-- JS -->
     <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-    <script src="js/register.js"></script>
+    <script src="public/js/register.js"></script>
 </body>
 </html>

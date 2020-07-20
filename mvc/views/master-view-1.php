@@ -7,6 +7,7 @@
         <?php require_once "./mvc/views/blocks/head.html"; ?>
         <link rel="stylesheet" href="./css/category.css">
         <link rel="stylesheet" href="./css/product.css">
+        <link rel="stylesheet" href="./css/cart.css">
         <script  type="text/javascript" src="./js/jquery-1.8.3.min.js"></script>
         <script src="./js/jquery.elevatezoom-3.0.8.min.js" type="text/javascript"></script>
         <script src="./js/jquery.elevatezoom.js" type="text/javascript"></script>
