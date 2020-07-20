@@ -14,8 +14,10 @@ class Register extends Controller
         //echo "Controller Register";
     }
 
-    function create()
+    function Processing()
     {
+        $error_message = "Failed to create an account";
+        $result = false;
         if (isset($_POST["btn_signup"]) && isset($_POST["agree-term"]))
         {
             $username = $_POST["username"];
@@ -23,27 +25,27 @@ class Register extends Controller
             $re_password = $_POST["re_password"];
             $email = $_POST["email"];
 
-            if ($password != $re_password)
+            if (!$this->RegisterModel->validateUsername($username))
             {
-                echo "Password don't match, please try again";
+                $error_message = "This username has already been used";
+            }
+            else if (!$this->RegisterModel->validateUserEmail($email))
+            {
+                $error_message = "This email has been used, please use another email";
+            }
+            else if ($password != $re_password)
+            {
+                $error_message = "Password don't match, please try again";
             }
             else
             {
                 $password = password_hash($password, PASSWORD_DEFAULT);
-
-                echo "hello";
-                echo "<br>" . $username . "<br>" . $password . "<br>" . $re_password . "<br>" . $email . "<br>" . $_POST["agree-term"];
-
                 $result = $this->RegisterModel->insertAccount($username, $password, $email);
-                    echo $result;
-
-                
             }
-            
         }
-        else
-        {
-            header("Location: http://localhost/Nhom420/Register");
-        }
+        $this->getView("master-view-register", [
+            "message" => $error_message,
+            "result" => $result
+        ]);
     }
 };

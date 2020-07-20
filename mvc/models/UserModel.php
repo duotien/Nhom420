@@ -17,7 +17,31 @@ class UserModel extends Database
         {
             $result = true;
         }
-        return json_encode($result);
+        return $result;
+    }
+
+    function validateUsername($username)
+    {
+        $qr = "SELECT `username` FROM customer_account WHERE username='$username'";
+        $result = mysqli_query($this->con, $qr);
+        $valid = true;
+        if (mysqli_fetch_row($result) > 0)
+        {
+            $valid = false;
+        }
+        return $valid;
+    }
+
+    function validateUserEmail($email)
+    {
+        $qr = "SELECT `email` FROM customer_account WHERE email='$email'";
+        $result = mysqli_query($this->con, $qr);
+        $valid = true;
+        if (mysqli_fetch_row($result) > 0)
+        {
+            $valid = false;
+        }
+        return $valid;
     }
 
     function getUserPasswordHash($username)
@@ -30,9 +54,9 @@ class UserModel extends Database
     function login($username, $password)
     {
         $hash = json_decode($this->getUserPasswordHash($username));
-        if(isset($hash))
+        if (isset($hash))
         {
-            if(password_verify($password, $hash[0]))
+            if (password_verify($password, $hash[0]))
             {
                 $_SESSION["user"] = $username;
                 return true;
