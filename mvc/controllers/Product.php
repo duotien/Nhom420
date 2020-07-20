@@ -1,17 +1,17 @@
 <?php
 class Product extends Controller
 {
-    public $productmodel;
+    public $ProductModel;
 
     function __construct()
     {
-        $this->productmodel = $this->getModel("ProductModel");
+        $this->ProductModel = $this->getModel("ProductModel");
     }
 
     function showDefault()
     {
         //$decodedArray = json_decode($encodedArray, true): true => return $decodedArray instead of stdClass
-        $my_array = json_decode($this->productmodel->showList(), true);
+        $my_array = json_decode($this->ProductModel->showList(), true);
         $this->getView("master-view-1", [
             "Page" => "category",
             "Array" => $my_array
@@ -20,7 +20,7 @@ class Product extends Controller
 
     function Detail($id)
     {
-        $my_product = json_decode($this->productmodel->getProduct($id), true);
+        $my_product = json_decode($this->ProductModel->getProduct($id), true);
         $this->getView("master-view-1", [
             "Page" => "productdetail",
             "Product" => $my_product
@@ -29,7 +29,7 @@ class Product extends Controller
 
     function Men()
     {
-        $my_array = json_decode($this->productmodel->showListGender(1), true);
+        $my_array = json_decode($this->ProductModel->showListGender(1), true);
         $this->getView("master-view-1", [
             "Page" => "category",
             "Array" => $my_array
@@ -38,7 +38,7 @@ class Product extends Controller
 
     function Women()
     {
-        $my_array = json_decode($this->productmodel->showListGender(2), true);
+        $my_array = json_decode($this->ProductModel->showListGender(2), true);
         $this->getView("master-view-1", [
             "Page" => "category",
             "Array" => $my_array
@@ -52,7 +52,7 @@ class Product extends Controller
 
     function search($keyword = "")
     {
-        $my_array = json_decode($this->productmodel->getProductByName($keyword), true);
+        $my_array = json_decode($this->ProductModel->getProductByName($keyword), true);
         $this->getView("master-view-1", [
             "Page" => "category",
             "Array" => $my_array
