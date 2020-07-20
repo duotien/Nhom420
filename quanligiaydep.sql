@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 19, 2020 at 06:56 PM
+-- Generation Time: Jul 20, 2020 at 03:51 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.7
 
@@ -77,9 +77,8 @@ CREATE TABLE `customer_account` (
 --
 
 INSERT INTO `customer_account` (`id`, `username`, `pass`, `email`) VALUES
-(1, 'a', '$2y$10$iWMW87SZJ/T56KftTXCXW.Xj6AmqcdTS6/bI5TVA06nds17O70E6.', 'a@a.com'),
-(4, 'test', '123', 'test@mail.com'),
-(7, 'test1', '$2y$10$U1dVM9SdWdh.oHurj5lw6uhq6OPMzKVtO0lCumJjqTWRC5LFnADzK', '1a@a.com');
+(1, 'hello', '$2y$10$iS5Sj9B./u710uWYQxYkrOlHqFdplNppqParRJ1d20R9ontXPKBuK', 'helloworld@email.com'),
+(2, 'duotien', '$2y$10$n2xSb.M0wZDW2YYFb1C10ONf5yUgFdxg8F2fmurxnG6n210T2qs.e', 'duotien@email.com');
 
 -- --------------------------------------------------------
 
@@ -167,7 +166,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `customer_account`
 --
 ALTER TABLE `customer_account`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `product`
