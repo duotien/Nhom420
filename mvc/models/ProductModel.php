@@ -1,10 +1,4 @@
 <?php
-/* TO DO:
- * Hiện list tất cả các sản phẩm
- *
- * 
-*/
-
 class ProductModel extends Database
 {
     #public variables here
@@ -21,7 +15,7 @@ class ProductModel extends Database
         return json_encode($my_array);
     }
 
-    function showListBrand($brand_id)
+    function getListByBrand($brand_id)
     {
         $qr = "SELECT * FROM product WHERE brand_id=$brand_id";
         $result = mysqli_query($this->con, $qr);
@@ -33,7 +27,7 @@ class ProductModel extends Database
         return json_encode($my_array);
     }
 
-    function showListGender($cate_id)
+    function getListByGender($cate_id)
     {
         $qr = "SELECT * FROM product WHERE cate_id=$cate_id";
         $result = mysqli_query($this->con, $qr);

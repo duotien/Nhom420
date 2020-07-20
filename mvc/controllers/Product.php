@@ -29,7 +29,7 @@ class Product extends Controller
 
     function Men()
     {
-        $my_array = json_decode($this->ProductModel->showListGender(1), true);
+        $my_array = json_decode($this->ProductModel->getListByGender(1), true);
         $this->getView("master-view-1", [
             "Page" => "category",
             "Array" => $my_array
@@ -38,7 +38,7 @@ class Product extends Controller
 
     function Women()
     {
-        $my_array = json_decode($this->ProductModel->showListGender(2), true);
+        $my_array = json_decode($this->ProductModel->getListByGender(2), true);
         $this->getView("master-view-1", [
             "Page" => "category",
             "Array" => $my_array
