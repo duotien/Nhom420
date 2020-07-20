@@ -1,5 +1,6 @@
 <?php
-	if(isset($_POST["login_btn"])){
+	/*
+	if(isset($_POST["btn_login"])){
 		if(empty($_POST["username"]) || empty($_POST["pass"])){
 			header("location: http://localhost/Nhom420/Login/error/empty");
 
@@ -7,9 +8,10 @@
 		else{
 			$user = $_POST["username"];
 			$pass = $_POST["pass"];
-
+			//$pass = password_verify($pass, $hash);
+			
 			$con = mysqli_connect("localhost", "root", "", "quanligiaydep") or die("Connect failed!");
-			$qry = "Select * from customer_account where tentk = '$user' and pass = '$pass'";
+			$qry = "Select * from customer_account where username = '$user' and pass = '$pass'";
 			$result = mysqli_query($con, $qry);
 			if(mysqli_num_rows($result) > 0) {
 				session_start();
@@ -21,6 +23,7 @@
 			}
 		}
 	}
+	*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,7 +59,7 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
-				<form class="login100-form validate-form flex-sb flex-w" method="POST">
+				<form class="login100-form validate-form flex-sb flex-w" action="../Login/Login" method="POST">
 					<span class="login100-form-title p-b-32">
 						Account Login
 					</span>
@@ -106,7 +109,7 @@
 					</p>
 					<div class="flex-sb-m w-full p-b-48">
 						<div class="container-login100-form-btn">
-							<input type="submit" class="login100-form-btn" name="login_btn" value="Login">
+							<input type="submit" class="login100-form-btn" name="btn_login" value="Login">
 						</div>
 	
 						<div>
