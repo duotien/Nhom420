@@ -135,6 +135,19 @@
 										<button type="reset" class="btn btn-danger btn-sm">
 											<i class="fa fa-ban"></i> Reset
 										</button>
+										<?php
+											if(isset($data["Result"]))
+											{
+												if($data["Result"])
+												{	
+													echo "<span>Added a product</span>";
+												}
+												else
+												{
+													echo "<span>There was an error adding new product</span>";
+												}
+											}
+										?>
 									</div>
 								</form>
 							</div>
