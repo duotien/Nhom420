@@ -97,7 +97,11 @@
 							</a>
 						</div>
 					</div>
-
+					<div class="container" style="text-align: center;">
+						<a href="../Home"><button type="button" class="btn btn-outline-secondary">
+							<i class="fa fa-home"></i>Back to homepage
+						</button></a>
+					</div>
 				</form>
 			</div>
 		</div>
