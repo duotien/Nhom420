@@ -11,8 +11,8 @@ class Admin extends Controller
     function showDefault()
     {
         echo "Admin controller
-        <br><a href='./Product'>Product</a>
-        <br><a href='./Add'>Add</a>
+        <br><a href='./Admin/Product'>Product</a>
+        <br><a href='./Admin/Add'>Add</a>
         <br>";
         print_r(json_decode($this->AdminModel->listBrand(), true));
     }
@@ -27,13 +27,24 @@ class Admin extends Controller
     function Add()
     {
         $brand_list = json_decode($this->AdminModel->listBrand(), true);
+        $category_list = json_decode($this->AdminModel->listCategory(), true);
         $this->getView("master-view-1", [
             "Page" => "admin_add",
             "BrandList" => $brand_list,
-
+            "CategoryList" => $category_list
         ]);
         if (isset($_POST["btn_add_product"]))
         {
+            $name = $_POST["product-input"];
+            $brand_id = $_POST["brand-input"];
+            $cate_id = $_POST["cate-input"];
+            $price = $_POST["price-input"];
+            $quantity = $_POST["quantity-input"];
+            $description = $_POST["description-input"];
+
+            echo $name."<br>".$brand_id."<br>".$cate_id."<br>".$price."<br>".$quantity."<br>".$description."<br>";
+            /*
+
             $target_dir = __DIR__ . "/../../public/images/";
             $target_file = $target_dir . basename($_FILES["file-input"]["name"]);
             $uploadOk = 1;
@@ -100,6 +111,7 @@ class Admin extends Controller
                     echo "Sorry, there was an error uploading your file.";
                 }
             }
+            */
         }
     }
 };

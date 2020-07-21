@@ -50,7 +50,7 @@
 											<label for="brand-input" class=" form-control-label">Brand</label>
 										</div>
 										<div class="col-12 col-md-9">
-											<select id="select-input" name="brand-input">
+											<select id="brand-input" name="brand-input">
 												<?php 
 													foreach($data["BrandList"] as $brand)
 													{
@@ -72,6 +72,23 @@
 									</div>
 									<div class="row form-group">
 										<div class="col col-md-3">
+											<label for="cate-input" class=" form-control-label">Category</label>
+										</div>
+										<div class="col-12 col-md-9">
+											<select id="cate-input" name="cate-input">
+												<?php 
+													foreach($data["CategoryList"] as $category)
+													{
+												?>
+													<option value="<?php echo $category["cat_id"]; ?>"><?php echo $category["name"]; ?></option>
+												<?php
+													}
+												?>
+											</select>
+										</div>
+									</div>
+									<div class="row form-group">
+										<div class="col col-md-3">
 											<label for="date-input" class=" form-control-label">Date</label>
 										</div>
 										<div class="col-12 col-md-9">
@@ -81,10 +98,18 @@
 									</div>
 									<div class="row form-group">
 										<div class="col col-md-3">
+											<label class=" form-control-label">Price</label>
+										</div>
+										<div class="col-12 col-md-9">
+											<input type="number" id="price-input" name="price-input" value="1" placeholder="1" class="form-control">
+										</div>
+									</div>
+									<div class="row form-group">
+										<div class="col col-md-3">
 											<label class=" form-control-label">Quantity</label>
 										</div>
 										<div class="col-12 col-md-9">
-											<input type="number" id="quantity-input" name="quantity-input" placeholder="0" class="form-control">
+											<input type="number" id="quantity-input" name="quantity-input" value="1" placeholder="1" class="form-control">
 										</div>
 									</div>
 									<div class="row form-group">
@@ -93,6 +118,14 @@
 										</div>
 										<div class="col-12 col-md-9">
 											<input type="file" id="file-input" name="file-input" class="form-control-file">
+										</div>
+									</div>
+									<div class="row form-group">
+										<div class="col col-md-3">
+											<label for="description-input" class=" form-control-label">Description</label>
+										</div>
+										<div class="col-12 col-md-9">
+											<input type="text" id="description-input" name="description-input" placeholder="Description" class="form-control">
 										</div>
 									</div>
 									<div class="card-footer">
