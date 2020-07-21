@@ -25,7 +25,7 @@
                             <div class="n420-filter n420-checkbox-filter">
                                 <div class="n420-checkbox">
                                     <label class="420-checkbox_control">
-                                        <input type="checkbox"/>
+                                        <input type="checkbox" id="opt_1"/>
                                     </label>
                                     <span class="n420-checkbox_label">Nike</span>
                                 </div>
@@ -33,7 +33,7 @@
                             <div class="n420-filter n420-checkbox-filter">
                                 <div class="420-checkbox">
                                     <label class="n420-checkbox_control">
-                                        <input type="checkbox"/>
+                                        <input type="checkbox" id="opt_2"/>
                                     </label>
                                     <span class="n420-checkbox_label">Adidas</span>
                                 </div>
@@ -41,7 +41,7 @@
                             <div class="n420-filter n420-checkbox-filter">
                                 <div class="n420-checkbox">
                                     <label class="n420-checkbox_control">
-                                        <input type="checkbox"/>
+                                        <input type="checkbox" id="opt_3"/>
                                     </label>
                                     <span class="n420-checkbox_label">Converse</span>
                                 </div>
@@ -49,7 +49,7 @@
                             <div class="n420-filter n420-checkbox-filter">
                                 <div class="n420-checkbox">
                                     <label class="n420-checkbox_control">
-                                        <input type="checkbox"/>
+                                        <input type="checkbox" id="opt_4"/>
                                     </label>
                                     <span class="n420-checkbox_label">Puma</span>
                                 </div>
@@ -57,7 +57,7 @@
                             <div class="n420-filter n420-checkbox-filter">
                                 <div class="n420-checkbox">
                                     <label class="n420-checkbox_control">
-                                        <input type="checkbox"/>
+                                        <input type="checkbox" id="opt_5"/>
                                     </label>
                                     <span class="n420-checkbox_label">Vans</span>
                                 </div>
@@ -68,7 +68,7 @@
                             <div class="n420-filter n420-checkbox-filter">
                                 <div class="n420-checkbox">
                                     <label class="n420-checkbox_control">
-                                        <input type="checkbox"/>
+                                        <input type="checkbox" id="opt_6"/>
                                     </label>
                                     <span class="n420-checkbox_label">38</span>
                                 </div>
@@ -76,7 +76,7 @@
                             <div class="n420-filter n420-checkbox-filter">
                                 <div class="420-checkbox">
                                     <label class="n420-checkbox_control">
-                                        <input type="checkbox"/>
+                                        <input type="checkbox" id="opt_7"/>
                                     </label>
                                     <span class="n420-checkbox_label">39</span>
                                 </div>
@@ -84,7 +84,7 @@
                             <div class="n420-filter n420-checkbox-filter">
                                 <div class="n420-checkbox">
                                     <label class="n420-checkbox_control">
-                                        <input type="checkbox"/>
+                                        <input type="checkbox" id="opt_8"/>
                                     </label>
                                     <span class="n420-checkbox_label">40</span>
                                 </div>
@@ -92,7 +92,7 @@
                             <div class="n420-filter n420-checkbox-filter">
                                 <div class="n420-checkbox">
                                     <label class="n420-checkbox_control">
-                                        <input type="checkbox"/>
+                                        <input type="checkbox" id="opt_9"/>
                                     </label>
                                     <span class="n420-checkbox_label">41</span>
                                 </div>
@@ -100,7 +100,7 @@
                             <div class="n420-filter n420-checkbox-filter">
                                 <div class="n420-checkbox">
                                     <label class="n420-checkbox_control">
-                                        <input type="checkbox"/>
+                                        <input type="checkbox" id="opt_10"/>
                                     </label>
                                     <span class="n420-checkbox_label">42</span>
                                 </div>
@@ -108,7 +108,7 @@
                             <div class="n420-filter n420-checkbox-filter">
                                 <div class="n420-checkbox">
                                     <label class="n420-checkbox_control">
-                                        <input type="checkbox"/>
+                                        <input type="checkbox" id="opt_11"/>
                                     </label>
                                     <span class="n420-checkbox_label">43</span>
                                 </div>
@@ -116,7 +116,7 @@
                             <div class="n420-filter n420-checkbox-filter">
                                 <div class="n420-checkbox">
                                     <label class="n420-checkbox_control">
-                                        <input type="checkbox"/>
+                                        <input type="checkbox" id="opt_12" />
                                     </label>
                                     <span class="n420-checkbox_label">44</span>
                                 </div>
@@ -124,7 +124,7 @@
                             <div class="n420-filter n420-checkbox-filter">
                                 <div class="n420-checkbox">
                                     <label class="n420-checkbox_control">
-                                        <input type="checkbox"/>
+                                        <input type="checkbox" id="opt_13"/>
                                     </label>
                                     <span class="n420-checkbox_label">45</span>
                                 </div>
@@ -132,9 +132,9 @@
                         </div>
                     </div>
                     <div class="n420-filter-button" style="margin-left: 5px ;">
-                        <button class="n420-filter-button-submit" type="submit">Lọc</button>
+                        <button id="btnSubmit" class="n420-filter-button-submit" type="submit">Lọc</button>
                         
-                        <button class="n420-filter-button-reset" type="reset">Làm mới</button>
+                        <button id="btnReset" class="n420-filter-button-reset" type="reset">Làm mới</button>
                     </div>
                 </div>
                 <div class="right-bodyContainer col-md-10">
@@ -209,6 +209,11 @@
                         }
                 });
                 $(".folding-items").append("<div><p>-----------------</p></div>");
+                $("#btnReset").click(function(){
+                    $("[id^='opt_']").prop("checked", false);
+                    $(".folding-items").attr("data-value","");
+                    $(".right-bodyContainer").ready(100);
+                });
             });
         </script>
 
