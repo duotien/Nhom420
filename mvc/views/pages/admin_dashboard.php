@@ -1,6 +1,4 @@
-<body class="animsition">
-    <div class="page-wrapper">
-        
+     
         <!-- PAGE CONTAINER-->
         <div class="page-container">
             <!-- MAIN CONTENT-->
@@ -197,5 +195,3 @@
             <!-- END MAIN CONTENT-->
             <!-- END PAGE CONTAINER-->
         </div>
-
-    </div>
