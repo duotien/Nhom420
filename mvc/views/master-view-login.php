@@ -72,7 +72,7 @@
 							</a>
 						</div>
 					</div>
-					<p class="message">
+					<p class="message" style="color: red;">
 						<?php
 							if (isset($data["error"]))
 							{
