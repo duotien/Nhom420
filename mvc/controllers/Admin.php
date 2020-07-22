@@ -2,10 +2,10 @@
 class Admin extends Controller
 {
     public $AdminModel;
-
     function __construct()
     {
         $this->AdminModel = $this->getModel("AdminModel");
+        $this->ProductModel = $this->getModel("ProductModel");
     }
 
     function showDefault()
@@ -19,8 +19,8 @@ class Admin extends Controller
 
     function Product()
     {
-        $this->getView("master-view-1", [
-            "Page" => "admin_product"
+        $this->getView("master-view-admin", [
+            "Page" => "admin_product2"
         ]);
     }
 
@@ -43,18 +43,28 @@ class Admin extends Controller
             $description = $_POST["description-input"];
 
             //echo empty($name)."<br>".$brand_id."<br>".$cate_id."<br>".$price."<br>".$quantity."<br>".$description."<br>";
-            
+
             $result = false;
-            if(!empty($name))
+            if (!empty($name))
             {
                 $img_path = $this->uploadImage($_FILES);
                 $result = $this->AdminModel->addProduct($name, $brand_id, $cate_id, $price, $quantity, $img_path, $description);
             }
             //echo "<br><br>$result";
-            $this->getView("master-view-1", [
-                "Page" => "admin_add",
-                "Result" => $result
-            ]);
+            return $result;
         }
+    }
+
+    function Edit($id)
+    {
+        $brand_list = json_decode($this->AdminModel->listBrand(), true);
+        $category_list = json_decode($this->AdminModel->listCategory(), true);
+        $my_product = json_decode($this->AdminModel->getProduct($id), true);
+        $this->getView("master-view-1", [
+            "Page" => "admin_edit",
+            "BrandList" => $brand_list,
+            "CategoryList" => $category_list,
+            "SelectedProduct" => $my_product
+        ]);
     }
 };

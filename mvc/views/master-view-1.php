@@ -11,7 +11,6 @@
         <script  type="text/javascript" src="./js/jquery-1.8.3.min.js"></script>
         <script src="./js/jquery.elevatezoom-3.0.8.min.js" type="text/javascript"></script>
         <script src="./js/jquery.elevatezoom.js" type="text/javascript"></script>
-        
     </head>
 
     <body>

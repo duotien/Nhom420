@@ -14607,3 +14607,8 @@ section {
 .vue-lists ul, .vue-lists ol {
     padding-left: 30px;
 }
+
+#formAdditem {
+    width: 100%;
+    height: 100%;
+}

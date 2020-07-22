@@ -37,4 +37,16 @@ class AdminModel extends Database
         }
         return $result;
     }
+
+    function getProduct($id)
+    {
+        $qr = "SELECT * FROM product WHERE id=$id";
+        $result = mysqli_query($this->con, $qr);
+        return json_encode(mysqli_fetch_array($result));
+    }
+
+    function editProduct()
+    {
+        
+    }
 }
