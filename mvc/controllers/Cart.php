@@ -37,7 +37,6 @@ class Cart extends Controller
                 $_SESSION["shopping_cart"][0] = $my_product;
                 $_SESSION["shopping_cart_count"] = 0;
             }
-            print_r($_SESSION["shopping_cart"]);
             $this->getView("master-view-1", [
                 "Page" => "cart",
                 "ShoppingCart" => $_SESSION["shopping_cart"]
