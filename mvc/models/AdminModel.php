@@ -75,6 +75,44 @@ class AdminModel extends Database
         return $result;
     }
 
+    function getListAdminUser()
+    {
+        $qr = "SELECT * FROM `admin_account`";
+        $result = mysqli_query($this->con, $qr);
+        $my_array = array();
+        while ($row = mysqli_fetch_array($result))
+        {
+            $my_array[] = $row;
+        }
+        return json_encode($my_array);
+    }
+
+    function getAdminUserById($id)
+    {
+        $qr = "SELECT * FROM `admin_account` WHERE id=$id";
+        $result = mysqli_query($this->con, $qr);
+        return json_encode(mysqli_fetch_array($result));
+    }
+
+    function getListCustomerUser()
+    {
+        $qr = "SELECT * FROM `customer_account`";
+        $result = mysqli_query($this->con, $qr);
+        $my_array = array();
+        while ($row = mysqli_fetch_array($result))
+        {
+            $my_array[] = $row;
+        }
+        return json_encode($my_array);
+    }
+
+    function getCustomerUserById($id)
+    {
+        $qr = "SELECT * FROM `customer_account` WHERE id=$id";
+        $result = mysqli_query($this->con, $qr);
+        return json_encode(mysqli_fetch_array($result));
+    }
+
     function login($username, $password)
     {
         $qr = "SELECT * FROM admin_account WHERE username='$username' AND pass='$password'";

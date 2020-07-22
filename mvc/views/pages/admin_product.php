@@ -19,7 +19,7 @@
                                             <i class="zmdi zmdi-filter-list"></i>filters</button>
                                     </div>
                                     <div class="table-data__tool-right">
-                                        <a href="../Admin/Add"><button class="au-btn au-btn-icon au-btn--green au-btn--small">
+                                        <a href="../Admin/AddProduct"><button class="au-btn au-btn-icon au-btn--green au-btn--small">
                                             <i class="zmdi zmdi-plus"></i>add item</button></a>
                                     </div>
                                 </div>

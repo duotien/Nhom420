@@ -54,8 +54,12 @@ class Admin extends Controller
     {
         if ($this->loggedin)
         {
+            $customer_list = json_decode($this->AdminModel->getListCustomerUser(), true);
+            $admin_list = json_decode($this->AdminModel->getListAdminUser(), true);
             $this->getView("master-view-admin", [
-                "Page" => "admin_user"
+                "Page" => "admin_user",
+                "CustomerList" => $customer_list,
+                "AdminList" => $admin_list
             ]);
         }
         else
@@ -63,7 +67,8 @@ class Admin extends Controller
             header("Location: http://localhost/Nhom420/Admin/Login");
         }
     }
-    function Add()
+
+    function AddProduct()
     {
         if ($this->loggedin)
         {
@@ -189,6 +194,7 @@ class Admin extends Controller
             header("Location: http://localhost/Nhom420/Admin/Login");
         }
     }
+
     function Login()
     {
         if (isset($_SESSION["admin_user"]))
