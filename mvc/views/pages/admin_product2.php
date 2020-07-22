@@ -63,13 +63,13 @@
                                                         <td><?php echo $product["price"] ?></td>
                                                         <td>
                                                             <div class="table-data-feature">
-                                                                <a href="../Admin/Edit/<?php echo $product["id"] ?>"><button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                                <a href="../Admin/EditProduct/<?php echo $product["id"] ?>"><button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
                                                                     <i class="zmdi zmdi-edit"></i>
                                                                 </button></a>
                                                                 <form 
                                                                     onsubmit="return confirm('Do you really want to delete this product?');"
                                                                     method="POST"
-                                                                    action='../Admin/Remove/<?php echo $product["id"] ?>'
+                                                                    action='../Admin/RemoveProduct/<?php echo $product["id"] ?>'
                                                                 >
                                                                     <button type="submit" class="item" data-toggle="tooltip" data-placement="top" title="Delete">
                                                                         <i class="zmdi zmdi-delete"></i>

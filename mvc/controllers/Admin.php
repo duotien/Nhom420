@@ -103,7 +103,7 @@ class Admin extends Controller
         }
     }
 
-    function Edit($id = 0)
+    function EditProduct($id = 0)
     {
         if ($this->loggedin)
         {
@@ -129,7 +129,7 @@ class Admin extends Controller
         }
     }
 
-    function Editting($id = 0)
+    function EdittingProduct($id = 0)
     {
         if ($this->loggedin)
         {
@@ -161,7 +161,7 @@ class Admin extends Controller
                     $result = $this->AdminModel->editProduct($id, $name, $brand_id, $cate_id, $price, $quantity, $img_path, $description);
                 }
             }
-            header("Location: http://localhost/Nhom420/Admin/Edit/$id");
+            header("Location: http://localhost/Nhom420/Admin/EditProduct/$id");
             return $result;
         }
         else
@@ -170,7 +170,7 @@ class Admin extends Controller
         }
     }
 
-    function Remove($id = 0)
+    function RemoveProduct($id = 0)
     {
         if ($this->loggedin)
         {

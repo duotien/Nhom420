@@ -44,7 +44,7 @@
 								<strong>Add Item</strong> Product 
 							</div>
 							<div class="card-body card-block">
-								<form action="../Admin/Editting/<?php echo $data["SelectedProduct"]["id"]; ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
+								<form action="../Admin/EdittingProduct/<?php echo $data["SelectedProduct"]["id"]; ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
 									<div class="row form-group">
 										<div class="col col-md-3">
 											<label for="brand-input" class=" form-control-label">Brand</label>

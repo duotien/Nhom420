@@ -8,7 +8,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <!-- DATA TABLE -->
-                                <h3 class="title-5 m-b-35">data user</h3>
+                                <h3 class="title-5 m-b-35">Customer</h3>
                                 <div class="table-data__tool">
                                     <div class="table-data__tool-left">
                                         <div class="rs-select2--light rs-select2--md">
@@ -31,161 +31,46 @@
                                     <table class="table table-data2">
                                         <thead>
                                             <tr>
-                                                <th>
-                                                    <label class="au-checkbox">
-                                                        <input type="checkbox">
-                                                        <span class="au-checkmark"></span>
-                                                    </label>
-                                                </th>
-                                                <th>name</th>
-                                                <th>sex</th>
+                                                <th></th>
+                                                <th>username</th>
                                                 <th>email</th>
-                                                <th>Country</th>
-                                                <th>date work</th>
-                                                <th>salary</th>
                                                 <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr class="tr-shadow">
-                                                <td>
-                                                    <label class="au-checkbox">
-                                                        <input type="checkbox">
-                                                        <span class="au-checkmark"></span>
-                                                    </label>
-                                                </td>
-                                                <td>Lori Lynch</td>
-                                                <td>Male</td>
-                                                <td>
-                                                    <span class="block-email">lori@example.com</span>
-                                                </td>
-                                                <td>VietNam</td>
-                                                <td>
-                                                    <span>2019-09-12</span>
-                                                </td>
-                                                <td>$679.00</td>
-                                                <td>
-                                                    <div class="table-data-feature">
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                                            <i class="zmdi zmdi-mail-send"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                            <i class="zmdi zmdi-edit"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                            <i class="zmdi zmdi-delete"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                                            <i class="zmdi zmdi-more"></i>
-                                                        </button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr class="spacer"></tr>
-                                            <tr class="tr-shadow">
-                                                <td>
-                                                    <label class="au-checkbox">
-                                                        <input type="checkbox">
-                                                        <span class="au-checkmark"></span>
-                                                    </label>
-                                                </td>
-                                                <td>Lori Lynch</td>
-                                                <td>Male</td>
-                                                <td>
-                                                    <span class="block-email">lori@example.com</span>
-                                                </td>
-                                                <td>VietNam</td>
-                                                <td>
-                                                    <span>2019-09-12</span>
-                                                </td>
-                                                <td>$679.00</td>
-                                                <td>
-                                                    <div class="table-data-feature">
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                                            <i class="zmdi zmdi-mail-send"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                            <i class="zmdi zmdi-edit"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                            <i class="zmdi zmdi-delete"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                                            <i class="zmdi zmdi-more"></i>
-                                                        </button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr class="spacer"></tr>
-                                            <tr class="tr-shadow">
-                                                <td>
-                                                    <label class="au-checkbox">
-                                                        <input type="checkbox">
-                                                        <span class="au-checkmark"></span>
-                                                    </label>
-                                                </td>
-                                                <td>Lori Lynch</td>
-                                                <td>Male</td>
-                                                <td>
-                                                    <span class="block-email">lori@example.com</span>
-                                                </td>
-                                                <td>VietNam</td>
-                                                <td>
-                                                    <span>2019-09-12</span>
-                                                </td>
-                                                <td>$679.00</td>
-                                                <td>
-                                                    <div class="table-data-feature">
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                                            <i class="zmdi zmdi-mail-send"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                            <i class="zmdi zmdi-edit"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                            <i class="zmdi zmdi-delete"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                                            <i class="zmdi zmdi-more"></i>
-                                                        </button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr class="spacer"></tr>
-                                            <tr class="tr-shadow">
-                                                <td>
-                                                    <label class="au-checkbox">
-                                                        <input type="checkbox">
-                                                        <span class="au-checkmark"></span>
-                                                    </label>
-                                                </td>
-                                                <td>Lori Lynch</td>
-                                                <td>Male</td>
-                                                <td>
-                                                    <span class="block-email">lori@example.com</span>
-                                                </td>
-                                                <td>VietNam</td>
-                                                <td>
-                                                    <span>2019-09-12</span>
-                                                </td>
-                                                <td>$679.00</td>
-                                                <td>
-                                                    <div class="table-data-feature">
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                                            <i class="zmdi zmdi-mail-send"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                            <i class="zmdi zmdi-edit"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                            <i class="zmdi zmdi-delete"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                                            <i class="zmdi zmdi-more"></i>
-                                                        </button>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                            <?php
+                                                foreach($data["CustomerList"] as $customer)
+                                                {
+                                            ?>
+                                                <tr class="tr-shadow">
+                                                    <td></td>
+                                                    <td><?php echo $customer["username"]; ?></td>
+                                                    
+                                                    <td>
+                                                        <span class="block-email"><?php echo $customer["email"]; ?></span>
+                                                    </td>
+                                                    <td>
+                                                        <div class="table-data-feature">
+                                                        <a href="../Admin/User/<?php echo $customer["id"] ?>"><button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                                    <i class="zmdi zmdi-edit"></i>
+                                                                </button></a>
+                                                                <form 
+                                                                    onsubmit="return confirm('Do you really want to delete this product?');"
+                                                                    method="POST"
+                                                                    action='../Admin/User/<?php echo $customer["id"] ?>'
+                                                                >
+                                                                    <button type="submit" class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                                        <i class="zmdi zmdi-delete"></i>
+                                                                    </button>
+                                                                    <input type="hidden" name="btn-remove" value="yes" />
+                                                                </form>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr class="spacer"></tr>
+                                            <?php
+                                                }
+                                            ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -198,7 +83,7 @@
                             <!-- USER DATA-->
                             <div class="user-data m-b-30">
                                 <h3 class="title-3 m-b-30">
-                                    <i class="zmdi zmdi-account-calendar"></i>user data</h3>
+                                    <i class="zmdi zmdi-account-calendar"></i>Admin User</h3>
                                 <div class="filters m-b-45">
                                     <div class="rs-select2--dark rs-select2--md m-r-10 rs-select2--border">
                                         <select class="js-select2" name="property">
