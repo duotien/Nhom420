@@ -48,7 +48,7 @@
                                                     {
                                                 ?>
                                                 <tr class="tr-shadow">
-                                                    <td></td>
+                                                    <td><img src="<?php echo $product["img_path"] ?>" /></td>
                                                     <td><?php echo $product["id"] ?></td>
                                                     <td>
                                                         <span class="block-email"><?php echo $data["BrandArray"][$product["brand_id"]-1]["name"]; ?></span>

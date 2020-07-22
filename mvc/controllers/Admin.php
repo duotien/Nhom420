@@ -88,29 +88,6 @@ class Admin extends Controller
             "CategoryList" => $category_list,
             "SelectedProduct" => $my_product
         ]);
-
-        // if (isset($_POST["btn_edit_product"]))
-        // {
-        //     $name = $_POST["product-input"];
-        //     $brand_id = $_POST["brand-input"];
-        //     $cate_id = $_POST["cate-input"];
-        //     $price = $_POST["price-input"];
-        //     $quantity = $_POST["quantity-input"];
-        //     $description = $_POST["description-input"];
-
-        //     $img_path = $my_product["img_path"];
-
-        //     if (!empty($name))
-        //     {
-        //         $new_img_path = $this->uploadImage($_FILES);
-        //         if($img_path != $new_img_path && $new_img_path != "images/product/placeHolder.jpg")
-        //         {
-        //             $img_path = $new_img_path;
-        //         }
-        //         $result = $this->AdminModel->editProduct($id, $name, $brand_id, $cate_id, $price, $quantity, $img_path, $description);
-        //     }
-        // }
-        // return $result;
     }
 
     function Editting($id = 0)
