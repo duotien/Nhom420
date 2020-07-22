@@ -51,13 +51,13 @@
                                                     </td>
                                                     <td>
                                                         <div class="table-data-feature">
-                                                        <a href="../Admin/User/<?php echo $customer["id"] ?>"><button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                        <a href="../Admin/EditUser/<?php echo $customer["id"] ?>"><button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
                                                                     <i class="zmdi zmdi-edit"></i>
                                                                 </button></a>
                                                                 <form 
                                                                     onsubmit="return confirm('Do you really want to delete this product?');"
                                                                     method="POST"
-                                                                    action='../Admin/User/<?php echo $customer["id"] ?>'
+                                                                    action='../Admin/RemoveUser/<?php echo $customer["id"] ?>'
                                                                 >
                                                                     <button type="submit" class="item" data-toggle="tooltip" data-placement="top" title="Delete">
                                                                         <i class="zmdi zmdi-delete"></i>
@@ -107,155 +107,42 @@
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <td>
-                                                    <label class="au-checkbox">
-                                                        <input type="checkbox">
-                                                        <span class="au-checkmark"></span>
-                                                    </label>
-                                                </td>
-                                                <td>name</td>
+                                                <td></td>
+                                                <td>username</td>
                                                 <td>role</td>
-                                                <td>type</td>
                                                 <td></td>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>
-                                                    <label class="au-checkbox">
-                                                        <input type="checkbox">
-                                                        <span class="au-checkmark"></span>
-                                                    </label>
-                                                </td>
-                                                <td>
-                                                    <div class="table-data__info">
-                                                        <h6>lori lynch</h6>
-                                                        <span>
-                                                            <a href="#">johndoe@gmail.com</a>
-                                                        </span>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <span class="role admin">admin</span>
-                                                </td>
-                                                <td>
-                                                    <div class="rs-select2--trans rs-select2--sm">
-                                                        <select class="js-select2" name="property">
-                                                            <option selected="selected">Full Control</option>
-                                                            <option value="">Post</option>
-                                                            <option value="">Watch</option>
-                                                        </select>
-                                                        <div class="dropDownSelect2"></div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <span class="more">
-                                                        <i class="zmdi zmdi-more"></i>
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <label class="au-checkbox">
-                                                        <input type="checkbox" checked="checked">
-                                                        <span class="au-checkmark"></span>
-                                                    </label>
-                                                </td>
-                                                <td>
-                                                    <div class="table-data__info">
-                                                        <h6>lori lynch</h6>
-                                                        <span>
-                                                            <a href="#">johndoe@gmail.com</a>
-                                                        </span>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <span class="role user">user</span>
-                                                </td>
-                                                <td>
-                                                    <div class="rs-select2--trans rs-select2--sm">
-                                                        <select class="js-select2" name="property">
-                                                            <option value="">Full Control</option>
-                                                            <option value="" selected="selected">Post</option>
-                                                            <option value="">Watch</option>
-                                                        </select>
-                                                        <div class="dropDownSelect2"></div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <span class="more">
-                                                        <i class="zmdi zmdi-more"></i>
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <label class="au-checkbox">
-                                                        <input type="checkbox">
-                                                        <span class="au-checkmark"></span>
-                                                    </label>
-                                                </td>
-                                                <td>
-                                                    <div class="table-data__info">
-                                                        <h6>lori lynch</h6>
-                                                        <span>
-                                                            <a href="#">johndoe@gmail.com</a>
-                                                        </span>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <span class="role user">user</span>
-                                                </td>
-                                                <td>
-                                                    <div class="rs-select2--trans rs-select2--sm">
-                                                        <select class="js-select2" name="property">
-                                                            <option value="">Full Control</option>
-                                                            <option value="" selected="selected">Post</option>
-                                                            <option value="">Watch</option>
-                                                        </select>
-                                                        <div class="dropDownSelect2"></div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <span class="more">
-                                                        <i class="zmdi zmdi-more"></i>
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <label class="au-checkbox">
-                                                        <input type="checkbox">
-                                                        <span class="au-checkmark"></span>
-                                                    </label>
-                                                </td>
-                                                <td>
-                                                    <div class="table-data__info">
-                                                        <h6>lori lynch</h6>
-                                                        <span>
-                                                            <a href="#">johndoe@gmail.com</a>
-                                                        </span>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <span class="role member">member</span>
-                                                </td>
-                                                <td>
-                                                    <div class="rs-select2--trans rs-select2--sm">
-                                                        <select class="js-select2" name="property">
-                                                            <option selected="selected">Full Control</option>
-                                                            <option value="">Post</option>
-                                                            <option value="">Watch</option>
-                                                        </select>
-                                                        <div class="dropDownSelect2"></div>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <span class="more">
-                                                        <i class="zmdi zmdi-more"></i>
-                                                    </span>
-                                                </td>
-                                            </tr>
+                                            <?php 
+                                                foreach($data["AdminList"] as $adminuser)
+                                                {
+                                            ?>
+                                                <tr>
+                                                    <td></td>
+                                                    <td>
+                                                        <div class="table-data__info">
+                                                            <h6><?php echo $adminuser["username"]; ?></h6>
+                                                            <span>
+                                                                <a href="#"><?php $adminuser["email"] ?></a>
+                                                            </span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <?php
+                                                            if($adminuser["type"] == 1)
+                                                            {
+                                                                echo "<span class='role admin'>Admin</span>";
+                                                            }
+                                                            else if($adminuser["type"] == 0)
+                                                            {
+                                                                echo "<span class='role member'>User</span>";
+                                                            }
+                                                        ?>
+                                                    </td>
+                                                    <td></td>
+                                                </tr>
+                                            <?php } ?>
                                         </tbody>
                                     </table>
                                     </div>

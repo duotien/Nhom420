@@ -30,6 +30,60 @@ class Admin extends Controller
         }
     }
 
+    function User()
+    {
+        if ($this->loggedin)
+        {
+            $customer_list = json_decode($this->AdminModel->getListCustomerUser(), true);
+            $admin_list = json_decode($this->AdminModel->getListAdminUser(), true);
+            $this->getView("master-view-admin", [
+                "Page" => "admin_user",
+                "CustomerList" => $customer_list,
+                "AdminList" => $admin_list
+            ]);
+        }
+        else
+        {
+            header("Location: http://localhost/Nhom420/Admin/Login");
+        }
+    }
+
+    function EditUser()
+    {
+        if ($this->loggedin)
+        {
+
+        }
+        else
+        {
+            header("Location: http://localhost/Nhom420/Admin/Login");
+        }
+    }
+
+    function EdittingUser()
+    {
+        if ($this->loggedin)
+        {
+
+        }
+        else
+        {
+            header("Location: http://localhost/Nhom420/Admin/Login");
+        }
+    }
+
+    function RemoveUser()
+    {
+        if ($this->loggedin)
+        {
+            
+        }
+        else
+        {
+            header("Location: http://localhost/Nhom420/Admin/Login");
+        }
+    }
+
     function Product()
     {
         if ($this->loggedin)
@@ -43,23 +97,6 @@ class Admin extends Controller
                 "ProductArray" => $product_array,
                 "BrandArray" => $brand_array,
                 "CategoryArray" => $category_array
-            ]);
-        }
-        else
-        {
-            header("Location: http://localhost/Nhom420/Admin/Login");
-        }
-    }
-    function User()
-    {
-        if ($this->loggedin)
-        {
-            $customer_list = json_decode($this->AdminModel->getListCustomerUser(), true);
-            $admin_list = json_decode($this->AdminModel->getListAdminUser(), true);
-            $this->getView("master-view-admin", [
-                "Page" => "admin_user",
-                "CustomerList" => $customer_list,
-                "AdminList" => $admin_list
             ]);
         }
         else
