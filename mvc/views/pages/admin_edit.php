@@ -145,6 +145,7 @@
 										<button type="reset" class="btn btn-danger btn-sm">
 											<i class="fa fa-ban"></i> Reset
 										</button>
+										<a href="../Admin" type="button" class="btn btn-outline-success" style="border: none; float:right;">Back to Admin</a>
 									</div>
 								</form>
 							</div>
