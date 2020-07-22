@@ -19,8 +19,8 @@ class Admin extends Controller
 
     function Product()
     {
-        $this->getView("master-view-1", [
-            "Page" => "admin_product"
+        $this->getView("master-view-admin", [
+            "Page" => "admin_product2"
         ]);
     }
 

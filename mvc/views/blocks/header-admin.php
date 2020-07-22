@@ -4,7 +4,7 @@
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="index.html">
-                            <img src="public/admin/images/icon/logo.jpg" alt="G420" />
+                            <img src="admin/images/icon/logo.jpg" alt="G420" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -39,7 +39,7 @@
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="#">
-                    <img src="public/admin/images/icon/logo.jpg" alt="Group 420" />
+                    <img src="admin/images/icon/logo.jpg" alt="Group 420" />
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
@@ -73,7 +73,7 @@
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="public/admin/images/icon/avatar-01.jpg" alt="Thanh Phi" />
+                                            <img src="admin/images/icon/avatar-01.jpg" alt="Thanh Phi" />
                                         </div>
                                         <div class="content">
                                             <a class="js-acc-btn" href="#">Thanh Phi</a>
@@ -82,7 +82,7 @@
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <img src="public/admin/images/icon/avatar-01.jpg" alt="Thanh Phi" />
+                                                        <img src="admin/images/icon/avatar-01.jpg" alt="Thanh Phi" />
                                                     </a>
                                                 </div>
                                                 <div class="content">

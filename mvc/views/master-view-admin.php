@@ -3,7 +3,6 @@
 
     <head>
         <?php require_once "./mvc/views/blocks/head-admin.html"; ?>
-
     </head>
 
 
