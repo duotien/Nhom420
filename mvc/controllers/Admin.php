@@ -43,6 +43,7 @@ class Admin extends Controller
             "Page" => "admin_user"
         ]);
     }
+
     function Add()
     {
         $brand_list = json_decode($this->AdminModel->listBrand(), true);
@@ -92,6 +93,11 @@ class Admin extends Controller
 
     function Editting($id = 0)
     {
+        if ($id == 0)
+        {
+            header("Location: http://localhost/Nhom420/Admin/Product");
+            return false;
+        }
         $my_product = json_decode($this->AdminModel->getProduct($id), true);
         $result = false;
         if (isset($_POST["btn_edit_product"]))
@@ -116,6 +122,24 @@ class Admin extends Controller
             }
         }
         header("Location: http://localhost/Nhom420/Admin/Edit/$id");
+        return $result;
+    }
+
+    function Remove($id = 0)
+    {
+        if($id == 0)
+        {
+            header("Location: http://localhost/Nhom420/Admin/Product");
+        }
+        $result = false;
+        if(isset($_POST["btn-remove"]))
+        {
+            if($this->AdminModel->removeProduct($id))
+            {
+                $result = true;
+            }
+        }
+        header("Location: http://localhost/Nhom420/Admin/Product");
         return $result;
     }
 

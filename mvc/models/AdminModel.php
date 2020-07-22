@@ -26,6 +26,13 @@ class AdminModel extends Database
         return json_encode($my_array);
     }
 
+    function getProduct($id)
+    {
+        $qr = "SELECT * FROM product WHERE id=$id";
+        $result = mysqli_query($this->con, $qr);
+        return json_encode(mysqli_fetch_array($result));
+    }
+
     function addProduct($name, $brand_id, $cate_id, $price, $quantity, $img_path, $description)
     {
         $qr = "INSERT INTO `product` VALUES
@@ -36,13 +43,6 @@ class AdminModel extends Database
             $result = true;
         }
         return $result;
-    }
-
-    function getProduct($id)
-    {
-        $qr = "SELECT * FROM product WHERE id=$id";
-        $result = mysqli_query($this->con, $qr);
-        return json_encode(mysqli_fetch_array($result));
     }
 
     function editProduct($id, $name, $brand_id, $cate_id, $price, $quantity, $img_path, $description)
@@ -56,6 +56,17 @@ class AdminModel extends Database
             `img_path`='$img_path',
             `description`='$description'
             WHERE `id`=$id";
+        $result = false;
+        if (mysqli_query($this->con, $qr))
+        {
+            $result = true;
+        }
+        return $result;
+    }
+
+    function removeProduct($id)
+    {
+        $qr = "DELETE FROM `product` WHERE `id`=$id";
         $result = false;
         if (mysqli_query($this->con, $qr))
         {

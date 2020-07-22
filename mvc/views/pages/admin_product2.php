@@ -47,32 +47,39 @@
                                                     foreach($data["ProductArray"] as $product)
                                                     {
                                                 ?>
-                                                <tr class="tr-shadow">
-                                                    <td><img src="<?php echo $product["img_path"] ?>" /></td>
-                                                    <td><?php echo $product["id"] ?></td>
-                                                    <td>
-                                                        <span class="block-email"><?php echo $data["BrandArray"][$product["brand_id"]-1]["name"]; ?></span>
-                                                    </td>
-                                                    <td class="desc"><?php echo $product["name"] ?></td>
-                                                    <td>
-                                                        <span class="block-email"><?php echo $data["CategoryArray"][$product["cate_id"]-1]["name"]; ?></span>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $product["quantity"] ?>
-                                                    </td>
-                                                    <td><?php echo $product["price"] ?></td>
-                                                    <td>
-                                                        <div class="table-data-feature">
-                                                            <a href="../Admin/Edit/<?php echo $product["id"] ?>"><button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                                <i class="zmdi zmdi-edit"></i>
-                                                            </button></a>
-                                                            <a href="../Admin/Remove/<?php echo $product["id"] ?>"><button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                                <i class="zmdi zmdi-delete"></i></a>
-                                                            </button>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr class="spacer"></tr>
+                                                    <tr class="tr-shadow">
+                                                        <td><img src="<?php echo $product["img_path"] ?>" /></td>
+                                                        <td><?php echo $product["id"] ?></td>
+                                                        <td>
+                                                            <span class="block-email"><?php echo $data["BrandArray"][$product["brand_id"]-1]["name"]; ?></span>
+                                                        </td>
+                                                        <td class="desc"><?php echo $product["name"] ?></td>
+                                                        <td>
+                                                            <span class="block-email"><?php echo $data["CategoryArray"][$product["cate_id"]-1]["name"]; ?></span>
+                                                        </td>
+                                                        <td>
+                                                            <?php echo $product["quantity"] ?>
+                                                        </td>
+                                                        <td><?php echo $product["price"] ?></td>
+                                                        <td>
+                                                            <div class="table-data-feature">
+                                                                <a href="../Admin/Edit/<?php echo $product["id"] ?>"><button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                                    <i class="zmdi zmdi-edit"></i>
+                                                                </button></a>
+                                                                <form 
+                                                                    onsubmit="return confirm('Do you really want to delete this product?');"
+                                                                    method="POST"
+                                                                    action='../Admin/Remove/<?php echo $product["id"] ?>'
+                                                                >
+                                                                    <button type="submit" class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                                        <i class="zmdi zmdi-delete"></i>
+                                                                    </button>
+                                                                    <input type="hidden" name="btn-remove" value="yes" />
+                                                                </form>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="spacer"></tr>
                                                 <?php } ?>
                                             </tbody>
                                         </table>
