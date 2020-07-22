@@ -9,6 +9,7 @@
                     <img id="zoom_01" src="./<?php echo $data["Product"]['img_path'] ?>" data-zoom-image="./<?php echo $data["Product"]['img_path'] ?>" width="80%"/>
                 </div>
                 <div class="col-md-6">
+                  <form action="../Cart" method="POST">
                     <h1><?php echo $data["Product"]['name'] ?></h1>
                         <span class="price"><?php echo $data["Product"]['price'] . " VNĐ" ?></span>
                         <!-- <div>
@@ -24,7 +25,9 @@
                             <span>39</span>
                             <span>40</span>
                         </div>
-                        <button type="button" class="btn btn-success">Add to your cart</button>
+                        <input type="hidden" name="hidden_id" value="<?php echo $data["Product"]['id']?>"/>
+                        <button type="submit" class="btn btn-success" name="add_to_cart">Add to your cart</button>
+                  </form>
                 </div>
             </div>
         </div>
