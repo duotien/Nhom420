@@ -23,18 +23,20 @@
                     <tbody>
                         <?php
                         $total= 0;
+                        $index=0;
                         foreach ($data["ShoppingCart"] as $key) {
+                            $key["index"] = $index;
+                            $index++;
                         ?>
-                        
-                        
 
                             <tr>
                                 <td><img src="<?php echo $key["img_path"] ?>" /> </td>
                                 <td><?php echo $key["name"] ?></td>
                                 <td>In stock</td>
-                                <td><input class="form-control" type="number" name="quantity" /></td>
+                                <td><input class="form-control" type="number" name="quantity" min="1"/></td>
                                 <td><?php echo $key["price"] ?></td>
-                                <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
+                            
+                                <td class="text-right"><a href="../Cart/Remove/<?php echo $key["index"]; ?>"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button></a> </td>
                             </tr>
                             <?php
                                 $total = $total + ($key["price"]);
