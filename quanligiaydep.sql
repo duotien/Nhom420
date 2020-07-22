@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 20, 2020 at 03:51 PM
--- Server version: 10.4.13-MariaDB
--- PHP Version: 7.4.7
+-- Generation Time: Jul 22, 2020 at 09:51 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,28 @@ SET time_zone = "+00:00";
 --
 -- Database: `quanligiaydep`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin_account`
+--
+
+CREATE TABLE `admin_account` (
+  `id` int(11) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `pass` text NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `type` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `admin_account`
+--
+
+INSERT INTO `admin_account` (`id`, `username`, `pass`, `email`, `type`) VALUES
+(3, 'admin', 'admin', 'admin@email.com', 1),
+(4, 'mod', 'mod', 'mod@email.com', 0);
 
 -- --------------------------------------------------------
 
@@ -78,7 +100,8 @@ CREATE TABLE `customer_account` (
 
 INSERT INTO `customer_account` (`id`, `username`, `pass`, `email`) VALUES
 (1, 'hello', '$2y$10$iS5Sj9B./u710uWYQxYkrOlHqFdplNppqParRJ1d20R9ontXPKBuK', 'helloworld@email.com'),
-(2, 'duotien', '$2y$10$n2xSb.M0wZDW2YYFb1C10ONf5yUgFdxg8F2fmurxnG6n210T2qs.e', 'duotien@email.com');
+(2, 'duotien', '$2y$10$n2xSb.M0wZDW2YYFb1C10ONf5yUgFdxg8F2fmurxnG6n210T2qs.e', 'duotien@email.com'),
+(3, 'a', '$2y$10$IQXuzslDYHv2JcKKVpto0.bbV5wNAE6t4UjoTcW41YIvf2NEgkFg.', 'a@a.com');
 
 -- --------------------------------------------------------
 
@@ -112,11 +135,20 @@ INSERT INTO `product` (`id`, `name`, `brand_id`, `cate_id`, `price`, `quantity`,
 (8, 'Nike Zoom Fly Flyknit', 1, 1, 100, 100, 'product/nike/2.png', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'),
 (9, 'Nike Air Max 90 Red', 1, 2, 100, 100, 'product/nike/3.png', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'),
 (10, 'Nike Air Max 270', 1, 1, 140, 100, 'product/nike/4.png', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'),
-(11, 'Nike Air Zoom Pegasus 33 Shield', 1, 1, 130, 100, 'product/nike/5.png', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.');
+(11, 'Nike Air Zoom Pegasus 33 Shield', 1, 1, 130, 100, 'product/nike/5.png', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'),
+(13, '$name', 1, 2, 4, 5, '$img_path', '$description');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin_account`
+--
+ALTER TABLE `admin_account`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- Indexes for table `brand`
@@ -151,6 +183,12 @@ ALTER TABLE `product`
 --
 
 --
+-- AUTO_INCREMENT for table `admin_account`
+--
+ALTER TABLE `admin_account`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `brand`
 --
 ALTER TABLE `brand`
@@ -166,13 +204,13 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `customer_account`
 --
 ALTER TABLE `customer_account`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Constraints for dumped tables
