@@ -32,301 +32,48 @@
                                         <table class="table table-data2">
                                             <thead>
                                                 <tr>
-                                                    <th>
-                                                        <label class="au-checkbox">
-                                                            <input type="checkbox">
-                                                            <span class="au-checkmark"></span>
-                                                        </label>
-                                                    </th>
+                                                    <th></th>
                                                     <th>no.</th>
                                                     <th>brand</th>
-                                                    <th>description</th>
-                                                    <th>date</th>
-                                                    <th>status</th>
+                                                    <th>name</th>
+                                                    <th>category</th>
+                                                    <th>quantity</th>
                                                     <th>price</th>
                                                     <th></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                <?php
+                                                    foreach($data["ProductArray"] as $product)
+                                                    {
+                                                ?>
                                                 <tr class="tr-shadow">
+                                                    <td></td>
+                                                    <td><?php echo $product["id"] ?></td>
                                                     <td>
-                                                        <label class="au-checkbox">
-                                                            <input type="checkbox">
-                                                            <span class="au-checkmark"></span>
-                                                        </label>
+                                                        <span class="block-email"><?php echo $data["BrandArray"][$product["brand_id"]-1]["name"]; ?></span>
                                                     </td>
-                                                    <td>1</td>
+                                                    <td class="desc"><?php echo $product["name"] ?></td>
                                                     <td>
-                                                        <span class="block-email">Nike</span>
+                                                        <span class="block-email"><?php echo $data["CategoryArray"][$product["cate_id"]-1]["name"]; ?></span>
                                                     </td>
-                                                    <td class="desc">LeBron 17 Low</td>
-                                                    <td>2020-06-27 02:12</td>
                                                     <td>
-                                                        <span class="status--process">Processed</span>
+                                                        <?php echo $product["quantity"] ?>
                                                     </td>
-                                                    <td>$679.00</td>
+                                                    <td><?php echo $product["price"] ?></td>
                                                     <td>
                                                         <div class="table-data-feature">
-                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                                                <i class="zmdi zmdi-mail-send"></i>
-                                                            </button>
                                                             <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
                                                                 <i class="zmdi zmdi-edit"></i>
                                                             </button>
                                                             <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
                                                                 <i class="zmdi zmdi-delete"></i>
-                                                            </button>
-                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                                                <i class="zmdi zmdi-more"></i>
                                                             </button>
                                                         </div>
                                                     </td>
                                                 </tr>
                                                 <tr class="spacer"></tr>
-                                                <tr class="tr-shadow">
-                                                    <td>
-                                                        <label class="au-checkbox">
-                                                            <input type="checkbox">
-                                                            <span class="au-checkmark"></span>
-                                                        </label>
-                                                    </td>
-                                                    <td>2</td>
-                                                    <td>
-                                                        <span class="block-email">Adidas</span>
-                                                    </td>
-                                                    <td class="desc">Adidas OZWEEGO</td>
-                                                    <td>2020-06-29 05:57</td>
-                                                    <td>
-                                                        <span class="status--process">Processed</span>
-                                                    </td>
-                                                    <td>$999.00</td>
-                                                    <td>
-                                                        <div class="table-data-feature">
-                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                                                <i class="zmdi zmdi-mail-send"></i>
-                                                            </button>
-                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                                <i class="zmdi zmdi-edit"></i>
-                                                            </button>
-                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                                <i class="zmdi zmdi-delete"></i>
-                                                            </button>
-                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                                                <i class="zmdi zmdi-more"></i>
-                                                            </button>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr class="spacer"></tr>
-                                                <tr class="tr-shadow">
-                                                    <td>
-                                                        <label class="au-checkbox">
-                                                            <input type="checkbox">
-                                                            <span class="au-checkmark"></span>
-                                                        </label>
-                                                    </td>
-                                                    <td>3</td>
-                                                    <td>
-                                                        <span class="block-email">Puma</span>
-                                                    </td>
-                                                    <td class="desc">Puma BladeRunner</td>
-                                                    <td>2020-6-25 19:03</td>
-                                                    <td>
-                                                        <span class="status--denied">Denied</span>
-                                                    </td>
-                                                    <td>$1199.00</td>
-                                                    <td>
-                                                        <div class="table-data-feature">
-                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                                                <i class="zmdi zmdi-mail-send"></i>
-                                                            </button>
-                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                                <i class="zmdi zmdi-edit"></i>
-                                                            </button>
-                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                                <i class="zmdi zmdi-delete"></i>
-                                                            </button>
-                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                                                <i class="zmdi zmdi-more"></i>
-                                                            </button>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr class="spacer"></tr>
-                                                <tr class="tr-shadow">
-                                                    <td>
-                                                        <label class="au-checkbox">
-                                                            <input type="checkbox">
-                                                            <span class="au-checkmark"></span>
-                                                        </label>
-                                                    </td>
-                                                    <td>4</td>
-                                                    <td>
-                                                        <span class="block-email">Converse</span>
-                                                    </td>
-                                                    <td class="desc">Converse X Off White</td>
-                                                    <td>2020-06-24 19:10</td>
-                                                    <td>
-                                                        <span class="status--process">Processed</span>
-                                                    </td>
-                                                    <td>$699.00</td>
-                                                    <td>
-                                                        <div class="table-data-feature">
-                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                                                <i class="zmdi zmdi-mail-send"></i>
-                                                            </button>
-                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                                <i class="zmdi zmdi-edit"></i>
-                                                            </button>
-                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                                <i class="zmdi zmdi-delete"></i>
-                                                            </button>
-                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                                                <i class="zmdi zmdi-more"></i>
-                                                            </button>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr class="spacer"></tr>
-                                                <tr class="tr-shadow">
-                                                    <td>
-                                                        <label class="au-checkbox">
-                                                            <input type="checkbox">
-                                                            <span class="au-checkmark"></span>
-                                                        </label>
-                                                    </td>
-                                                    <td>5</td>
-                                                    <td>
-                                                        <span class="block-email">Vans</span>
-                                                    </td>
-                                                    <td class="desc">Vans Garcons Sk8</td>
-                                                    <td>2020-06-24 19:10</td>
-                                                    <td>
-                                                        <span class="status--process">Processed</span>
-                                                    </td>
-                                                    <td>$699.00</td>
-                                                    <td>
-                                                        <div class="table-data-feature">
-                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                                                <i class="zmdi zmdi-mail-send"></i>
-                                                            </button>
-                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                                <i class="zmdi zmdi-edit"></i>
-                                                            </button>
-                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                                <i class="zmdi zmdi-delete"></i>
-                                                            </button>
-                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                                                <i class="zmdi zmdi-more"></i>
-                                                            </button>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr class="spacer"></tr>
-                                                <tr class="tr-shadow">
-                                                    <td>
-                                                        <label class="au-checkbox">
-                                                            <input type="checkbox">
-                                                            <span class="au-checkmark"></span>
-                                                        </label>
-                                                    </td>
-                                                    <td>5</td>
-                                                    <td>
-                                                        <span class="block-email">Vans</span>
-                                                    </td>
-                                                    <td class="desc">Vans Garcons Sk8</td>
-                                                    <td>2020-06-24 19:10</td>
-                                                    <td>
-                                                        <span class="status--process">Processed</span>
-                                                    </td>
-                                                    <td>$699.00</td>
-                                                    <td>
-                                                        <div class="table-data-feature">
-                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                                                <i class="zmdi zmdi-mail-send"></i>
-                                                            </button>
-                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                                <i class="zmdi zmdi-edit"></i>
-                                                            </button>
-                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                                <i class="zmdi zmdi-delete"></i>
-                                                            </button>
-                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                                                <i class="zmdi zmdi-more"></i>
-                                                            </button>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr class="spacer"></tr>
-                                                <tr class="tr-shadow">
-                                                    <td>
-                                                        <label class="au-checkbox">
-                                                            <input type="checkbox">
-                                                            <span class="au-checkmark"></span>
-                                                        </label>
-                                                    </td>
-                                                    <td>5</td>
-                                                    <td>
-                                                        <span class="block-email">Vans</span>
-                                                    </td>
-                                                    <td class="desc">Vans Garcons Sk8</td>
-                                                    <td>2020-06-24 19:10</td>
-                                                    <td>
-                                                        <span class="status--process">Processed</span>
-                                                    </td>
-                                                    <td>$699.00</td>
-                                                    <td>
-                                                        <div class="table-data-feature">
-                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                                                <i class="zmdi zmdi-mail-send"></i>
-                                                            </button>
-                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                                <i class="zmdi zmdi-edit"></i>
-                                                            </button>
-                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                                <i class="zmdi zmdi-delete"></i>
-                                                            </button>
-                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                                                <i class="zmdi zmdi-more"></i>
-                                                            </button>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr class="spacer"></tr>
-                                                <tr class="tr-shadow">
-                                                    <td>
-                                                        <label class="au-checkbox">
-                                                            <input type="checkbox">
-                                                            <span class="au-checkmark"></span>
-                                                        </label>
-                                                    </td>
-                                                    <td>5</td>
-                                                    <td>
-                                                        <span class="block-email">Vans</span>
-                                                    </td>
-                                                    <td class="desc">Vans Garcons Sk8</td>
-                                                    <td>2020-06-24 19:10</td>
-                                                    <td>
-                                                        <span class="status--process">Processed</span>
-                                                    </td>
-                                                    <td>$699.00</td>
-                                                    <td>
-                                                        <div class="table-data-feature">
-                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                                                <i class="zmdi zmdi-mail-send"></i>
-                                                            </button>
-                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                                <i class="zmdi zmdi-edit"></i>
-                                                            </button>
-                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                                <i class="zmdi zmdi-delete"></i>
-                                                            </button>
-                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                                                <i class="zmdi zmdi-more"></i>
-                                                            </button>
-                                                        </div>
-                                                    </td>
-                                                </tr>
+                                                <?php } ?>
                                             </tbody>
                                         </table>
                                     </div>

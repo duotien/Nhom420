@@ -2,9 +2,11 @@
 class Admin extends Controller
 {
     public $AdminModel;
+    public $ProductModel;
     function __construct()
     {
         $this->AdminModel = $this->getModel("AdminModel");
+        $this->ProductModel = $this->getModel("ProductModel");
     }
 
     function showDefault()
@@ -23,9 +25,18 @@ class Admin extends Controller
 
     function Product()
     {
+        $product_array = json_decode($this->ProductModel->showList(), true);
+        $brand_array = json_decode($this->AdminModel->listBrand(), true);
+        $category_array = json_decode($this->AdminModel->listCategory(), true);
+        
+        echo $brand_array[0]["name"];
         $this->getView("master-view-admin", [
-            "Page" => "admin_product2"
+            "Page" => "admin_product2",
+            "ProductArray" => $product_array,
+            "BrandArray" => $brand_array,
+            "CategoryArray"=> $category_array
         ]);
+        
     }
 
     function User()
