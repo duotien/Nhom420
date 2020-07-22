@@ -45,8 +45,23 @@ class AdminModel extends Database
         return json_encode(mysqli_fetch_array($result));
     }
 
-    function editProduct()
+    function editProduct($id, $name, $brand_id, $cate_id, $price, $quantity, $img_path, $description)
     {
+        $qr = "UPDATE `product` SET
+            `name`='$name',
+            `brand_id`=$brand_id,
+            `cate_id`=$cate_id,
+            `price`=$price,
+            `quantity`=$quantity,
+            `img_path`='$img_path',
+            `description`='$description'
+            WHERE `id`=$id";
+        $result = false;
+        if (mysqli_query($this->con, $qr))
+        {
+            $result = true;
+        }
+        return $result;
     }
 
     function login($username, $password)

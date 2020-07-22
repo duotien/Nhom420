@@ -44,7 +44,7 @@
 								<strong>Add Item</strong> Product 
 							</div>
 							<div class="card-body card-block">
-								<form action="../Admin/Edit/<?php echo $data["SelectedProduct"]["id"]; ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
+								<form action="../Admin/Editting/<?php echo $data["SelectedProduct"]["id"]; ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
 									<div class="row form-group">
 										<div class="col col-md-3">
 											<label for="brand-input" class=" form-control-label">Brand</label>
@@ -139,25 +139,12 @@
 										</div>
 									</div>
 									<div class="card-footer">
-										<a href="../Admin/Product"><button type="submit" name="btn_add_product" class="btn btn-primary btn-sm">
+										<button type="submit" name="btn_edit_product" class="btn btn-primary btn-sm">
 											<i class="fa fa-dot-circle-o"></i>Submit
-										</button></a>
+										</button>
 										<button type="reset" class="btn btn-danger btn-sm">
 											<i class="fa fa-ban"></i> Reset
 										</button>
-										<?php
-											if(isset($data["Result"]))
-											{
-												if($data["Result"])
-												{	
-													echo "<span>Added a product</span>";
-												}
-												else
-												{
-													echo "<span>There was an error adding new product</span>";
-												}
-											}
-										?>
 									</div>
 								</form>
 							</div>

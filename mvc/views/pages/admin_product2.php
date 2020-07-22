@@ -63,11 +63,11 @@
                                                     <td><?php echo $product["price"] ?></td>
                                                     <td>
                                                         <div class="table-data-feature">
-                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                            <a href="../Admin/Edit/<?php echo $product["id"] ?>"><button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
                                                                 <i class="zmdi zmdi-edit"></i>
-                                                            </button>
-                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                                <i class="zmdi zmdi-delete"></i>
+                                                            </button></a>
+                                                            <a href="../Admin/Remove/<?php echo $product["id"] ?>"><button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                                <i class="zmdi zmdi-delete"></i></a>
                                                             </button>
                                                         </div>
                                                     </td>
