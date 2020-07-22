@@ -47,6 +47,26 @@ class AdminModel extends Database
 
     function editProduct()
     {
-        
+    }
+
+    function login($username, $password)
+    {
+        $qr = "SELECT * FROM admin_account WHERE username='$username' AND pass='$password'";
+        $result = mysqli_query($this->con, $qr);
+
+        if (mysqli_fetch_row($result) > 0)
+        {
+            $_SESSION["admin_user"] = $username;
+            return true;
+        }
+        return false;
+    }
+    
+    function logout()
+    {
+        if(isset($_SESSION["admin_user"]))
+        {
+            unset($_SESSION["admin_user"]);
+        }
     }
 }

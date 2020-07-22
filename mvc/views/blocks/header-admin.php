@@ -18,15 +18,15 @@
                 <div class="container-fluid">
                     <ul class="navbar-mobile__list list-unstyled">
                         <li class="has-sub">
-                            <a class="js-arrow" href="./Dashboard">
+                            <a class="js-arrow" href="../Admin/Dashboard">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
                         <li>
-                            <a href="./Admin_product">
+                            <a href="../Admin/Product">
                                 <i class="fas fa-usd"></i>Product</a>
                         </li>
                         <li>
-                            <a href="./Admin_user">   
+                            <a href="../Admin/User">   
                                 <i class="fas fa-user"></i>User</a>
                         </li>
                     </ul>
@@ -45,16 +45,16 @@
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
-                        <li class="active has-sub">
-                            <a href="./Dashboard">
+                        <li>
+                            <a href="../Admin/Dashboard">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
-                        <li>
-                            <a href="./Admin_product">
+                        <li class="active has-sub">
+                            <a href="../Admin/Product">
                                 <i class="fas fa-usd"></i>Product</a>
                         </li>
                         <li>
-                            <a href="./Admin_user">   
+                            <a href="../Admin/User">   
                                 <i class="fas fa-user"></i>User</a>
                         </li>
                     </ul>
@@ -69,33 +69,13 @@
                         <div class="header-wrap">
                             <div class="header-button">
                                 <div class="noti-wrap">
-                                    <div class="noti__item js-item-menu">
                                 <div class="account-wrap">
-                                    <div class="account-item clearfix js-item-menu">
-                                        <div class="image">
-                                            <img src="admin/images/icon/avatar-01.jpg" alt="Thanh Phi" />
-                                        </div>
+                                    <div class="account">
                                         <div class="content">
-                                            <a class="js-acc-btn" href="#">Thanh Phi</a>
-                                        </div>
-                                        <div class="account-dropdown js-dropdown">
-                                            <div class="info clearfix">
-                                                <div class="image">
-                                                    <a href="#">
-                                                        <img src="admin/images/icon/avatar-01.jpg" alt="Thanh Phi" />
-                                                    </a>
-                                                </div>
-                                                <div class="content">
-                                                    <h5 class="name">
-                                                        <a href="#">Thanh Phi</a>
-                                                    </h5>
-                                                    <span class="email">thanhphi@example.com</span>
-                                                </div>
-                                            </div>
-                                            <div class="account-dropdown__footer">
-                                                <a href="../login.php">
-                                                    <i class="zmdi zmdi-power"></i>Logout</a>
-                                            </div>
+                                            <span class="js-acc-btn"><?php echo $_SESSION["admin_user"] ?></span>
+                                            <a href="../Admin/Logout">
+                                                <i class="zmdi zmdi-power"></i>Logout
+                                            </a>
                                         </div>
                                     </div>
                                 </div>

@@ -5,16 +5,20 @@ class Admin extends Controller
     function __construct()
     {
         $this->AdminModel = $this->getModel("AdminModel");
-        $this->ProductModel = $this->getModel("ProductModel");
     }
 
     function showDefault()
     {
-        echo "Admin controller
-        <br><a href='./Admin/Product'>Product</a>
-        <br><a href='./Admin/Add'>Add</a>
-        <br>";
-        print_r(json_decode($this->AdminModel->listBrand(), true));
+        if (isset($_SESSION["admin_user"]))
+        {
+            $this->getView("master-view-admin", [
+                "Page" => "admin_dashboard"
+            ]);
+        }
+        else
+        {
+            header("Location: http://localhost/Nhom420/Admin/Login");
+        }
     }
 
     function Product()
@@ -24,6 +28,12 @@ class Admin extends Controller
         ]);
     }
 
+    function User()
+    {
+        $this->getView("master-view-admin", [
+            "Page" => "admin_user"
+        ]);
+    }
     function Add()
     {
         $brand_list = json_decode($this->AdminModel->listBrand(), true);
@@ -66,5 +76,49 @@ class Admin extends Controller
             "CategoryList" => $category_list,
             "SelectedProduct" => $my_product
         ]);
+    }
+
+    function Login()
+    {
+        if (isset($_SESSION["admin_user"]))
+        {
+            header("Location: http://localhost/Nhom420/Admin");
+            //print_r($_SESSION["admin_user"]);
+        }
+        
+        else
+        {
+            $this->getView("master-view-admin-login", []);
+
+            if (isset($_POST["btn_login"]))
+            {
+                if (empty($_POST["username"]) || empty($_POST["pass"]))
+                {
+                    return false;
+                }
+                else
+                {
+                    $username = $_POST["username"];
+                    $password = $_POST["pass"];
+
+                    if ($this->AdminModel->login($username, $password))
+                    {
+                        header("Location: http://localhost/Nhom420/Admin");
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            return false;
+        }
+    }
+
+    function Logout()
+    {
+        $this->getView("master-view-admin-login", []);
+        $this->AdminModel->logout();
     }
 };
