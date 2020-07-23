@@ -3,12 +3,14 @@ class Admin extends Controller
 {
     public $AdminModel;
     public $ProductModel;
+    public $UserModel;
     private $loggedin;
 
     function __construct()
     {
         $this->AdminModel = $this->getModel("AdminModel");
         $this->ProductModel = $this->getModel("ProductModel");
+        $this->UserModel = $this->getModel("UserModel");
         $this->loggedin = false;
         if (isset($_SESSION["admin_user"]))
         {
@@ -34,7 +36,7 @@ class Admin extends Controller
     {
         if ($this->loggedin)
         {
-            $customer_list = json_decode($this->AdminModel->getListCustomerUser(), true);
+            $customer_list = json_decode($this->UserModel->getListCustomerUser(), true);
             $admin_list = json_decode($this->AdminModel->getListAdminUser(), true);
             $this->getView("master-view-admin", [
                 "Page" => "admin_user",
@@ -52,7 +54,6 @@ class Admin extends Controller
     {
         if ($this->loggedin)
         {
-
         }
         else
         {
@@ -64,7 +65,6 @@ class Admin extends Controller
     {
         if ($this->loggedin)
         {
-
         }
         else
         {
@@ -76,7 +76,6 @@ class Admin extends Controller
     {
         if ($this->loggedin)
         {
-            
         }
         else
         {
@@ -147,7 +146,7 @@ class Admin extends Controller
             $brand_list = json_decode($this->ProductModel->listBrand(), true);
             $category_list = json_decode($this->ProductModel->listCategory(), true);
             $my_product = json_decode($this->ProductModel->getProduct($id), true);
-            
+
             if (!$my_product)
             {
                 header("Location: http://localhost/Nhom420/Admin/Product");
@@ -239,7 +238,6 @@ class Admin extends Controller
         if (isset($_SESSION["admin_user"]))
         {
             header("Location: http://localhost/Nhom420/Admin");
-            //print_r($_SESSION["admin_user"]);
         }
 
         else

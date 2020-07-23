@@ -20,6 +20,25 @@ class UserModel extends Database
         return $result;
     }
 
+    function getListCustomerUser()
+    {
+        $qr = "SELECT * FROM `customer_account`";
+        $result = mysqli_query($this->con, $qr);
+        $my_array = array();
+        while ($row = mysqli_fetch_array($result))
+        {
+            $my_array[] = $row;
+        }
+        return json_encode($my_array);
+    }
+
+    function getCustomerUserById($id)
+    {
+        $qr = "SELECT * FROM `customer_account` WHERE id=$id";
+        $result = mysqli_query($this->con, $qr);
+        return json_encode(mysqli_fetch_array($result));
+    }
+
     function validateUsername($username)
     {
         $qr = "SELECT `username` FROM customer_account WHERE username='$username'";
