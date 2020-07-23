@@ -54,8 +54,8 @@
                                                         <a href="../Admin/EditUser/<?php echo $customer["id"] ?>"><button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
                                                                     <i class="zmdi zmdi-edit"></i>
                                                                 </button></a>
-                                                                <form 
-                                                                    onsubmit="return confirm('Do you really want to delete this product?');"
+                                                                <form class="formDel"
+                                                                    onsubmit="return(myFunction());"
                                                                     method="POST"
                                                                     action='../Admin/RemoveUser/<?php echo $customer["id"] ?>'
                                                                 >
@@ -162,3 +162,4 @@
                 </div>
             </div>
         </div>
+<?php require_once "./mvc/views/blocks/swal.html"; ?>
