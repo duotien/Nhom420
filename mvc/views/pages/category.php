@@ -22,46 +22,21 @@
                     <div class="n420-filter-group n420-facet-filter" style="margin-left: 5px;">
                         <div class="n420-filter-group-header">Theo Danh Mục</div>
                         <div class="folding-items n420-filter-group_body folding-items--folded">
-                            <div class="n420-filter n420-checkbox-filter">
-                                <div class="n420-checkbox">
-                                    <label class="420-checkbox_control">
-                                        <input type="checkbox" id="opt_1"/>
-                                    </label>
-                                    <span class="n420-checkbox_label">Nike</span>
+                            <?php
+                                foreach($data["BrandList"] as $brand)
+                                {
+                            ?>
+                                <div class="n420-filter n420-checkbox-filter">
+                                    <div class="n420-checkbox">
+                                        <label class="420-checkbox_control">
+                                            <input type="checkbox" id="opt_<?php echo $brand["id"];?>"/>
+                                        </label>
+                                        <span class="n420-checkbox_label"><?php echo $brand["name"];?></span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="n420-filter n420-checkbox-filter">
-                                <div class="420-checkbox">
-                                    <label class="n420-checkbox_control">
-                                        <input type="checkbox" id="opt_2"/>
-                                    </label>
-                                    <span class="n420-checkbox_label">Adidas</span>
-                                </div>
-                            </div>
-                            <div class="n420-filter n420-checkbox-filter">
-                                <div class="n420-checkbox">
-                                    <label class="n420-checkbox_control">
-                                        <input type="checkbox" id="opt_3"/>
-                                    </label>
-                                    <span class="n420-checkbox_label">Converse</span>
-                                </div>
-                            </div>
-                            <div class="n420-filter n420-checkbox-filter">
-                                <div class="n420-checkbox">
-                                    <label class="n420-checkbox_control">
-                                        <input type="checkbox" id="opt_4"/>
-                                    </label>
-                                    <span class="n420-checkbox_label">Puma</span>
-                                </div>
-                            </div>
-                            <div class="n420-filter n420-checkbox-filter">
-                                <div class="n420-checkbox">
-                                    <label class="n420-checkbox_control">
-                                        <input type="checkbox" id="opt_5"/>
-                                    </label>
-                                    <span class="n420-checkbox_label">Vans</span>
-                                </div>
-                            </div>
+                            <?php
+                                }
+                            ?>
                         </div>
                         <div class="n420-filter-group-header">Theo Size</div>
                         <div class="folding-items n420-filter-group_body folding-items--folded">
@@ -140,7 +115,7 @@
                 <div class="right-bodyContainer col-md-10">
                     <h2 class="n420-product-title">Trending</h2>
                     <?php
-                    foreach ($data['Array'] as $row)
+                    foreach ($data['ProductArray'] as $row)
                     {
                     ?>
                         <div class="n420-product-box">
@@ -158,7 +133,7 @@
                     <hr>
                     <h2 class="n420-product-title">Featured</h2>
                     <?php
-                    foreach ($data['Array'] as $row)
+                    foreach ($data['ProductArray'] as $row)
                     {
                     ?>
                         <div class="n420-product-box">
@@ -176,7 +151,7 @@
                     <hr>
                     <h2 class="n420-product-title">By You Favorites</h2>
                     <?php
-                    foreach ($data['Array'] as $row)
+                    foreach ($data['ProductArray'] as $row)
                     {
                     ?>
                         <div class="n420-product-box">

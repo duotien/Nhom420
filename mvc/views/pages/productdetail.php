@@ -6,12 +6,12 @@
         <div class="container">
             <div class="row" style="display: flex;">
                 <div id="img-container" class="col-md-6">
-                    <img id="zoom_01" src="./<?php echo $data["Product"]['img_path'] ?>" data-zoom-image="./<?php echo $data["Product"]['img_path'] ?>" width="80%"/>
+                    <img id="zoom_01" src="./<?php echo $data["SelectedProduct"]['img_path'] ?>" data-zoom-image="./<?php echo $data["SelectedProduct"]['img_path'] ?>" width="80%"/>
                 </div>
                 <div class="col-md-6">
                   <form action="../Cart" method="POST">
-                    <h1><?php echo $data["Product"]['name'] ?></h1>
-                        <span class="price"><?php echo $data["Product"]['price'] . " $" ?></span>
+                    <h1><?php echo $data["SelectedProduct"]['name'] ?></h1>
+                        <span class="price"><?php echo $data["SelectedProduct"]['price'] . " $" ?></span>
                         <!-- <div>
                             <label for="">Color</label>
                             <span style="background-color: red; width: 100px; height: 100px; border: red 1px solid;">RED</span>
@@ -25,7 +25,7 @@
                             <span>39</span>
                             <span>40</span>
                         </div>
-                        <input type="hidden" name="hidden_id" value="<?php echo $data["Product"]['id']?>"/>
+                        <input type="hidden" name="hidden_id" value="<?php echo $data["SelectedProduct"]['id']?>"/>
                         <button type="submit" class="btn btn-success" name="add_to_cart">Add to your cart</button>
                   </form>
                 </div>
@@ -47,8 +47,8 @@
             <!-- Tab panes -->
             <div class="tab-content">
               <div id="home" class="container tab-pane active"><br>
-                <h3><?php echo $data["Product"]['name'] ?></h3>
-                <?php echo $data["Product"]['description'] ?>
+                <h3><?php echo $data["SelectedProduct"]['name'] ?></h3>
+                <?php echo $data["SelectedProduct"]['description'] ?>
               </div>
               <!-- <div id="menu" class="container tab-pane fade"><br>
                 <h3>Nhận xét</h3>
