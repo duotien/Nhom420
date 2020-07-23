@@ -13,6 +13,7 @@ class Admin extends Controller
         $this->ProductModel = $this->getModel("ProductModel");
         $this->UserModel = $this->getModel("UserModel");
         $this->loggedin = false;
+        $this->isadmin = false;
         if (isset($_SESSION["admin_user"]))
         {
             $this->loggedin = true;
@@ -52,10 +53,22 @@ class Admin extends Controller
         }
     }
 
-    function EditUser()
+    function EditUser($id)
     {
         if ($this->loggedin && $this->isadmin)
         {
+            $selected_user = json_decode($this->UserModel->getCustomerUserById($id),true);
+            if(!$selected_user)
+            {
+                header("Location: http://localhost/Nhom420/Admin/User");
+            }
+            else
+            {
+                $this->getView("master-view-1", [
+                    "Page" => "admin_editcustomer",
+                    "SelectedCustomer" => $selected_user
+                ]);
+            }
         }
         else
         {
@@ -152,15 +165,16 @@ class Admin extends Controller
             if (!$my_product)
             {
                 header("Location: http://localhost/Nhom420/Admin/Product");
-                return false;
             }
-
-            $this->getView("master-view-1", [
-                "Page" => "admin_edit",
-                "BrandList" => $brand_list,
-                "CategoryList" => $category_list,
-                "SelectedProduct" => $my_product
-            ]);
+            else
+            {
+                $this->getView("master-view-1", [
+                    "Page" => "admin_edit",
+                    "BrandList" => $brand_list,
+                    "CategoryList" => $category_list,
+                    "SelectedProduct" => $my_product
+                ]);
+            }
         }
         else
         {
