@@ -87,7 +87,7 @@
 											</select>
 										</div>
 									</div>
-									<div class="row form-group">
+									<!-- <div class="row form-group">
 										<div class="col col-md-3">
 											<label for="date-input" class=" form-control-label">Date</label>
 										</div>
@@ -95,7 +95,7 @@
 											<input type="date" id="date-input" name="date-input" value=<?php echo date('Y-m-d'); ?> class="form-control">
 											<small class="help-block form-text">Please enter the date</small>
 										</div>
-									</div>
+									</div> -->
 									<div class="row form-group">
 										<div class="col col-md-3">
 											<label class=" form-control-label">Price</label>
