@@ -11,7 +11,7 @@
                 <div class="col-md-6">
                   <form action="../Cart" method="POST">
                     <h1><?php echo $data["Product"]['name'] ?></h1>
-                        <span class="price"><?php echo $data["Product"]['price'] . " VNĐ" ?></span>
+                        <span class="price"><?php echo $data["Product"]['price'] . " $" ?></span>
                         <!-- <div>
                             <label for="">Color</label>
                             <span style="background-color: red; width: 100px; height: 100px; border: red 1px solid;">RED</span>

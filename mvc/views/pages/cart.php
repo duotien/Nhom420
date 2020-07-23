@@ -24,6 +24,7 @@
                         <?php
                         $total= 0;
                         $index=0;
+                        if (isset($data["ShoppingCart"])){
                         foreach ($data["ShoppingCart"] as $key) {
                             $key["index"] = $index;
                             $index++;
@@ -41,7 +42,7 @@
                             <?php
                                 $total = $total + ($key["price"]);
                             ?>
-                    <?php } ?>
+                    <?php }} ?>
 
                             <tr>
                                 <td></td>
