@@ -29,6 +29,12 @@
                             <input type="email" class="form-input" name="email" id="email" placeholder="Email"/>
                         </div>
                         <div class="form-group">
+                            <input type="text" class="form-input" name="name" id="name" placeholder="Your Name"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" pattern="[0-9]*" class="form-input" name="phone_number" id="phone_number" placeholder="Phone Number"/>
+                        </div>
+                        <div class="form-group">
                             <input type="password" class="form-input" name="password" id="password" placeholder="Password"/>
                             <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
                         </div>

@@ -9,9 +9,9 @@ class UserModel extends Database
 {
     #public variables here
 
-    function insertAccount($username, $password, $email)
+    function insertAccount($username, $password, $email, $name, $phone_number)
     {
-        $qr = "INSERT INTO customer_account VALUES(null, '$username', '$password', '$email')";
+        $qr = "INSERT INTO customer_account VALUES(null, '$username', '$password', '$email', '$name', '$phone_number')";
         $result = false;
         if (mysqli_query($this->con, $qr))
         {
@@ -35,6 +35,18 @@ class UserModel extends Database
     function validateUserEmail($email)
     {
         $qr = "SELECT `email` FROM customer_account WHERE email='$email'";
+        $result = mysqli_query($this->con, $qr);
+        $valid = true;
+        if (mysqli_fetch_row($result) > 0)
+        {
+            $valid = false;
+        }
+        return $valid;
+    }
+
+    function validateUserPhoneNumber($phone_number)
+    {
+        $qr = "SELECT `phone_number` FROM customer_account WHERE phone_number='$phone_number'";
         $result = mysqli_query($this->con, $qr);
         $valid = true;
         if (mysqli_fetch_row($result) > 0)
