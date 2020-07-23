@@ -3,7 +3,7 @@
             <div class="header-mobile__bar">
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
-                        <a class="logo" href="index.html">
+                        <a class="logo" href="../Home">
                             <img src="admin/images/icon/logo.jpg" alt="G420" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
@@ -38,7 +38,7 @@
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
-                <a href="#">
+                <a href="../Home">
                     <img src="admin/images/icon/logo.jpg" alt="Group 420" />
                 </a>
             </div>
