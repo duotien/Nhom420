@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 22, 2020 at 09:51 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.5
+-- Generation Time: Jul 23, 2020 at 07:47 AM
+-- Server version: 10.4.13-MariaDB
+-- PHP Version: 7.4.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,16 +32,18 @@ CREATE TABLE `admin_account` (
   `username` varchar(100) NOT NULL,
   `pass` text NOT NULL,
   `email` varchar(100) NOT NULL,
-  `type` tinyint(1) NOT NULL DEFAULT 0
+  `type` tinyint(1) NOT NULL DEFAULT 0,
+  `name` varchar(100) NOT NULL,
+  `phone_number` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `admin_account`
 --
 
-INSERT INTO `admin_account` (`id`, `username`, `pass`, `email`, `type`) VALUES
-(3, 'admin', 'admin', 'admin@email.com', 1),
-(4, 'mod', 'mod', 'mod@email.com', 0);
+INSERT INTO `admin_account` (`id`, `username`, `pass`, `email`, `type`, `name`, `phone_number`) VALUES
+(1, 'admin', 'admin', 'admin@email.com', 1, 'Mr.Admin', '123456789'),
+(2, 'mod', 'mod', 'mod@email.com', 0, 'Mr.Mod', '987654321');
 
 -- --------------------------------------------------------
 
@@ -60,7 +62,10 @@ CREATE TABLE `brand` (
 
 INSERT INTO `brand` (`brand_id`, `name`) VALUES
 (1, 'Nike'),
-(2, 'Adidas');
+(2, 'Adidas'),
+(3, 'Converse'),
+(4, 'Puma'),
+(5, 'Vans');
 
 -- --------------------------------------------------------
 
@@ -91,17 +96,19 @@ CREATE TABLE `customer_account` (
   `id` int(10) NOT NULL,
   `username` varchar(20) NOT NULL,
   `pass` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL
+  `email` varchar(100) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `phone_number` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `customer_account`
 --
 
-INSERT INTO `customer_account` (`id`, `username`, `pass`, `email`) VALUES
-(1, 'hello', '$2y$10$iS5Sj9B./u710uWYQxYkrOlHqFdplNppqParRJ1d20R9ontXPKBuK', 'helloworld@email.com'),
-(2, 'duotien', '$2y$10$n2xSb.M0wZDW2YYFb1C10ONf5yUgFdxg8F2fmurxnG6n210T2qs.e', 'duotien@email.com'),
-(3, 'a', '$2y$10$IQXuzslDYHv2JcKKVpto0.bbV5wNAE6t4UjoTcW41YIvf2NEgkFg.', 'a@a.com');
+INSERT INTO `customer_account` (`id`, `username`, `pass`, `email`, `name`, `phone_number`) VALUES
+(1, 'hello', '$2y$10$iS5Sj9B./u710uWYQxYkrOlHqFdplNppqParRJ1d20R9ontXPKBuK', 'helloworld@email.com', 'Hello World', '42542546'),
+(2, 'duotien', '$2y$10$n2xSb.M0wZDW2YYFb1C10ONf5yUgFdxg8F2fmurxnG6n210T2qs.e', 'duotien@email.com', 'Dương Tiến', '8653434576'),
+(3, 'a', '$2y$10$IQXuzslDYHv2JcKKVpto0.bbV5wNAE6t4UjoTcW41YIvf2NEgkFg.', 'a@a.com', 'aaaaaaa', '1235153');
 
 -- --------------------------------------------------------
 
@@ -185,13 +192,13 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `admin_account`
 --
 ALTER TABLE `admin_account`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `brand`
 --
 ALTER TABLE `brand`
-  MODIFY `brand_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `brand_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -209,7 +216,7 @@ ALTER TABLE `customer_account`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables
