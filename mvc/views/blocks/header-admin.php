@@ -53,10 +53,15 @@
                             <a href="../Admin/Product">
                                 <i class="fas fa-usd"></i>Product</a>
                         </li>
-                        <li>
-                            <a href="../Admin/User">   
-                                <i class="fas fa-user"></i>User</a>
-                        </li>
+                        <?php 
+                            if(isset($_SESSION["admin_user"]))
+                            {
+                                if($_SESSION["admin_user"]["type"] == 1)
+                                {
+                                    echo '<li><a href="../Admin/User"><i class="fas fa-user"></i>User</a></li>';
+                                }
+                            }
+                        ?>
                     </ul>
                 </nav>
             </div>
@@ -72,7 +77,7 @@
                                 <div class="account-wrap">
                                     <div class="account">
                                         <div class="content">
-                                            <span class="js-acc-btn"><?php echo $_SESSION["admin_user"] ?></span>
+                                            <span class="js-acc-btn"><?php echo $_SESSION["admin_user"]["name"] ?></span>
                                             <a href="../Admin/Logout">
                                                 <i class="zmdi zmdi-power"></i>Logout
                                             </a>

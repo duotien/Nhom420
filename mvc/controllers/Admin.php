@@ -255,14 +255,11 @@ class Admin extends Controller
                     $username = $_POST["username"];
                     $password = $_POST["pass"];
 
-                    if ($this->AdminModel->login($username, $password))
+                    if ($result = $this->AdminModel->login($username, $password))
                     {
+                        $_SESSION["admin_user"] = json_decode($result,true);
                         header("Location: http://localhost/Nhom420/Admin");
                         return true;
-                    }
-                    else
-                    {
-                        return false;
                     }
                 }
             }
@@ -272,7 +269,7 @@ class Admin extends Controller
 
     function Logout()
     {
-        $this->getView("master-view-admin-login", []);
+        header("Location: http://localhost/Nhom420/Admin/Login");
         $this->AdminModel->logout();
     }
 };

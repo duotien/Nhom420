@@ -66,13 +66,14 @@ class AdminModel extends Database
 
     function login($username, $password)
     {
-        $qr = "SELECT * FROM admin_account WHERE username='$username' AND pass='$password'";
+        $qr = "SELECT * FROM `admin_account` WHERE username='$username' AND pass='$password'";
         $result = mysqli_query($this->con, $qr);
-
-        if (mysqli_fetch_row($result) > 0)
+        $result = mysqli_fetch_array($result);
+        if ($result > 0)
         {
-            $_SESSION["admin_user"] = $username;
-            return true;
+            //$_SESSION["admin_user"] = json_encode(mysqli_fetch_row($result));
+            return json_encode($result);
+            //return true;
         }
         return false;
     }
