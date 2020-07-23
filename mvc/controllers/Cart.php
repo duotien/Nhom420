@@ -12,7 +12,7 @@ class Cart extends Controller
     {
         if (isset($_POST["add_to_cart"]))
         {
-            $id = @$_POST["hidden_id"];
+            $id = $_POST["hidden_id"];
             $my_product = json_decode($this->ProductModel->getProduct($id), true);
             $existed = false;
             
@@ -28,7 +28,7 @@ class Cart extends Controller
                 if(!$existed)
                 {
                     $_SESSION["shopping_cart_count"] += 1;
-                    $count = @$_SESSION["shopping_cart_count"];
+                    $count = $_SESSION["shopping_cart_count"];
                     $_SESSION["shopping_cart"][$count] = $my_product;
                 }
             }
