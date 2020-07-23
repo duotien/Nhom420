@@ -111,7 +111,7 @@
 											<label class=" form-control-label">Price</label>
 										</div>
 										<div class="col-12 col-md-9">
-											<input type="number" id="price-input" name="price-input" placeholder="1" class="form-control" value="<?php echo $data["SelectedProduct"]["price"]; ?>">
+											<input type="number" id="price-input" name="price-input" min="1" placeholder="1" class="form-control" value="<?php echo $data["SelectedProduct"]["price"]; ?>">
 										</div>
 									</div>
 									<div class="row form-group">
@@ -119,7 +119,7 @@
 											<label class=" form-control-label">Quantity</label>
 										</div>
 										<div class="col-12 col-md-9">
-											<input type="number" id="quantity-input" name="quantity-input" placeholder="1" class="form-control" value="<?php echo $data["SelectedProduct"]["quantity"]; ?>">
+											<input type="number" id="quantity-input" name="quantity-input" min="1" placeholder="1" class="form-control" value="<?php echo $data["SelectedProduct"]["quantity"]; ?>">
 										</div>
 									</div>
 									<div class="row form-group">
@@ -145,7 +145,7 @@
 										<button type="reset" class="btn btn-danger btn-sm">
 											<i class="fa fa-ban"></i> Reset
 										</button>
-										<a href="../Admin" type="button" class="btn btn-outline-success" style="border: none; float:right;">Back to Admin</a>
+										<a href="../Admin/Product" type="button" class="btn btn-outline-success" style="border: none; float:right;">Back to Admin</a>
 									</div>
 								</form>
 							</div>

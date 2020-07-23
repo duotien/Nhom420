@@ -101,7 +101,7 @@
 											<label class=" form-control-label">Price</label>
 										</div>
 										<div class="col-12 col-md-9">
-											<input type="number" id="price-input" name="price-input" value="1" placeholder="1" class="form-control">
+											<input type="number" id="price-input" name="price-input" min="1" value="1" placeholder="1" class="form-control">
 										</div>
 									</div>
 									<div class="row form-group">
@@ -109,7 +109,7 @@
 											<label class=" form-control-label">Quantity</label>
 										</div>
 										<div class="col-12 col-md-9">
-											<input type="number" id="quantity-input" name="quantity-input" value="1" placeholder="1" class="form-control">
+											<input type="number" id="quantity-input" name="quantity-input" min="1" value="1" placeholder="1" class="form-control">
 										</div>
 									</div>
 									<div class="row form-group">
@@ -135,7 +135,7 @@
 										<button type="reset" class="btn btn-danger btn-sm">
 											<i class="fa fa-ban"></i> Reset
 										</button>
-										<a href="../Admin" type="button" class="btn btn-outline-success" style="border: none; float:right;">Back to Admin</a>
+										<a href="../Admin/Product" type="button" class="btn btn-outline-success" style="border: none; float:right;">Back to Admin</a>
 										<?php
 											if(isset($data["Result"]))
 											{
