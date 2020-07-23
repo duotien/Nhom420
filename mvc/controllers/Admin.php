@@ -5,6 +5,7 @@ class Admin extends Controller
     public $ProductModel;
     public $UserModel;
     private $loggedin;
+    private $isadmin;
 
     function __construct()
     {
@@ -15,6 +16,7 @@ class Admin extends Controller
         if (isset($_SESSION["admin_user"]))
         {
             $this->loggedin = true;
+            $this->isadmin = $_SESSION["admin_user"]["type"];
         }
     }
 
@@ -34,7 +36,7 @@ class Admin extends Controller
 
     function User()
     {
-        if ($this->loggedin)
+        if ($this->loggedin && $this->isadmin)
         {
             $customer_list = json_decode($this->UserModel->getListCustomerUser(), true);
             $admin_list = json_decode($this->AdminModel->getListAdminUser(), true);
@@ -52,7 +54,7 @@ class Admin extends Controller
 
     function EditUser()
     {
-        if ($this->loggedin)
+        if ($this->loggedin && $this->isadmin)
         {
         }
         else
@@ -63,7 +65,7 @@ class Admin extends Controller
 
     function EdittingUser()
     {
-        if ($this->loggedin)
+        if ($this->loggedin && $this->isadmin)
         {
         }
         else
@@ -74,7 +76,7 @@ class Admin extends Controller
 
     function RemoveUser()
     {
-        if ($this->loggedin)
+        if ($this->loggedin && $this->isadmin)
         {
         }
         else
