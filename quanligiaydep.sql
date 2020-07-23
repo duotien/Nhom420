@@ -136,7 +136,6 @@ INSERT INTO `product` (`id`, `name`, `brand_id`, `cate_id`, `price`, `quantity`,
 (9, 'Nike Air Max 90 Red', 1, 2, 100, 100, 'images/product/Airmax90.jpg', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'),
 (10, 'Nike Air Max 270', 1, 1, 140, 100, 'images/product/Airmax270.jpg', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'),
 (11, 'Nike Air Zoom Pegasus 33 Shield', 1, 1, 130, 100, 'images/product/Pegasus_33_Shield.jpg', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'),
-(13, '$name', 1, 2, 4, 5, '$img_path', '$description');
 
 --
 -- Indexes for dumped tables
