@@ -47,10 +47,10 @@
             </div> 
             <div class="row">
                 <div class="left-category col-md-6">
-                    <img src="../public/images/men-shoes.jpg" alt="">
+                    <a href="../Product/Men"><img src="../public/images/men-shoes.jpg" alt=""></a>
                 </div>
                 <div class="right-category col-md-6">
-                    <img src="../public/images/women-shoes.jpg" alt="">
+                <a href="../Product/Women"><img src="../public/images/women-shoes.jpg" alt=""></a>
                 </div>
             </div>    
         </div>
