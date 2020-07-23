@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 23, 2020 at 07:47 AM
+-- Generation Time: Jul 23, 2020 at 10:04 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.7
 
@@ -65,7 +65,8 @@ INSERT INTO `brand` (`brand_id`, `name`) VALUES
 (2, 'Adidas'),
 (3, 'Converse'),
 (4, 'Puma'),
-(5, 'Vans');
+(5, 'Vans'),
+(6, 'Bitis');
 
 -- --------------------------------------------------------
 
@@ -108,7 +109,9 @@ CREATE TABLE `customer_account` (
 INSERT INTO `customer_account` (`id`, `username`, `pass`, `email`, `name`, `phone_number`) VALUES
 (1, 'hello', '$2y$10$iS5Sj9B./u710uWYQxYkrOlHqFdplNppqParRJ1d20R9ontXPKBuK', 'helloworld@email.com', 'Hello World', '42542546'),
 (2, 'duotien', '$2y$10$n2xSb.M0wZDW2YYFb1C10ONf5yUgFdxg8F2fmurxnG6n210T2qs.e', 'duotien@email.com', 'Dương Tiến', '8653434576'),
-(3, 'a', '$2y$10$IQXuzslDYHv2JcKKVpto0.bbV5wNAE6t4UjoTcW41YIvf2NEgkFg.', 'a@a.com', 'aaaaaaa', '1235153');
+(3, 'a', '$2y$10$IQXuzslDYHv2JcKKVpto0.bbV5wNAE6t4UjoTcW41YIvf2NEgkFg.', 'a@a.com', 'aaaaaaa', '1235153'),
+(4, 'b', '$2y$10$.URFbOMYkBzwJu1kXZel2uzo3uRVchojeF7qjIftBU4ITAOC5rJPu', 'b@b.com', 'Mister BBBBB', '1363821'),
+(5, 'c', '$2y$10$atv6Id31nHCjNVa74fLOiezp4.NC0Z/plEzI.37b8rsxK5RbEGJ3.', 'c@c.com', 'Mrs. C', '23567783');
 
 -- --------------------------------------------------------
 
@@ -154,7 +157,8 @@ INSERT INTO `product` (`id`, `name`, `brand_id`, `cate_id`, `price`, `quantity`,
 ALTER TABLE `admin_account`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `username` (`username`),
-  ADD UNIQUE KEY `email` (`email`);
+  ADD UNIQUE KEY `email` (`email`),
+  ADD UNIQUE KEY `phone_number` (`phone_number`);
 
 --
 -- Indexes for table `brand`
@@ -174,7 +178,8 @@ ALTER TABLE `category`
 ALTER TABLE `customer_account`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `username` (`username`),
-  ADD UNIQUE KEY `email` (`email`);
+  ADD UNIQUE KEY `email` (`email`),
+  ADD UNIQUE KEY `phone_number` (`phone_number`);
 
 --
 -- Indexes for table `product`
@@ -198,7 +203,7 @@ ALTER TABLE `admin_account`
 -- AUTO_INCREMENT for table `brand`
 --
 ALTER TABLE `brand`
-  MODIFY `brand_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `brand_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -210,7 +215,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `customer_account`
 --
 ALTER TABLE `customer_account`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `product`
