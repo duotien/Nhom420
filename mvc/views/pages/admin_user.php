@@ -32,8 +32,9 @@
                                         <thead>
                                             <tr>
                                                 <th></th>
-                                                <th>username</th>
+                                                <th>name</th>
                                                 <th>email</th>
+                                                <th>phone number</th>
                                                 <th></th>
                                             </tr>
                                         </thead>
@@ -44,11 +45,11 @@
                                             ?>
                                                 <tr class="tr-shadow">
                                                     <td></td>
-                                                    <td><?php echo $customer["username"]; ?></td>
-                                                    
+                                                    <td><?php echo $customer["name"]; ?></td>
                                                     <td>
                                                         <span class="block-email"><?php echo $customer["email"]; ?></span>
                                                     </td>
+                                                    <td><?php echo $customer["phone_number"]; ?></td>
                                                     <td>
                                                         <div class="table-data-feature">
                                                         <a href="../Admin/EditUser/<?php echo $customer["id"] ?>"><button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
@@ -108,7 +109,8 @@
                                         <thead>
                                             <tr>
                                                 <td></td>
-                                                <td>username</td>
+                                                <td>name</td>
+                                                <td>phone number</td>
                                                 <td>role</td>
                                                 <td></td>
                                             </tr>
@@ -122,11 +124,14 @@
                                                     <td></td>
                                                     <td>
                                                         <div class="table-data__info">
-                                                            <h6><?php echo $adminuser["username"]; ?></h6>
+                                                            <h6><?php echo $adminuser["name"]; ?></h6>
                                                             <span>
-                                                                <a href="#"><?php $adminuser["email"] ?></a>
+                                                                <a href="#"><?php echo $adminuser["email"]; ?></a>
                                                             </span>
                                                         </div>
+                                                    </td>
+                                                    <td>
+                                                        <?php echo $adminuser["phone_number"]; ?>
                                                     </td>
                                                     <td>
                                                         <?php
