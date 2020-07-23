@@ -57,4 +57,28 @@ class ProductModel extends Database
         }
         return json_encode($my_array);
     }
+
+    function listBrand()
+    {
+        $qr = "SELECT * FROM `brand`";
+        $result = mysqli_query($this->con, $qr);
+        $my_array = array();
+        while ($row = mysqli_fetch_array($result))
+        {
+            $my_array[] = $row;
+        }
+        return json_encode($my_array);
+    }
+
+    function listCategory()
+    {
+        $qr = "SELECT * FROM `category`";
+        $result = mysqli_query($this->con, $qr);
+        $my_array = array();
+        while ($row = mysqli_fetch_array($result))
+        {
+            $my_array[] = $row;
+        }
+        return json_encode($my_array);
+    }
 }

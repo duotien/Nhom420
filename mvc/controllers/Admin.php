@@ -89,8 +89,8 @@ class Admin extends Controller
         if ($this->loggedin)
         {
             $product_array = json_decode($this->ProductModel->showList(), true);
-            $brand_array = json_decode($this->AdminModel->listBrand(), true);
-            $category_array = json_decode($this->AdminModel->listCategory(), true);
+            $brand_array = json_decode($this->ProductModel->listBrand(), true);
+            $category_array = json_decode($this->ProductModel->listCategory(), true);
 
             $this->getView("master-view-admin", [
                 "Page" => "admin_product2",
@@ -109,8 +109,8 @@ class Admin extends Controller
     {
         if ($this->loggedin)
         {
-            $brand_list = json_decode($this->AdminModel->listBrand(), true);
-            $category_list = json_decode($this->AdminModel->listCategory(), true);
+            $brand_list = json_decode($this->ProductModel->listBrand(), true);
+            $category_list = json_decode($this->ProductModel->listCategory(), true);
             $this->getView("master-view-1", [
                 "Page" => "admin_add",
                 "BrandList" => $brand_list,
@@ -144,14 +144,15 @@ class Admin extends Controller
     {
         if ($this->loggedin)
         {
-            if ($id == 0)
+            $brand_list = json_decode($this->ProductModel->listBrand(), true);
+            $category_list = json_decode($this->ProductModel->listCategory(), true);
+            $my_product = json_decode($this->ProductModel->getProduct($id), true);
+            
+            if (!$my_product)
             {
                 header("Location: http://localhost/Nhom420/Admin/Product");
                 return false;
             }
-            $brand_list = json_decode($this->AdminModel->listBrand(), true);
-            $category_list = json_decode($this->AdminModel->listCategory(), true);
-            $my_product = json_decode($this->AdminModel->getProduct($id), true);
 
             $this->getView("master-view-1", [
                 "Page" => "admin_edit",
@@ -170,12 +171,13 @@ class Admin extends Controller
     {
         if ($this->loggedin)
         {
-            if ($id == 0)
+            $my_product = json_decode($this->ProductModel->getProduct($id), true);
+
+            if (!$my_product)
             {
                 header("Location: http://localhost/Nhom420/Admin/Product");
                 return false;
             }
-            $my_product = json_decode($this->AdminModel->getProduct($id), true);
             $result = false;
             if (isset($_POST["btn_edit_product"]))
             {
