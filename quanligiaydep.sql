@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 23, 2020 at 10:04 AM
+-- Generation Time: Jul 24, 2020 at 08:19 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.7
 
@@ -135,17 +135,33 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `brand_id`, `cate_id`, `price`, `quantity`, `img_path`, `description`) VALUES
-(1, 'Giày Nikey', 1, 1, 300, 12, 'images/product/react-phantom-run-flyknit-.jpg', 'asjdasdasdj'),
-(2, 'Giày adidas', 2, 2, 150, 300, 'images/product/custom-nike-blazer-low.jpg', 'giày adidas'),
-(3, 'Adidas Ultra Boost 20', 2, 1, 130, 100, 'images/product/Giay_UltraBoost_20.jpg', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'),
-(4, 'Adidas Originals Superstar White', 2, 2, 100, 100, 'images/product/adidas-superstar-white.jpg', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'),
-(5, 'Adidas Originals Superstar Black', 2, 1, 100, 100, 'images/product/Superstar_black.jpg', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'),
-(6, 'Jordan 1 Retro High Court Purple', 2, 1, 120, 100, 'images/product/Jordan1.jpg', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'),
-(7, 'Nike Air Zoom Streak 7', 1, 2, 130, 100, 'images/product/Zoom_Streak7.jpg', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'),
-(8, 'Nike Zoom Fly Flyknit', 1, 1, 100, 100, 'images/product/Zoom_fly_flyknit.jpg', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'),
-(9, 'Nike Air Max 90 Red', 1, 2, 100, 100, 'images/product/Airmax90.jpg', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'),
-(10, 'Nike Air Max 270', 1, 1, 140, 100, 'images/product/Airmax270.jpg', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'),
-(11, 'Nike Air Zoom Pegasus 33 Shield', 1, 1, 130, 100, 'images/product/Pegasus_33_Shield.jpg', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.');
+(1, 'Giày Nikey', 1, 1, 300, 12, 'images/product/react-phantom-run-flyknit-.jpg', 'This is description'),
+(2, 'Giày adidas', 2, 2, 150, 300, 'images/product/custom-nike-blazer-low.jpg', 'This is description'),
+(3, 'Adidas Ultra Boost 20', 2, 1, 130, 100, 'images/product/Giay_UltraBoost_20.jpg', 'This is description'),
+(4, 'Adidas Originals Superstar White', 2, 2, 100, 100, 'images/product/adidas-superstar-white.jpg', 'This is description'),
+(5, 'Adidas Originals Superstar Black', 2, 1, 100, 100, 'images/product/Superstar_black.jpg', 'This is description'),
+(6, 'Jordan 1 Retro High Court Purple', 2, 1, 120, 100, 'images/product/Jordan1.jpg', 'This is description'),
+(7, 'Nike Air Zoom Streak 7', 1, 2, 130, 100, 'images/product/Zoom_Streak7.jpg', 'This is description'),
+(8, 'Nike Zoom Fly Flyknit', 1, 1, 100, 100, 'images/product/Zoom_fly_flyknit.jpg', 'This is description'),
+(9, 'Nike Air Max 90 Red', 1, 2, 100, 100, 'images/product/Airmax90.jpg', 'This is description\r\n'),
+(10, 'Nike Air Max 270', 1, 1, 140, 100, 'images/product/Airmax270.jpg', 'This is description'),
+(11, 'Nike Air Zoom Pegasus 33 Shield', 1, 1, 130, 100, 'images/product/Pegasus_33_Shield.jpg', 'This is description'),
+(12, 'Converse 1970s High', 3, 1, 100, 50, 'images/product/Converse_1970s.png', '1970s White version'),
+(13, 'Puma RS-X', 4, 2, 200, 10, 'images/product/Puma RS-X.jpg', 'Lightful Color'),
+(14, 'Puma Cali Trainer', 4, 2, 250, 20, 'images/product/Puma Cali Trainers.jpg', 'This is description'),
+(15, 'Converse Low', 3, 1, 50, 100, 'images/product/ConverseLow.jpg', 'Yellow color'),
+(16, 'Vans Old Skool ', 5, 2, 80, 50, 'images/product/Van pink.jpg', 'Pink'),
+(17, 'Vans Old Skool ', 5, 1, 100, 120, 'images/product/Vans old skool.jpg', 'Vans'),
+(18, 'Vans Old Skool ', 5, 2, 80, 100, 'images/product/Vans Slip-on.jpg', 'Slip-on'),
+(19, 'Converse All-Stars Logo', 3, 1, 200, 50, 'images/product/Converse.jpg', 'All-Stars Logo'),
+(20, 'Converse Water-proof Gore-Tex', 3, 1, 180, 20, 'images/product/Converse1.jpg', 'Waterproof'),
+(21, 'Puma X Selena Gomez', 4, 2, 300, 200, 'images/product/PumaxSelena.jpg', 'Selena'),
+(22, 'Bitis Hunter PKL', 6, 1, 50, 100, 'images/product/Hunter PKL.jpg', 'This is description'),
+(23, 'Bitis Hunter PKL', 6, 1, 50, 50, 'images/product/Hunter PKl.jpeg', 'This is description'),
+(24, 'Bitis Hunter X', 6, 2, 30, 100, 'images/product/HUNTER X.jpg', 'This is description\r\n'),
+(25, 'Bitis Hunter Core', 6, 2, 35, 50, 'images/product/Hunter Core.jpg', 'Core'),
+(26, 'Adidas Originals Superstar White', 2, 2, 100, 100, 'images/product/adidas-superstar-white.jpg', 'This is description'),
+(27, 'Nike Air Max 270', 1, 1, 140, 100, 'images/product/Airmax270.jpg', 'This is description');
 
 --
 -- Indexes for dumped tables
@@ -221,7 +237,7 @@ ALTER TABLE `customer_account`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- Constraints for dumped tables
