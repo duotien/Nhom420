@@ -128,16 +128,16 @@ class Admin extends Controller
     {
         if ($this->loggedin)
         {
-            $product_array = json_decode($this->ProductModel->showList(), true);
-            $brand_array = json_decode($this->ProductModel->listBrand(), true);
-            $category_array = json_decode($this->ProductModel->listCategory(), true);
+            $product_list = json_decode($this->ProductModel->showList(), true);
+            $brand_list = json_decode($this->ProductModel->listBrand(), true);
+            $category_list = json_decode($this->ProductModel->listCategory(), true);
 
             $this->getView("master-view-admin", [
                 "Page" => "admin_product2",
                 "ActiveMenu" => "Product",
-                "ProductArray" => $product_array,
-                "BrandArray" => $brand_array,
-                "CategoryArray" => $category_array
+                "ProductList" => $product_list,
+                "BrandList" => $brand_list,
+                "CategoryList" => $category_list
             ]);
         }
         else
@@ -150,14 +150,6 @@ class Admin extends Controller
     {
         if ($this->loggedin)
         {
-            $brand_list = json_decode($this->ProductModel->listBrand(), true);
-            $category_list = json_decode($this->ProductModel->listCategory(), true);
-            $this->getView("master-view-1", [
-                "Page" => "admin_add",
-                "ActiveMenu" => "Product",
-                "BrandList" => $brand_list,
-                "CategoryList" => $category_list
-            ]);
             if (isset($_POST["btn_add_product"]))
             {
                 $name = $_POST["product-input"];
@@ -173,6 +165,7 @@ class Admin extends Controller
                     $img_path = $this->uploadImage($_FILES);
                     $result = $this->AdminModel->addProduct($name, $brand_id, $cate_id, $price, $quantity, $img_path, $description);
                 }
+                header("Location: http://localhost/Nhom420/Admin/Product");
                 return $result;
             }
         }
@@ -181,7 +174,7 @@ class Admin extends Controller
             header("Location: http://localhost/Nhom420/Admin/Login");
         }
     }
-
+    
     function EditProduct($id = 0)
     {
         if ($this->loggedin)
@@ -318,3 +311,42 @@ class Admin extends Controller
         $this->AdminModel->logout();
     }
 };
+
+/*
+//old add product
+    function AddProduct()
+    {
+        if ($this->loggedin)
+        {
+            $brand_list = json_decode($this->ProductModel->listBrand(), true);
+            $category_list = json_decode($this->ProductModel->listCategory(), true);
+            $this->getView("master-view-1", [
+                "Page" => "admin_add",
+                "ActiveMenu" => "Product",
+                "BrandList" => $brand_list,
+                "CategoryList" => $category_list
+            ]);
+            if (isset($_POST["btn_add_product"]))
+            {
+                $name = $_POST["product-input"];
+                $brand_id = $_POST["brand-input"];
+                $cate_id = $_POST["cate-input"];
+                $price = $_POST["price-input"];
+                $quantity = $_POST["quantity-input"];
+                $description = $_POST["description-input"];
+
+                $result = false;
+                if (!empty($name))
+                {
+                    $img_path = $this->uploadImage($_FILES);
+                    $result = $this->AdminModel->addProduct($name, $brand_id, $cate_id, $price, $quantity, $img_path, $description);
+                }
+                return $result;
+            }
+        }
+        else
+        {
+            header("Location: http://localhost/Nhom420/Admin/Login");
+        }
+    }
+*/

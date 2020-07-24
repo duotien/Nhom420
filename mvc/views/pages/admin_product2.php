@@ -47,18 +47,18 @@
                                             </thead>
                                             <tbody>
                                                 <?php
-                                                    foreach($data["ProductArray"] as $product)
+                                                    foreach($data["ProductList"] as $product)
                                                     {
                                                 ?>
                                                     <tr class="tr-shadow">
                                                         <td><img src="<?php echo $product["img_path"] ?>" /></td>
                                                         <td><?php echo $product["id"] ?></td>
                                                         <td>
-                                                            <span class="block-email"><?php echo $data["BrandArray"][$product["brand_id"]-1]["name"]; ?></span>
+                                                            <span class="block-email"><?php echo $data["BrandList"][$product["brand_id"]-1]["name"]; ?></span>
                                                         </td>
                                                         <td class="desc"><?php echo $product["name"] ?></td>
                                                         <td>
-                                                            <span class="block-email"><?php echo $data["CategoryArray"][$product["cate_id"]-1]["name"]; ?></span>
+                                                            <span class="block-email"><?php echo $data["CategoryList"][$product["cate_id"]-1]["name"]; ?></span>
                                                         </td>
                                                         <td>
                                                             <?php echo $product["quantity"] ?>
@@ -70,7 +70,6 @@
                                                                     <i class="zmdi zmdi-edit"></i>
                                                                 </button></a>
                                                                 <form class="formDel"
-                                                                    
                                                                     method="POST"
                                                                     action='../Admin/RemoveProduct/<?php echo $product["id"] ?>'
                                                                     onsubmit="return(myFunction());"
