@@ -38,16 +38,9 @@
 
 
 
-                                    <td id="content"></td>
+                                    <td id="content"><?php echo $key['price'];?></td>
                                     
-                                    <script>
-                                        
-                                        var soluong = document.getElementById('quantity');
-                                        var Totals = <?php echo $key["price"]; ?>;
-                                        soluong.setAttribute('value', soluong.value);
-                                        
-                                        $("#content").html(soluong.value * Totals);
-                                    </script>
+                                    
                                     <td class="text-right"><a href="../Cart/Remove/<?php echo $key["index"]; ?>"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button></a> </td>
                                 </tr>
                                         
