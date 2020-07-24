@@ -71,7 +71,6 @@ class Product extends Controller
         if(isset($_POST["btn_filter"]))
         {
             $brand = $_POST["brand"];
-            print_r($brand);
         }
         $product_array = json_decode($this->ProductModel->getListByBrand($brand), true);
         $brand_array = json_decode($this->ProductModel->listBrand(), true);
