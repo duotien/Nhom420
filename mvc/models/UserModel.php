@@ -35,6 +35,17 @@ class UserModel extends Database
         return $result;
     }
 
+    function removeCustomerUser($id)
+    {
+        $qr = "DELETE FROM `customer_account` WHERE `id`=$id";
+        $result = false;
+        if (mysqli_query($this->con, $qr))
+        {
+            $result = true;
+        }
+        return $result;
+    }
+
     function getListCustomerUser()
     {
         $qr = "SELECT * FROM `customer_account`";

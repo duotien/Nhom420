@@ -83,7 +83,7 @@ class Admin extends Controller
     {
         if ($this->loggedin && $this->isadmin)
         {
-            $selected_user = $this->UserModel->getCustomerUserById($id);
+            $selected_user = json_decode($this->UserModel->getCustomerUserById($id), true);
             if (!$selected_user)
             {
                 header("Location: http://localhost/Nhom420/Admin/User");
@@ -113,10 +113,24 @@ class Admin extends Controller
         }
     }
 
-    function RemoveUser()
+    function RemoveUser($id = 0)
     {
         if ($this->loggedin && $this->isadmin)
         {
+            $selected_user = json_decode($this->UserModel->getCustomerUserById($id), true);
+            $result = false;
+            if ($selected_user)
+            {
+                if (isset($_POST["btn-remove"]))
+                {
+                    if ($this->UserModel->removeCustomerUser($id))
+                    {
+                        $result = true;
+                    }
+                }
+            }
+            header("Location: http://localhost/Nhom420/Admin/User");
+            return $result;
         }
         else
         {
@@ -174,7 +188,7 @@ class Admin extends Controller
             header("Location: http://localhost/Nhom420/Admin/Login");
         }
     }
-    
+
     function EditProduct($id = 0)
     {
         if ($this->loggedin)
@@ -250,16 +264,16 @@ class Admin extends Controller
     {
         if ($this->loggedin)
         {
-            if ($id == 0)
-            {
-                header("Location: http://localhost/Nhom420/Admin/Product");
-            }
+            $selected_product = json_decode($this->ProductModel->getProduct($id), true);
             $result = false;
-            if (isset($_POST["btn-remove"]))
+            if ($selected_product)
             {
-                if ($this->AdminModel->removeProduct($id))
+                if (isset($_POST["btn-remove"]))
                 {
-                    $result = true;
+                    if ($this->AdminModel->removeProduct($id))
+                    {
+                        $result = true;
+                    }
                 }
             }
             header("Location: http://localhost/Nhom420/Admin/Product");
