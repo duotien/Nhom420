@@ -45,11 +45,11 @@
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
-                        <li>
+                        <li <?php if($data["ActiveMenu"] == "Dashboard") echo 'class="active has-sub"'; ?>>
                             <a href="../Admin/Dashboard">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
-                        <li class="active has-sub">
+                        <li <?php if($data["ActiveMenu"] == "Product") echo 'class="active has-sub"'; ?> >
                             <a href="../Admin/Product">
                                 <i class="fas fa-usd"></i>Product</a>
                         </li>
@@ -58,7 +58,14 @@
                             {
                                 if($_SESSION["admin_user"]["type"] == 1)
                                 {
-                                    echo '<li><a href="../Admin/User"><i class="fas fa-user"></i>User</a></li>';
+                                    if($data["ActiveMenu"] == "User")
+                                    {
+                                        echo '<li class="active has-sub"><a href="../Admin/User"><i class="fas fa-user"></i>User</a></li>';
+                                    }
+                                    else
+                                    {
+                                        echo '<li><a href="../Admin/User"><i class="fas fa-user"></i>User</a></li>';
+                                    }
                                 }
                             }
                         ?>

@@ -26,6 +26,7 @@ class Admin extends Controller
         if ($this->loggedin)
         {
             $this->getView("master-view-admin", [
+                "ActiveMenu" => "Dashboard",
                 "Page" => "admin_dashboard"
             ]);
         }
@@ -43,6 +44,7 @@ class Admin extends Controller
             $admin_list = json_decode($this->AdminModel->getListAdminUser(), true);
             $this->getView("master-view-admin", [
                 "Page" => "admin_user",
+                "ActiveMenu" => "User",
                 "CustomerList" => $customer_list,
                 "AdminList" => $admin_list
             ]);
@@ -57,8 +59,8 @@ class Admin extends Controller
     {
         if ($this->loggedin && $this->isadmin)
         {
-            $selected_user = json_decode($this->UserModel->getCustomerUserById($id),true);
-            if(!$selected_user)
+            $selected_user = json_decode($this->UserModel->getCustomerUserById($id), true);
+            if (!$selected_user)
             {
                 header("Location: http://localhost/Nhom420/Admin/User");
             }
@@ -66,6 +68,7 @@ class Admin extends Controller
             {
                 $this->getView("master-view-1", [
                     "Page" => "admin_editcustomer",
+                    "ActiveMenu" => "User",
                     "SelectedCustomer" => $selected_user
                 ]);
             }
@@ -76,10 +79,33 @@ class Admin extends Controller
         }
     }
 
-    function EdittingUser()
+    function EdittingUser($id = 0)
     {
         if ($this->loggedin && $this->isadmin)
         {
+            $selected_user = $this->UserModel->getCustomerUserById($id);
+            if (!$selected_user)
+            {
+                header("Location: http://localhost/Nhom420/Admin/User");
+                return false;
+            }
+            else
+            {
+                $result = false;
+                if (isset($_POST["btn_edit_customer"]))
+                {
+                    $name = $_POST["name"];
+                    $email = $_POST["email"];
+                    $phone_number = $_POST["phone_number"];
+
+                    if (!empty($name) && !empty($email) && !empty($phone_number))
+                    {
+                        $result = $this->UserModel->editCustomerUser($id, $email, $name, $phone_number);
+                    }
+                }
+                header("Location: http://localhost/Nhom420/Admin/EditUser/$id");
+                return $result;
+            }
         }
         else
         {
@@ -108,6 +134,7 @@ class Admin extends Controller
 
             $this->getView("master-view-admin", [
                 "Page" => "admin_product2",
+                "ActiveMenu" => "Product",
                 "ProductArray" => $product_array,
                 "BrandArray" => $brand_array,
                 "CategoryArray" => $category_array
@@ -127,6 +154,7 @@ class Admin extends Controller
             $category_list = json_decode($this->ProductModel->listCategory(), true);
             $this->getView("master-view-1", [
                 "Page" => "admin_add",
+                "ActiveMenu" => "Product",
                 "BrandList" => $brand_list,
                 "CategoryList" => $category_list
             ]);
@@ -170,6 +198,7 @@ class Admin extends Controller
             {
                 $this->getView("master-view-1", [
                     "Page" => "admin_edit",
+                    "ActiveMenu" => "Product",
                     "BrandList" => $brand_list,
                     "CategoryList" => $category_list,
                     "SelectedProduct" => $my_product
@@ -273,7 +302,7 @@ class Admin extends Controller
 
                     if ($result = $this->AdminModel->login($username, $password))
                     {
-                        $_SESSION["admin_user"] = json_decode($result,true);
+                        $_SESSION["admin_user"] = json_decode($result, true);
                         header("Location: http://localhost/Nhom420/Admin");
                         return true;
                     }

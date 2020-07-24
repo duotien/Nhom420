@@ -20,6 +20,21 @@ class UserModel extends Database
         return $result;
     }
 
+    function editCustomerUser($id, $email, $name, $phone_number)
+    {
+        $qr = "UPDATE `customer_account` SET
+            `email`='$email',
+            `name`='$name',
+            `phone_number`='$phone_number'
+            WHERE `id`=$id";
+        $result = false;
+        if (mysqli_query($this->con, $qr))
+        {
+            $result = true;
+        }
+        return $result;
+    }
+
     function getListCustomerUser()
     {
         $qr = "SELECT * FROM `customer_account`";
