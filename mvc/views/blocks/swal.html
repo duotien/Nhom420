@@ -1,31 +1,31 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
-    document.querySelector('.formDel').addEventListener('submit', function(e) {
-  var form = this;
+	document.querySelector('.formDel').addEventListener('submit', function (e) {
+		var form = this;
 
-  e.preventDefault(); // <--- prevent form from submitting
+		e.preventDefault(); // <--- prevent form from submitting
 
-  swal({
-      title: "Are you sure?",
-      text: "Once deleted, you will not be able to recover this item!",
-      icon: "warning",
-      buttons: [
-        'Cancel',
-        'Yes, I am sure'
-      ],
-      dangerMode: true,
-    }).then(function(isConfirm) {
-      if (isConfirm) {
-        swal({
-          title: 'Deleted!',
-          text: 'This item has been deleted!',
-          icon: 'success'
-        }).then(function() {
-          form.submit(); // <--- submit form programmatically
-        });
-      } else {
-        swal("Cancelled", "This item is safe now", "error");
-      }
-    })
-});
+		swal({
+			title: "Are you sure?",
+			text: "Once deleted, you will not be able to recover this item!",
+			icon: "warning",
+			buttons: [
+				'Cancel',
+				'Yes, I am sure'
+			],
+			dangerMode: true,
+		}).then(function (isConfirm) {
+			if (isConfirm) {
+				swal({
+					title: 'Deleted!',
+					text: 'This item has been deleted!',
+					icon: 'success'
+				}).then(function () {
+					form.submit(); // <--- submit form programmatically
+				});
+			} else {
+				swal("Cancelled", "This item is safe now", "error");
+			}
+		})
+	});
 </script>
