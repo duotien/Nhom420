@@ -16,101 +16,104 @@
         <div id="category" class="container-fluid">
             <div class="row">
                 <div class="left-420-filter-panel col-md-2">
-                    <div class="n420-filter-search-status">
-                        <div class="n420-filter-search-status_text" style="font-size: 17px; margin-left: 5px;">BỘ LỌC SẢN PHẨM<br>---------------</br></div>
-                    </div>
-                    <div class="n420-filter-group n420-facet-filter" style="margin-left: 5px;">
-                        <div class="n420-filter-group-header">Theo Danh Mục</div>
-                        <div class="folding-items n420-filter-group_body folding-items--folded">
-                            <?php
-                                foreach($data["BrandList"] as $brand)
-                                {
-                            ?>
+                    <form action="../Admin" method="post">
+                        <div class="n420-filter-search-status">
+                            <div class="n420-filter-search-status_text" style="font-size: 17px; margin-left: 5px;">BỘ LỌC SẢN PHẨM<br>---------------</br></div>
+                        </div>
+                        <div class="n420-filter-group n420-facet-filter" style="margin-left: 5px;">
+                            <div class="n420-filter-group-header">Theo Danh Mục</div>
+                            <div class="folding-items n420-filter-group_body folding-items--folded">
+                                <?php
+                                    foreach($data["BrandList"] as $brand)
+                                    {
+                                ?>
+                                    <div class="n420-filter n420-checkbox-filter">
+                                        <div class="n420-checkbox">
+                                            <label class="420-checkbox_control">
+                                                <input type="checkbox" id="opt_<?php echo $brand["id"];?>"/>
+                                            </label>
+                                            <span class="n420-checkbox_label"><?php echo $brand["name"];?></span>
+                                        </div>
+                                    </div>
+                                <?php
+                                    }
+                                ?>
+                            </div>
+                            <div class="n420-filter-group-header">Theo Size</div>
+                            <div class="folding-items n420-filter-group_body folding-items--folded">
                                 <div class="n420-filter n420-checkbox-filter">
                                     <div class="n420-checkbox">
-                                        <label class="420-checkbox_control">
-                                            <input type="checkbox" id="opt_<?php echo $brand["id"];?>"/>
+                                        <label class="n420-checkbox_control">
+                                            <input type="checkbox" id="opt_6"/>
                                         </label>
-                                        <span class="n420-checkbox_label"><?php echo $brand["name"];?></span>
+                                        <span class="n420-checkbox_label">38</span>
                                     </div>
                                 </div>
-                            <?php
-                                }
-                            ?>
-                        </div>
-                        <div class="n420-filter-group-header">Theo Size</div>
-                        <div class="folding-items n420-filter-group_body folding-items--folded">
-                            <div class="n420-filter n420-checkbox-filter">
-                                <div class="n420-checkbox">
-                                    <label class="n420-checkbox_control">
-                                        <input type="checkbox" id="opt_6"/>
-                                    </label>
-                                    <span class="n420-checkbox_label">38</span>
+                                <div class="n420-filter n420-checkbox-filter">
+                                    <div class="420-checkbox">
+                                        <label class="n420-checkbox_control">
+                                            <input type="checkbox" id="opt_7"/>
+                                        </label>
+                                        <span class="n420-checkbox_label">39</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="n420-filter n420-checkbox-filter">
-                                <div class="420-checkbox">
-                                    <label class="n420-checkbox_control">
-                                        <input type="checkbox" id="opt_7"/>
-                                    </label>
-                                    <span class="n420-checkbox_label">39</span>
+                                <div class="n420-filter n420-checkbox-filter">
+                                    <div class="n420-checkbox">
+                                        <label class="n420-checkbox_control">
+                                            <input type="checkbox" id="opt_8"/>
+                                        </label>
+                                        <span class="n420-checkbox_label">40</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="n420-filter n420-checkbox-filter">
-                                <div class="n420-checkbox">
-                                    <label class="n420-checkbox_control">
-                                        <input type="checkbox" id="opt_8"/>
-                                    </label>
-                                    <span class="n420-checkbox_label">40</span>
+                                <div class="n420-filter n420-checkbox-filter">
+                                    <div class="n420-checkbox">
+                                        <label class="n420-checkbox_control">
+                                            <input type="checkbox" id="opt_9"/>
+                                        </label>
+                                        <span class="n420-checkbox_label">41</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="n420-filter n420-checkbox-filter">
-                                <div class="n420-checkbox">
-                                    <label class="n420-checkbox_control">
-                                        <input type="checkbox" id="opt_9"/>
-                                    </label>
-                                    <span class="n420-checkbox_label">41</span>
+                                <div class="n420-filter n420-checkbox-filter">
+                                    <div class="n420-checkbox">
+                                        <label class="n420-checkbox_control">
+                                            <input type="checkbox" id="opt_10"/>
+                                        </label>
+                                        <span class="n420-checkbox_label">42</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="n420-filter n420-checkbox-filter">
-                                <div class="n420-checkbox">
-                                    <label class="n420-checkbox_control">
-                                        <input type="checkbox" id="opt_10"/>
-                                    </label>
-                                    <span class="n420-checkbox_label">42</span>
+                                <div class="n420-filter n420-checkbox-filter">
+                                    <div class="n420-checkbox">
+                                        <label class="n420-checkbox_control">
+                                            <input type="checkbox" id="opt_11"/>
+                                        </label>
+                                        <span class="n420-checkbox_label">43</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="n420-filter n420-checkbox-filter">
-                                <div class="n420-checkbox">
-                                    <label class="n420-checkbox_control">
-                                        <input type="checkbox" id="opt_11"/>
-                                    </label>
-                                    <span class="n420-checkbox_label">43</span>
+                                <div class="n420-filter n420-checkbox-filter">
+                                    <div class="n420-checkbox">
+                                        <label class="n420-checkbox_control">
+                                            <input type="checkbox" id="opt_12" />
+                                        </label>
+                                        <span class="n420-checkbox_label">44</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="n420-filter n420-checkbox-filter">
-                                <div class="n420-checkbox">
-                                    <label class="n420-checkbox_control">
-                                        <input type="checkbox" id="opt_12" />
-                                    </label>
-                                    <span class="n420-checkbox_label">44</span>
-                                </div>
-                            </div>
-                            <div class="n420-filter n420-checkbox-filter">
-                                <div class="n420-checkbox">
-                                    <label class="n420-checkbox_control">
-                                        <input type="checkbox" id="opt_13"/>
-                                    </label>
-                                    <span class="n420-checkbox_label">45</span>
+                                <div class="n420-filter n420-checkbox-filter">
+                                    <div class="n420-checkbox">
+                                        <label class="n420-checkbox_control">
+                                            <input type="checkbox" id="opt_13"/>
+                                        </label>
+                                        <span class="n420-checkbox_label">45</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="n420-filter-button" style="margin-left: 5px ;">
-                        <button id="btnSubmit" class="n420-filter-button-submit" type="submit">Lọc</button>
-                        
-                        <button id="btnReset" class="n420-filter-button-reset" type="reset">Làm mới</button>
-                    </div>
+                        <div class="n420-filter-button" style="margin-left: 5px ;">
+                            <button id="btnSubmit" class="n420-filter-button-submit" type="submit">Lọc</button>
+                            
+                            <button id="btnReset" class="n420-filter-button-reset" type="reset">Làm mới</button>
+                        </div>
+                    </form>
+                    
                 </div>
                 <div class="right-bodyContainer col-md-10">
                     <h2 class="n420-product-title">Trending</h2>
