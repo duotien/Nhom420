@@ -22,36 +22,51 @@
                     </thead>
                     <tbody>
                         <?php
-                        $total= 0;
-                        $index=0;
-                        if (isset($data["ShoppingCart"])){
-                        foreach ($data["ShoppingCart"] as $key) {
-                            $key["index"] = $index;
-                            $index++;
+                        $total = 0;
+                        $index = 0;
+                        if (isset($data["ShoppingCart"])) {
+                            foreach ($data["ShoppingCart"] as $key) {
+                                $key["index"] = $index;
+                                $index++;
                         ?>
 
-                            <tr>
-                                <td><img src="<?php echo $key["img_path"] ?>" /> </td>
-                                <td><?php echo $key["name"] ?></td>
-                                <td>In stock</td>
-                                <td><input class="form-control" type="number" name="quantity" min="1"/></td>
-                                <td><?php echo $key["price"] ?></td>
-                            
-                                <td class="text-right"><a href="../Cart/Remove/<?php echo $key["index"]; ?>"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button></a> </td>
-                            </tr>
-                            <?php
-                                $total = $total + ($key["price"]);
-                            ?>
-                    <?php }} ?>
+                                <tr>
+                                    <td><img src="<?php echo $key["img_path"] ?>" /> </td>
+                                    <td><?php echo $key["name"] ?></td>
+                                    <td>In stock</td>
+                                    <td><input class="form-control" type="number" name="quantity" id="quantity" min="1" max="10" value="1"/></td>
 
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td><strong>Total</strong></td>
-                                <td class="text-right"><strong>$ <?php echo number_format($total, 3); ?></strong></td>
-                            </tr>
+
+
+                                    <td id="content"></td>
+                                    
+                                    <script>
+                                        
+                                        var soluong = document.getElementById('quantity');
+                                        var Totals = <?php echo $key["price"]; ?>;
+                                        soluong.setAttribute('value', soluong.value);
+                                        
+                                        $("#content").html(soluong.value * Totals);
+                                    </script>
+                                    <td class="text-right"><a href="../Cart/Remove/<?php echo $key["index"]; ?>"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button></a> </td>
+                                </tr>
+                                        
+                                <?php
+
+                                $total = $total + ($key["price"]);
+                                ?>
+
+                        <?php }
+                        } ?>
+
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><strong>Total</strong></td>
+                            <td class="text-right"><strong>$ <?php echo number_format($total, 3); ?></strong></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
