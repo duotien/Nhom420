@@ -16,7 +16,7 @@
         <div id="category" class="container-fluid">
             <div class="row">
                 <div class="left-420-filter-panel col-md-2">
-                    <form action="../Admin" method="post">
+                    <form action="../Product/filter" method="post">
                         <div class="n420-filter-search-status">
                             <div class="n420-filter-search-status_text" style="font-size: 17px; margin-left: 5px;">BỘ LỌC SẢN PHẨM<br>---------------</br></div>
                         </div>
@@ -30,7 +30,7 @@
                                     <div class="n420-filter n420-checkbox-filter">
                                         <div class="n420-checkbox">
                                             <label class="420-checkbox_control">
-                                                <input type="checkbox" id="opt_<?php echo $brand["id"];?>"/>
+                                                <input type="checkbox" name="brand[]" value="<?php echo $brand["brand_id"];?>" id="opt_<?php echo $brand["brand_id"];?>"/>
                                             </label>
                                             <span class="n420-checkbox_label"><?php echo $brand["name"];?></span>
                                         </div>
@@ -108,7 +108,7 @@
                             </div>
                         </div>
                         <div class="n420-filter-button" style="margin-left: 5px ;">
-                            <button id="btnSubmit" class="n420-filter-button-submit" type="submit">Lọc</button>
+                            <button id="btnSubmit" class="n420-filter-button-submit" type="submit" name="btn_filter">Lọc</button>
                             
                             <button id="btnReset" class="n420-filter-button-reset" type="reset">Làm mới</button>
                         </div>

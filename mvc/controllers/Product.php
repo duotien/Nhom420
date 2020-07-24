@@ -64,4 +64,22 @@ class Product extends Controller
             "BrandList" => $brand_array
         ]);
     }
+
+    function filter()
+    {
+        $brand = [];
+        if(isset($_POST["btn_filter"]))
+        {
+            $brand = $_POST["brand"];
+            print_r($brand);
+        }
+        $product_array = json_decode($this->ProductModel->getListByBrand($brand), true);
+        $brand_array = json_decode($this->ProductModel->listBrand(), true);
+
+        $this->getView("master-view-1", [
+            "Page" => "category",
+            "ProductArray" => $product_array,
+            "BrandList" => $brand_array
+        ]);
+    }
 }

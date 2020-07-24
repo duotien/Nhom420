@@ -15,9 +15,19 @@ class ProductModel extends Database
         return json_encode($my_array);
     }
 
-    function getListByBrand($brand_id)
+    function getListByBrand($brand = [])
     {
-        $qr = "SELECT * FROM product WHERE brand_id=$brand_id";
+        $condition = "";
+        if (!empty($brand))
+        {
+            $condition = " WHERE ";
+            foreach ($brand as $brand_id)
+            {
+                $condition .= " brand_id=$brand_id OR ";
+            }
+            $condition = substr($condition, 0, -4);
+        }
+        $qr = "SELECT * FROM product" . $condition;
         $result = mysqli_query($this->con, $qr);
         $my_array = array();
         while ($row = mysqli_fetch_array($result))
