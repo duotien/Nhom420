@@ -51,7 +51,7 @@
                                                     {
                                                 ?>
                                                     <tr class="tr-shadow">
-                                                        <td><img src="<?php echo $product["img_path"] ?>" /></td>
+                                                        <td><img src="<?php echo $product["img_path"] ?>" width="100px"/></td>
                                                         <td><?php echo $product["id"] ?></td>
                                                         <td>
                                                             <span class="block-email"><?php echo $data["BrandList"][$product["brand_id"]-1]["name"]; ?></span>
@@ -71,11 +71,7 @@
                                                                     <i class="zmdi zmdi-edit"></i>
                                                                 </button>
                                                                 <!-- </a> -->
-                                                                <form class="formDel"
-                                                                    method="POST"
-                                                                    action='../Admin/RemoveProduct/<?php echo $product["id"] ?>'
-                                                                    onsubmit="return(myFunction());"
-                                                                >
+                                                                <form class="formDel" method="POST" action='../Admin/RemoveProduct/<?php echo $product["id"] ?>'>
                                                                     <button type="submit" class="item" data-toggle="tooltip" data-placement="top" title="Delete" class="btn-del">
                                                                         <i class="zmdi zmdi-delete"></i>
                                                                     </button>

@@ -1,58 +1,92 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
+	/*
 	$(".btn-del").click(function () {
-var id= $(this).parents("tr").attr("id");
-Swal.fire({
-    title: 'Are you sure?',
-    text: "You won't be able to revert this!",
-    type: 'warning',
-    showCancelButton: true,
-    confirmButtonColor: '#3085d6',
-    cancelButtonColor: '#d33',
-    confirmButtonText: 'Yes, delete it!'
-}).then((result) => {
-    if (result.value) {
-        
-                Swal.fire(
-                    'DELETE',
-                    'SUCCESSFULLY DELETED',
-                    'success',
-                );
-            }
-            else if (result.dismiss === swal.DismissReason.cancel) {
-        swal.fire(
-            'Canceled',
-            'Your data not deleted',
-            'error'
-        )
-    }
-})
-	/*document.querySelector('.formDel').addEventListener('submit', function (e) {
-		var form = this;
-
-		e.preventDefault(); // <--- prevent form from submitting
-
-		swal({
-			title: "Are you sure?",
+		var id = $(this).parents("tr").attr("id");
+		Swal.fire({
+			title: 'Are you sure?',
 			text: "You won't be able to revert this!",
-			icon: "warning",
-			buttons: [
-				'Cancel',
-				'Yes, I am sure'
-			],
-			dangerMode: true,
-		}).then(function (isConfirm) {
-			if (isConfirm) {
-				swal({
-					title: 'Deleted!',
-					text: 'This item has been deleted!',
-					icon: 'success'
-				}).then(function () {
-					form.submit(); // <--- submit form programmatically
-				});
-			} else {
-				swal("Cancelled", "This item is safe now", "error");
+			type: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Yes, delete it!'
+		}).then((result) => {
+			if (result.value) {
+
+				Swal.fire(
+					'DELETE',
+					'SUCCESSFULLY DELETED',
+					'success',
+				);
+			}
+			else if (result.dismiss === swal.DismissReason.cancel) {
+				swal.fire(
+					'Canceled',
+					'Your data not deleted',
+					'error'
+				)
 			}
 		})
-	});*/
+	})
+	*/
+	var formDel = document.getElementsByClassName("formDel");
+	for (var i = 0; i < formDel.length; i++)
+	{
+		formDel[i].addEventListener('submit', function(e){
+			e.preventDefault(); // <--- prevent form from submitting
+			var form = this;
+			swal({
+				title: "Are you sure?",
+				text: "You won't be able to revert this!",
+				icon: "warning",
+				buttons: [
+					'Cancel',
+					'Yes, I am sure'
+				],
+				dangerMode: true,
+			}).then(function (isConfirm) {
+				if (isConfirm) {
+					swal({
+						title: 'Deleted!',
+						text: 'This item has been deleted!',
+						icon: 'success'
+					}).then(function () {
+						form.submit(); // <--- submit form programmatically
+					});
+				} else {
+					swal("Cancelled", "This item is safe now", "error");
+				}
+			})
+		});
+	}
+
+	// document.querySelector('.formDel').addEventListener('submit', function (e) {
+	// 	var form = this;
+
+	// 	e.preventDefault(); // <--- prevent form from submitting
+
+	// 	swal({
+	// 		title: "Are you sure?",
+	// 		text: "You won't be able to revert this!",
+	// 		icon: "warning",
+	// 		buttons: [
+	// 			'Cancel',
+	// 			'Yes, I am sure'
+	// 		],
+	// 		dangerMode: true,
+	// 	}).then(function (isConfirm) {
+	// 		if (isConfirm) {
+	// 			swal({
+	// 				title: 'Deleted!',
+	// 				text: 'This item has been deleted!',
+	// 				icon: 'success'
+	// 			}).then(function () {
+	// 				form.submit(); // <--- submit form programmatically
+	// 			});
+	// 		} else {
+	// 			swal("Cancelled", "This item is safe now", "error");
+	// 		}
+	// 	})
+	// });
 </script>
