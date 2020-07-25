@@ -47,12 +47,13 @@
                                             </thead>
                                             <tbody>
                                                 <?php
+                                                    $index = 1;
                                                     foreach($data["ProductList"] as $product)
                                                     {
                                                 ?>
                                                     <tr class="tr-shadow">
                                                         <td><img src="<?php echo $product["img_path"] ?>" width="100px"/></td>
-                                                        <td><?php echo $product["id"] ?></td>
+                                                        <td><?php echo $index++; ?></td>
                                                         <td>
                                                             <span class="block-email"><?php echo $data["BrandList"][$product["brand_id"]-1]["name"]; ?></span>
                                                         </td>
