@@ -74,7 +74,7 @@
                                                                 <form class="formDel"
                                                                     method="POST"
                                                                     action='../Admin/RemoveProduct/<?php echo $product["id"] ?>'
-                                                                    
+                                                                    onsubmit="return(myFunction());"
                                                                 >
                                                                     <button type="submit" class="item" data-toggle="tooltip" data-placement="top" title="Delete" class="btn-del">
                                                                         <i class="zmdi zmdi-delete"></i>
