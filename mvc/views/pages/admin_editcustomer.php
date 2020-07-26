@@ -1,7 +1,7 @@
 <div class="page-container">
     <div class="main-content">
         <div class="section__content section__content--p30">
-            <form method="POST" action="../Admin/EdittingUser/<?php echo $data["SelectedCustomer"]["id"]; ?>">
+            <form method="POST" action="../Admin/EditingUser/<?php echo $data["SelectedCustomer"]["id"]; ?>">
                 <div>
                     <p>Username: <?php echo $data["SelectedCustomer"]["username"]; ?></p>
                 </div>

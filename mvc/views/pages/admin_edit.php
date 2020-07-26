@@ -3,7 +3,7 @@
 		<div class="section__content section__content--p30">
 								<img src="<?php echo $data["SelectedProduct"]["img_path"] ?>" width="30%" style="padding-bottom: 10px;"/>
 
-								<form action="../Admin/EdittingProduct/<?php echo $data["SelectedProduct"]["id"]; ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
+								<form action="../Admin/EditingProduct/<?php echo $data["SelectedProduct"]["id"]; ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
 									<div class="row form-group">
 										<div class="col col-md-3">
 											<label for="brand-input" class=" form-control-label">Brand</label>

@@ -79,7 +79,7 @@ class Admin extends Controller
         }
     }
 
-    function EdittingUser($id = 0)
+    function EditingUser($id = 0)
     {
         if ($this->loggedin && $this->isadmin)
         {
@@ -218,7 +218,7 @@ class Admin extends Controller
         }
     }
 
-    function EdittingProduct($id = 0)
+    function EditingProduct($id = 0)
     {
         if ($this->loggedin)
         {
