@@ -1,6 +1,7 @@
 <div class="page-container">
     <div class="main-content">
         <div class="section__content section__content--p30">
+            <h1>Edit Customer Information</h1>
             <form method="POST" action="../Admin/EditingUser/<?php echo $data["SelectedCustomer"]["id"]; ?>">
                 <div>
                     <p>Username: <?php echo $data["SelectedCustomer"]["username"]; ?></p>
@@ -15,7 +16,7 @@
                 </div>
                 <div>
                     <label for="phone_number">Phone Number: </label>
-                    <input type="tel" pattern="[0-9]{11}" class="form-input" name="phone_number" id="phone_number" placeholder="Phone Number" value="<?php echo $data["SelectedCustomer"]["phone_number"]; ?>" />
+                    <input type="tel" pattern="[0-9]*" maxlength="11" class="form-input" name="phone_number" id="phone_number" placeholder="Phone Number" value="<?php echo $data["SelectedCustomer"]["phone_number"]; ?>" />
                 </div>
                 <div class="card-footer">
                     <button type="submit" name="btn_edit_customer" class="btn btn-primary btn-sm">

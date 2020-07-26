@@ -1,6 +1,7 @@
 <div class="page-container">
     <div class="main-content">
 		<div class="section__content section__content--p30">
+								<h1>Edit Product</h1>
 								<img src="<?php echo $data["SelectedProduct"]["img_path"] ?>" width="30%" style="padding-bottom: 10px;"/>
 
 								<form action="../Admin/EditingProduct/<?php echo $data["SelectedProduct"]["id"]; ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
