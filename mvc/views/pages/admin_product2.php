@@ -67,11 +67,11 @@
                                                         <td><?php echo $product["price"] ?></td>
                                                         <td>
                                                             <div class="table-data-feature">
-                                                                <!-- <a href="../Admin/EditProduct/<?php echo $product["id"] ?>"> -->
-                                                                <button class="item" data-toggle="tooltip" data-placement="top" title="Edit" id="btn-edit">
-                                                                    <i class="zmdi zmdi-edit"></i>
-                                                                </button>
-                                                                <!-- </a> -->
+                                                                <a href="../Admin/EditProduct/<?php echo $product["id"] ?>">
+                                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Edit" id="btn-edit">
+                                                                        <i class="zmdi zmdi-edit"></i>
+                                                                    </button>
+                                                                </a>
                                                                 <form class="formDel" method="POST" action='../Admin/RemoveProduct/<?php echo $product["id"] ?>'>
                                                                     <button type="submit" class="item" data-toggle="tooltip" data-placement="top" title="Delete" class="btn-del">
                                                                         <i class="zmdi zmdi-delete"></i>
@@ -174,30 +174,35 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
-    // Get the modal
-    var modalEdit = document.getElementById("EditModal");
+/*
 
-    // Get the button that opens the modal
-    var btnEdit = document.getElementById("btn-edit");
+// Get the modal
+var modalEdit = document.getElementById("EditModal");
 
-    // Get the <span> element that closes the modal
-    var spanEdit = document.getElementsByClassName("closeEdit")[0];
+// Get the button that opens the modal
+var btnEdit = document.getElementById("btn-edit");
 
-    // When the user clicks the button, open the modal 
-    btnEdit.onclick = function() {
+// Get the <span> element that closes the modal
+var spanEdit = document.getElementsByClassName("closeEdit")[0];
+
+// When the user clicks the button, open the modal 
+btnEdit.onclick = function() {
     modalEdit.style.display = "block";
-    }
+}
 
-    // When the user clicks on <span> (x), close the modal
-    spanEdit.onclick = function() {
+// When the user clicks on <span> (x), close the modal
+spanEdit.onclick = function() {
     modalEdit.style.display = "none";
-    }
+}
 
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
     if (event.target == modalEdit) {
         modalEdit.style.display = "none";
-    }    }
+    }
+}
+
+*/
 </script>
 
 <?php require_once "./mvc/views/blocks/swal.html"; ?>

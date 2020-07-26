@@ -66,7 +66,7 @@ class Admin extends Controller
             }
             else
             {
-                $this->getView("master-view-1", [
+                $this->getView("master-view-admin", [
                     "Page" => "admin_editcustomer",
                     "ActiveMenu" => "User",
                     "SelectedCustomer" => $selected_user
@@ -203,7 +203,7 @@ class Admin extends Controller
             }
             else
             {
-                $this->getView("master-view-1", [
+                $this->getView("master-view-admin", [
                     "Page" => "admin_edit",
                     "ActiveMenu" => "Product",
                     "BrandList" => $brand_list,

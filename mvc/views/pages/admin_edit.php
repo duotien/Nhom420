@@ -1,3 +1,7 @@
+<div class="page-container">
+    <div class="main-content">
+		<div class="section__content section__content--p30">
+								<img src="<?php echo $data["SelectedProduct"]["img_path"] ?>" width="30%" style="padding-bottom: 10px;"/>
 
 								<form action="../Admin/EdittingProduct/<?php echo $data["SelectedProduct"]["id"]; ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
 									<div class="row form-group">
@@ -100,6 +104,9 @@
 										<button type="reset" class="btn btn-danger btn-sm">
 											<i class="fa fa-ban"></i> Reset
 										</button>
-										<!-- <a href="../Admin/Product" type="button" class="btn btn-outline-success" style="border: none; float:right;">Back to Admin</a> -->
+										<a href="../Admin/Product" type="button" class="btn btn-outline-success" style="border: none; float:right;">Back to Admin</a>
 									</div>
 								</form>
+		</div>
+	</div>
+</div>
