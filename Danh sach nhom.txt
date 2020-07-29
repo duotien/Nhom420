@@ -1,0 +1,22 @@
+#####################
+#-------------------#
+#-----Nhóm 420------#
+#-------------------#
+#####################
+
+Mã LHP: COMP130303
+Họ và tên giảng viên: Lương Trần Hy Hiến
+
+Danh sách thành viên:
+
+STT.	Họ và tên		MSSV		SĐT		Email
+1.	Dương Tiến		44.01.104.193	0908042902	4401104193@student.hcmue.edu.vn
+2.	Nguyễn Xuân Tính	44.01.104.196	0868701342	4401104196@student.hcmue.edu.vn		
+3.	Trần Gia Phát		44.01.104.165	0912851952	4401104165@student.hcmup.edu.vn
+4.	Võ Thanh Phi		44.01.104.168	0396550193	4401104168@student.hcmup.edu.vn
+
+Nhóm trưởng:
+Họ và tên:	Dương Tiến
+MSSV:		44.01.104.193
+SĐT:		0908042902
+Email:		4401104193@student.hcmue.edu.vn
